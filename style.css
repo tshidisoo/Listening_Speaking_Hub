@@ -210,6 +210,9 @@ header h1 {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   line-height: 1.3;
+  flex: 1;
+  min-width: 0;
+  word-break: break-word;
 }
 
 /* --- Live Class Block --- */
@@ -482,7 +485,8 @@ main {
 .card-header {
   display: flex;
   align-items: center;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 8px;
   margin-bottom: 10px;
 }
 
@@ -834,8 +838,164 @@ footer {
   font-weight: 600;
 }
 
-/* --- Responsive tweaks --- */
+/* ═══════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   Mobile-first — base styles above target
+   phones ≥ 375px. Rules below layer up.
+═══════════════════════════════════════ */
+
+/* ── Tiny phones (< 360px) ───────────────
+   Prevent horizontal overflow on the
+   narrowest devices (320–359px).          */
+@media (max-width: 359px) {
+  header h1           { font-size: 1.55rem; }
+  .header-emoji       { font-size: 2.2rem; }
+  .golden-rule        { font-size: 0.78rem; padding: 5px 12px; }
+
+  /* Landing student selector */
+  .student-cards      { gap: 8px; }
+  .student-card       { min-width: 88px; padding: 18px 10px 14px; }
+  .student-card-emoji { font-size: 2rem; }
+  .student-card-name  { font-size: 1rem; }
+  .student-card-sub   { font-size: 0.65rem; }
+
+  /* Password box */
+  #password-field     { font-size: 0.9rem; padding: 11px 12px; }
+  #enter-btn          { width: 44px; height: 44px; font-size: 1.1rem; }
+
+  /* Week cards */
+  .week-card          { padding: 14px 14px; gap: 12px; }
+  .week-card-emoji    { font-size: 1.8rem; }
+  .week-card-title    { font-size: 0.95rem; }
+  .week-card-desc     { font-size: 0.75rem; }
+
+  /* Week view header */
+  .week-view-title    { font-size: 0.72rem; letter-spacing: 0; }
+  .back-btn           { font-size: 0.78rem; padding: 6px 10px; }
+
+  /* Tabs */
+  .tab                { padding: 8px 10px; min-width: 50px; }
+  .tab-icon           { font-size: 1.1rem; }
+  .tab-label          { font-size: 0.65rem; }
+
+  /* Day card */
+  .day-card           { padding: 16px 12px; }
+  .day-card h2        { font-size: 1.1rem; }
+
+  /* Match game */
+  .match-item         { font-size: 0.88rem; padding: 8px 4px; border-radius: 9px; }
+  .emoji-item         { font-size: 1.2rem; }
+  .match-grid         { gap: 6px; }
+}
+
+/* ── Small phones (360–479px) ────────────
+   Comfortable base for 375px / 390px.    */
+@media (min-width: 360px) and (max-width: 479px) {
+  .student-card       { min-width: 100px; }
+}
+
+/* ── Medium phones / large phones (480px+)
+   iPhone Plus, Android flagships.        */
 @media (min-width: 480px) {
-  header h1  { font-size: 2.2rem; }
-  .day-card  { padding: 28px 28px; }
+  header h1           { font-size: 2.2rem; }
+  .header-emoji       { font-size: 3rem; }
+
+  /* Student selector */
+  .student-card       { padding: 30px 26px 24px; min-width: 130px; }
+  .student-card-emoji { font-size: 3rem; }
+  .student-card-name  { font-size: 1.25rem; }
+
+  /* Week cards & day cards */
+  .week-card          { padding: 20px 24px; }
+  .week-card-emoji    { font-size: 2.4rem; }
+  .week-card-title    { font-size: 1.1rem; }
+  .day-card           { padding: 28px; }
+
+  /* Tabs */
+  .tab                { padding: 11px 20px; min-width: 65px; }
+  .tab-icon           { font-size: 1.3rem; }
+
+  /* Record button */
+  .record-btn         { width: 108px; height: 108px; }
+  .record-icon        { font-size: 2rem; }
+
+  /* Match game */
+  .match-item         { font-size: 1.05rem; padding: 12px 8px; }
+  .emoji-item         { font-size: 1.6rem; }
+  .match-grid         { gap: 12px; }
+}
+
+/* ── Tablets (640px+) ────────────────────
+   iPad mini / landscape phones.          */
+@media (min-width: 640px) {
+  header              { padding: 48px 24px 32px; }
+  header h1           { font-size: 2.5rem; }
+  .subtitle           { font-size: 0.95rem; }
+  .golden-rule        { font-size: 0.9rem; }
+
+  /* Selector */
+  #selector           { max-width: 580px; padding: 0 24px 48px; }
+  .student-cards      { gap: 20px; }
+  .student-card       { min-width: 150px; padding: 34px 30px 28px; }
+  .student-card-emoji { font-size: 3.4rem; }
+  .student-card-name  { font-size: 1.35rem; }
+  #password-box       { padding: 28px 28px; }
+
+  /* Landing week cards */
+  #landing            { max-width: 640px; padding: 0 24px 48px; }
+  .week-card          { padding: 22px 28px; gap: 18px; }
+  .week-card-emoji    { font-size: 2.6rem; }
+  .week-card-title    { font-size: 1.15rem; }
+  .week-card-desc     { font-size: 0.88rem; }
+
+  /* Week view */
+  .week-view-header   { max-width: 640px; padding: 16px 24px 20px; }
+  .week-view-title    { font-size: 0.95rem; }
+  main                { max-width: 640px; padding: 0 24px; }
+  .day-card           { padding: 32px; }
+  .day-card h2        { font-size: 1.5rem; }
+  .grammar-tag        { font-size: 0.88rem; }
+
+  /* Tabs */
+  .day-tabs           { gap: 10px; padding: 0 24px 24px; }
+  .tab                { padding: 12px 22px; min-width: 72px; }
+
+  /* Record button */
+  .record-btn         { width: 116px; height: 116px; }
+
+  /* Section blocks */
+  .section-block      { padding: 20px; }
+  .section-block p    { font-size: 0.96rem; }
+  .task-prompts li    { font-size: 0.96rem; }
+
+  /* Match game */
+  .match-item         { font-size: 1.1rem; padding: 13px 10px; }
+  .emoji-item         { font-size: 1.8rem; }
+}
+
+/* ── Desktop (900px+) ────────────────────
+   Full desktop / wide tablets.           */
+@media (min-width: 900px) {
+  header h1           { font-size: 2.8rem; }
+  .header-emoji       { font-size: 3.6rem; }
+  .golden-rule        { font-size: 0.92rem; }
+
+  #selector           { max-width: 700px; }
+  .student-cards      { gap: 24px; }
+  .student-card       { min-width: 170px; }
+
+  #landing            { max-width: 700px; }
+  main                { max-width: 700px; }
+  .week-view-header   { max-width: 700px; }
+
+  .day-card           { padding: 36px 40px; }
+  .day-card h2        { font-size: 1.6rem; }
+
+  .video-btn          { font-size: 1rem; }
+  .submit-btn         { font-size: 1.05rem; }
+
+  /* Match game: slightly larger targets on desktop */
+  .match-item         { font-size: 1.15rem; padding: 14px 12px; }
+  .emoji-item         { font-size: 2rem; }
+  .match-grid         { gap: 16px; }
 }
