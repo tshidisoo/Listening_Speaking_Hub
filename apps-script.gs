@@ -25,7 +25,7 @@
 //
 var BILGE_FOLDER_ID  = "1SwQDApb0ywl40UgAMVcGShVOzWBdAuU2";
 var ZEYNEP_FOLDER_ID = "1wScbMlm2spAdmyaKLhoiAWAvJYJsnter";
-var ALIYA_FOLDER_ID  = "YOUR_ALIYA_FOLDER_ID_HERE";
+var ALIYA_FOLDER_ID  = "1KH_f8Vbe38yaS-0fNdql0rf6LMMMRASP";
 
 // ── MAIN HANDLER ──────────────────────────────────────────────────
 function doPost(e) {
