@@ -25,6 +25,7 @@
 //
 var BILGE_FOLDER_ID  = "1SwQDApb0ywl40UgAMVcGShVOzWBdAuU2";
 var ZEYNEP_FOLDER_ID = "1wScbMlm2spAdmyaKLhoiAWAvJYJsnter";
+var ALIYA_FOLDER_ID  = "YOUR_ALIYA_FOLDER_ID_HERE";
 
 // ── MAIN HANDLER ──────────────────────────────────────────────────
 function doPost(e) {
@@ -42,7 +43,9 @@ function doPost(e) {
     var blob     = Utilities.newBlob(decoded, mimeType, filename);
 
     // Route to the correct student folder
-    var folderId = (student === "Zeynep") ? ZEYNEP_FOLDER_ID : BILGE_FOLDER_ID;
+    var folderId = (student === "Zeynep") ? ZEYNEP_FOLDER_ID
+                 : (student === "Aliya")  ? ALIYA_FOLDER_ID
+                 : BILGE_FOLDER_ID;
     var folder   = DriveApp.getFolderById(folderId);
     var file     = folder.createFile(blob);
 

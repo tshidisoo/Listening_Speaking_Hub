@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aliya's Phonics Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       HEADER
+  ═══════════════════════════════════════ -->
+  <header>
+    <div class="header-emoji">🌈</div>
+    <h1>Aliya's Phonics Hub</h1>
+    <p class="subtitle">Oxford Phonics World 2 · Short 'a'</p>
+    <p class="golden-rule">✨ Say every word OUT LOUD when you read it!</p>
+  </header>
+
+  <!-- ═══════════════════════════════════════
+       LANDING
+  ═══════════════════════════════════════ -->
+  <section id="landing">
+    <p class="landing-intro">Ready for your phonics adventure? 🎉</p>
+
+    <div class="week-cards">
+      <button class="week-card" data-week="1">
+        <span class="week-card-emoji">📖</span>
+        <span class="week-card-text">
+          <span class="week-card-number">This Week</span>
+          <span class="week-card-title">Short 'a' Words</span>
+          <span class="week-card-desc">cat · ant · yak · jam · fan · can</span>
+        </span>
+        <span class="week-card-arrow">→</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       WEEK VIEW
+  ═══════════════════════════════════════ -->
+  <section id="week-view" style="display:none">
+
+    <div class="week-view-header">
+      <button id="back-btn" class="back-btn">← Back</button>
+      <div id="week-view-title" class="week-view-title"></div>
+    </div>
+
+    <!-- DAY TABS -->
+    <nav class="day-tabs" role="tablist" aria-label="Days of the week">
+      <button class="tab active" data-day="monday"    role="tab" aria-selected="true" ><span class="tab-icon">🎤</span><span class="tab-label">Mon</span></button>
+      <button class="tab"        data-day="tuesday"   role="tab" aria-selected="false"><span class="tab-icon">🎮</span><span class="tab-label">Tue</span></button>
+      <button class="tab"        data-day="wednesday" role="tab" aria-selected="false"><span class="tab-icon">🎤</span><span class="tab-label">Wed</span></button>
+      <button class="tab"        data-day="thursday"  role="tab" aria-selected="false"><span class="tab-icon">🎮</span><span class="tab-label">Thu</span></button>
+      <button class="tab"        data-day="friday"    role="tab" aria-selected="false"><span class="tab-icon">⭐</span><span class="tab-label">Fri</span></button>
+    </nav>
+
+    <main>
+
+      <!-- ─────────────────────────────────
+           MONDAY — Speaking Day
+      ───────────────────────────────── -->
+      <section class="day-card active" id="card-w1-monday" data-week="1" data-day="monday">
+        <div class="card-header">
+          <span class="day-badge">Monday</span>
+          <span class="live-badge">🎤 Speaking Day</span>
+          <span class="done-badge" id="done-w1-monday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🐈 The 'a' &amp; '-am' Words!</h2>
+        <p class="grammar-tag">Phonics: <strong>Short 'a' · CVC words · cat · ant · yak · ax · ram · jam</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📺 Watch &amp; Sing First!</div>
+          <p>Watch the Oxford Phonics song and sing along! Listen carefully to how each word sounds.</p>
+          <a class="video-btn" href="https://youtu.be/0bvAWePdvTY?si=tqm_XhgULErsAjjj" target="_blank" rel="noopener">▶ Oxford Phonics World 2 · Short 'a' Song</a>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Speaking Task</div>
+          <p>Read these words clearly, one by one. Say each sound: <strong>c–a–t… cat!</strong></p>
+          <ul class="task-prompts">
+            <li>🐈 cat &nbsp; 🐜 ant &nbsp; 🐂 yak &nbsp; 🪓 ax</li>
+            <li>🐏 ram &nbsp; 🍯 jam</li>
+          </ul>
+          <p style="margin-top:10px; font-size:0.92rem; color:var(--text-dark);">Then say the chant:</p>
+          <div class="reminder">🗣️ <em>"I see an ant and an ax."</em></div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w1-monday">
+            <button class="record-btn" id="recordBtn-w1-monday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w1-monday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w1-monday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w1-monday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w1-monday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────
+           TUESDAY — Game Day (6 pairs)
+      ───────────────────────────────── -->
+      <section class="day-card" id="card-w1-tuesday" data-week="1" data-day="tuesday">
+        <div class="card-header">
+          <span class="day-badge">Tuesday</span>
+          <span class="live-badge" style="background:#fef3c7;color:#92400e;">🎮 Game Day</span>
+          <span class="done-badge" id="done-w1-tuesday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🎮 Word Match — Round 1!</h2>
+        <p class="grammar-tag">Phonics: <strong>Match the word to its picture · cat · ant · yak · ax · ram · jam</strong></p>
+
+        <div class="section-block game-block">
+          <div class="section-label">🎮 Match the Word to the Emoji!</div>
+          <p style="font-size:0.88rem;color:var(--text-dark);margin-bottom:4px;">Click a <strong>word</strong>, then click the matching <strong>picture</strong>. Say the word out loud every time! 🗣️</p>
+
+          <div class="match-game" id="game-tuesday">
+            <div class="match-grid">
+              <div class="match-col">
+                <div class="match-col-label">Words</div>
+                <div class="words-col"></div>
+              </div>
+              <div class="match-col">
+                <div class="match-col-label">Pictures</div>
+                <div class="emojis-col"></div>
+              </div>
+            </div>
+            <p class="match-score">Matched: <span class="match-score-count">0</span> / 6 ⭐</p>
+            <div class="match-celebration" style="display:none">
+              <p>🎉 Amazing, Aliya! You matched them all! 🎉</p>
+              <button class="replay-btn" data-game="game-tuesday" data-set="tuesday">🔄 Play Again!</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────
+           WEDNESDAY — Speaking Day
+      ───────────────────────────────── -->
+      <section class="day-card" id="card-w1-wednesday" data-week="1" data-day="wednesday">
+        <div class="card-header">
+          <span class="day-badge">Wednesday</span>
+          <span class="live-badge">🎤 Speaking Day</span>
+          <span class="done-badge" id="done-w1-wednesday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🪭 The '-an' Words!</h2>
+        <p class="grammar-tag">Phonics: <strong>Short 'a' · '-an' family · yam · dam · fan · man · pan · can</strong></p>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Speaking Task</div>
+          <p>New word family today! Read these words clearly, one by one.</p>
+          <ul class="task-prompts">
+            <li>🍠 yam &nbsp; 🧱 dam &nbsp; 🪭 fan &nbsp; 👨 man</li>
+            <li>🍳 pan &nbsp; 🥫 can</li>
+          </ul>
+          <p style="margin-top:10px; font-size:0.92rem; color:var(--text-dark);">Then say the chant:</p>
+          <div class="reminder">🗣️ <em>"The man has a can and a pan."</em></div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w1-wednesday">
+            <button class="record-btn" id="recordBtn-w1-wednesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w1-wednesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w1-wednesday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w1-wednesday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w1-wednesday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────
+           THURSDAY — Grand Challenge (12 pairs)
+      ───────────────────────────────── -->
+      <section class="day-card" id="card-w1-thursday" data-week="1" data-day="thursday">
+        <div class="card-header">
+          <span class="day-badge">Thursday</span>
+          <span class="live-badge" style="background:#fef3c7;color:#92400e;">🎮 Game Day</span>
+          <span class="done-badge" id="done-w1-thursday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🏆 The Grand Challenge — All 12 Words!</h2>
+        <p class="grammar-tag">Phonics: <strong>All short 'a' words · Can you beat your Tuesday score?</strong></p>
+
+        <div class="section-block game-block">
+          <div class="section-label">🏆 Grand Challenge — All 12 Words!</div>
+          <p style="font-size:0.88rem;color:var(--text-dark);margin-bottom:4px;">All 12 words from this week! Can you match them faster than Tuesday? Say each word out loud! 🗣️</p>
+
+          <div class="match-game" id="game-thursday">
+            <div class="match-grid">
+              <div class="match-col">
+                <div class="match-col-label">Words</div>
+                <div class="words-col"></div>
+              </div>
+              <div class="match-col">
+                <div class="match-col-label">Pictures</div>
+                <div class="emojis-col"></div>
+              </div>
+            </div>
+            <p class="match-score">Matched: <span class="match-score-count">0</span> / 12 ⭐</p>
+            <div class="match-celebration" style="display:none">
+              <p>🏆 YOU DID IT! All 12 words! You are a Phonics Champion, Aliya! 🌈</p>
+              <button class="replay-btn" data-game="game-thursday" data-set="thursday">🔄 Play Again!</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────
+           FRIDAY — Singing Star
+      ───────────────────────────────── -->
+      <section class="day-card" id="card-w1-friday" data-week="1" data-day="friday">
+        <div class="card-header">
+          <span class="day-badge">Friday</span>
+          <span class="live-badge" style="background:#fde68a;color:#92400e;">⭐ Singing Star</span>
+          <span class="done-badge" id="done-w1-friday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>⭐ Singing Star Friday!</h2>
+        <p class="grammar-tag">Phonics: <strong>All short 'a' words · Sing the whole song!</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📺 Sing Along!</div>
+          <p>Open the song and sing along to the <strong>whole video</strong>! Be as loud and clear as you can!</p>
+          <a class="video-btn" href="https://youtu.be/0bvAWePdvTY?si=tqm_XhgULErsAjjj" target="_blank" rel="noopener">▶ Oxford Phonics World 2 · Short 'a' Song</a>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">🌟 Your Singing Star Mission</div>
+          <p>Send your teacher a <strong>voice note</strong> of you singing along!</p>
+          <ul class="task-prompts">
+            <li>🎨 First, draw your <strong>favourite word</strong> from this week (a pink cat? a red jam jar?)</li>
+            <li>🎤 Then record yourself singing the song while holding your drawing!</li>
+          </ul>
+          <div class="reminder">🌈 You learned 12 new words this week. That is AMAZING! ⭐</div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Singing!</div>
+          <div class="recorder" id="recorder-w1-friday">
+            <button class="record-btn" id="recordBtn-w1-friday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w1-friday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w1-friday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w1-friday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w1-friday"></div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </section><!-- /week-view -->
+
+  <footer>
+    <p>Made with 🌈 for Aliya · You are a Phonics Star!</p>
+  </footer>
+
+  <script src="aliya-script.js"></script>
+</body>
+</html>

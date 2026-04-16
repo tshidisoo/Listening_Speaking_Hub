@@ -714,6 +714,117 @@ main {
 .status-msg.success   { color: #059669; }
 .status-msg.error     { color: #dc2626; }
 
+/* --- Match Game (Aliya) --- */
+.game-block {
+  background: linear-gradient(135deg, #fef9c3, #fde68a);
+  border: 1px solid #fbbf24;
+}
+
+.match-grid {
+  display: flex;
+  gap: 10px;
+  margin: 12px 0 8px;
+}
+
+.match-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.match-col-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text-soft);
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.match-item {
+  width: 100%;
+  padding: 11px 6px;
+  border: 2px solid var(--purple-light);
+  border-radius: 12px;
+  background: var(--white);
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.15s, background 0.15s, transform 0.12s;
+  line-height: 1.2;
+}
+
+.match-item:hover:not(:disabled) {
+  border-color: var(--purple-mid);
+  background: var(--lavender);
+}
+
+.match-item.selected {
+  border-color: var(--purple);
+  background: var(--lavender);
+  transform: scale(1.06);
+  box-shadow: 0 3px 12px rgba(124, 58, 237, 0.25);
+}
+
+.match-item.matched {
+  border-color: #10b981;
+  background: #d1fae5;
+  color: #065f46;
+  cursor: default;
+}
+
+.match-item.error {
+  border-color: #ef4444;
+  background: #fee2e2;
+  animation: shake 0.35s ease;
+}
+
+.emoji-item { font-size: 1.5rem; }
+
+.match-score {
+  text-align: center;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-mid);
+  margin: 6px 0 0;
+}
+
+.match-celebration {
+  text-align: center;
+  background: var(--lavender);
+  border-radius: var(--radius-sm);
+  padding: 16px 12px 12px;
+  margin-top: 12px;
+  animation: fadeIn 0.4s ease;
+}
+
+.match-celebration p {
+  font-size: 1.1rem !important;
+  font-weight: 800 !important;
+  color: var(--purple) !important;
+  margin-bottom: 10px !important;
+}
+
+.replay-btn {
+  display: inline-block;
+  padding: 9px 20px;
+  background: var(--purple);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.replay-btn:hover { background: #6d28d9; }
+
 /* --- Footer --- */
 footer {
   text-align: center;
