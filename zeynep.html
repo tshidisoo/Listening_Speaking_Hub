@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zeynep's English Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       HEADER
+  ═══════════════════════════════════════ -->
+  <header>
+    <div class="header-emoji">⚡</div>
+    <h1>Zeynep's English Hub</h1>
+    <p class="subtitle">Speaking &amp; Listening · A2 Level</p>
+    <p class="golden-rule">✨ The +1 Rule: Always add one more sentence!</p>
+  </header>
+
+  <!-- ═══════════════════════════════════════
+       LANDING — WEEK SELECTOR
+  ═══════════════════════════════════════ -->
+  <section id="landing">
+    <p class="landing-intro">Choose your week to begin your adventure! 👇</p>
+
+    <div class="week-cards">
+
+      <button class="week-card" data-week="1">
+        <span class="week-card-emoji">🍽️</span>
+        <span class="week-card-text">
+          <span class="week-card-number">Week 1</span>
+          <span class="week-card-title">The Global Food Critic</span>
+          <span class="week-card-desc">Competition, food &amp; first conditionals</span>
+        </span>
+        <span class="week-card-arrow">→</span>
+      </button>
+
+      <button class="week-card" data-week="2">
+        <span class="week-card-emoji">🏙️</span>
+        <span class="week-card-text">
+          <span class="week-card-number">Week 2</span>
+          <span class="week-card-title">The City Mayor</span>
+          <span class="week-card-desc">Debate, city life &amp; city vocabulary</span>
+        </span>
+        <span class="week-card-arrow">→</span>
+      </button>
+
+      <button class="week-card" data-week="3">
+        <span class="week-card-emoji">🎨</span>
+        <span class="week-card-text">
+          <span class="week-card-number">Week 3</span>
+          <span class="week-card-title">The Art Detective</span>
+          <span class="week-card-desc">Art mystery, opinions &amp; descriptions</span>
+        </span>
+        <span class="week-card-arrow">→</span>
+      </button>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       WEEK VIEW
+  ═══════════════════════════════════════ -->
+  <section id="week-view" style="display:none">
+
+    <div class="week-view-header">
+      <button id="back-btn" class="back-btn">← Back</button>
+      <div id="week-view-title" class="week-view-title"></div>
+    </div>
+
+    <!-- DAY TABS -->
+    <nav class="day-tabs" role="tablist" aria-label="Days of the week">
+      <button class="tab active" data-day="monday"    role="tab" aria-selected="true" ><span class="tab-icon">1</span><span class="tab-label">Mon</span></button>
+      <button class="tab"        data-day="tuesday"   role="tab" aria-selected="false"><span class="tab-icon">2</span><span class="tab-label">Tue</span></button>
+      <button class="tab"        data-day="wednesday" role="tab" aria-selected="false"><span class="tab-icon">3</span><span class="tab-label">Wed</span></button>
+      <button class="tab"        data-day="thursday"  role="tab" aria-selected="false"><span class="tab-icon">4</span><span class="tab-label">Thu</span></button>
+      <button class="tab"        data-day="friday"    role="tab" aria-selected="false"><span class="tab-icon">5</span><span class="tab-label">Fri</span></button>
+    </nav>
+
+    <main>
+
+      <!-- ─────────────────────────────────
+           WEEK 1 — The Global Food Critic
+      ───────────────────────────────── -->
+
+      <!-- W1 Monday -->
+      <section class="day-card active" id="card-w1-monday" data-week="1" data-day="monday">
+        <div class="card-header">
+          <span class="day-badge">Monday</span>
+          <span class="live-badge">🎥 Live Class</span>
+          <span class="done-badge" id="done-w1-monday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>👨‍🍳 The Masterchef Kitchen!</h2>
+        <p class="grammar-tag">Grammar: <strong>Zero Conditional — If you mix this, it makes…</strong></p>
+
+        <div class="section-block live-block">
+          <div class="section-label">🎥 Live Class Activity</div>
+          <p>Watch a MasterChef Junior clip together. The <strong>30-Second Challenge</strong>: pause the video and ask Zeynep: <em>"What are they cooking? What ingredients are on the table? Go!"</em></p>
+          <p>Practice Zero Conditionals together: <em>"If you add too much salt, it tastes terrible!"</em></p>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>You are in MasterChef! Tell me about your <strong>signature dish</strong>.</p>
+          <ul class="task-prompts">
+            <li>What is your dish called?</li>
+            <li>Tell me <strong>3 ingredients</strong> in it</li>
+            <li>Use: <em>"If you eat this, you will love it!"</em></li>
+          </ul>
+          <p class="reminder">⏱ The 30-second challenge: say as much as you can! ⚡</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w1-monday">
+            <button class="record-btn" id="recordBtn-w1-monday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w1-monday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w1-monday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w1-monday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w1-monday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W1 Tuesday -->
+      <section class="day-card" id="card-w1-tuesday" data-week="1" data-day="tuesday">
+        <div class="card-header">
+          <span class="day-badge">Tuesday</span>
+          <span class="done-badge" id="done-w1-tuesday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🌍 Kids Try Food From Around the World</h2>
+        <p class="grammar-tag">Grammar: <strong>First Conditional — If you go to Japan, you will…</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📺 Watch This First</div>
+          <p>Watch kids trying food from different countries. What do they like? What do they hate?</p>
+          <a class="video-btn" href="https://www.youtube.com/watch?v=JGjeaHe7GkY" target="_blank" rel="noopener">▶ American Kids Try Food From Around the World</a>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>The kids tried Japanese food. Now tell me about <strong>you</strong>!</p>
+          <ul class="task-prompts">
+            <li>If you go to Japan, what <strong>will</strong> you eat?</li>
+            <li>Tell me one food you <strong>love</strong> and one food you <strong>hate</strong></li>
+          </ul>
+          <p class="reminder">Example: <em>"If I go to Japan, I will try sushi. I love baklava but I hate liver!"</em> ⚡</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w1-tuesday">
+            <button class="record-btn" id="recordBtn-w1-tuesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w1-tuesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w1-tuesday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w1-tuesday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w1-tuesday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W1 Wednesday -->
+      <section class="day-card" id="card-w1-wednesday" data-week="1" data-day="wednesday">
+        <div class="card-header">
+          <span class="day-badge">Wednesday</span>
+          <span class="done-badge" id="done-w1-wednesday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🍽️ The Worst Food Critic in Istanbul!</h2>
+        <p class="grammar-tag">Grammar: <strong>Present Simple — it is, it has, it tastes…</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📺 Watch This First</div>
+          <p>Listen to how people order food and complain at a restaurant. Notice the phrases they use!</p>
+          <a class="video-btn" href="https://www.youtube.com/watch?v=ki2m6Sr3UAU" target="_blank" rel="noopener">▶ Ordering at a Restaurant · Everyday English</a>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>You are the <strong>worst food critic in Istanbul</strong>. NOTHING is good tonight! 😤</p>
+          <ul class="task-prompts">
+            <li>What restaurant are you in?</li>
+            <li>What is wrong with the food?</li>
+            <li>Complain about at least <strong>2 things</strong></li>
+          </ul>
+          <p class="reminder">Example: <em>"The soup is cold! The bread is too hard! If the chef cooks like this, nobody will come!"</em> ⚡</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w1-wednesday">
+            <button class="record-btn" id="recordBtn-w1-wednesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w1-wednesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w1-wednesday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w1-wednesday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w1-wednesday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W1 Thursday -->
+      <section class="day-card" id="card-w1-thursday" data-week="1" data-day="thursday">
+        <div class="card-header">
+          <span class="day-badge">Thursday</span>
+          <span class="live-badge">🎥 Live Class</span>
+          <span class="done-badge" id="done-w1-thursday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🧾 The Restaurant Roleplay</h2>
+        <p class="grammar-tag">Grammar: <strong>Can I have…? If I order the pizza, does it have…?</strong></p>
+
+        <div class="section-block live-block">
+          <div class="section-label">🎥 Live Class Activity</div>
+          <p>Roleplay at a very weird restaurant! The menu has strange dishes like <em>"Spider Soup"</em> and <em>"Chocolate Pizza"</em>. Your teacher is the waiter.</p>
+          <p>Practice ordering, asking questions, and complaining: <em>"Can I have the pasta? If I order this, does it have mushrooms? I don't like mushrooms!"</em></p>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>Design your <strong>dream restaurant menu</strong>!</p>
+          <ul class="task-prompts">
+            <li>What is the <strong>starter</strong>?</li>
+            <li>What is the <strong>main course</strong>?</li>
+            <li>What is the <strong>dessert</strong>?</li>
+          </ul>
+          <p class="reminder">Example: <em>"My starter is tomato soup. My main course is grilled chicken. My dessert is chocolate cake — if you eat it, you will be very happy!"</em> ⚡</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w1-thursday">
+            <button class="record-btn" id="recordBtn-w1-thursday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w1-thursday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w1-thursday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w1-thursday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w1-thursday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W1 Friday -->
+      <section class="day-card" id="card-w1-friday" data-week="1" data-day="friday">
+        <div class="card-header">
+          <span class="day-badge">Friday</span>
+          <span class="done-badge" id="done-w1-friday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🍫 One Food for the Whole Weekend!</h2>
+        <p class="grammar-tag">Grammar: <strong>First Conditional — If I can only eat ONE food, I will…</strong></p>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>It is Friday and you have a big decision to make! 🤔</p>
+          <ul class="task-prompts">
+            <li>If you can only eat <strong>ONE food</strong> for the whole weekend, what will you choose?</li>
+            <li>Give me <strong>two reasons</strong> why</li>
+          </ul>
+          <p class="reminder">Example: <em>"If I can only eat one food, I will choose pizza. If I eat pizza every day, I will be very happy. Also, pizza has cheese and I love cheese!"</em> ⚡</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w1-friday">
+            <button class="record-btn" id="recordBtn-w1-friday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w1-friday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w1-friday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w1-friday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w1-friday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────
+           WEEK 2 — The City Mayor
+      ───────────────────────────────── -->
+
+      <!-- W2 Monday -->
+      <section class="day-card" id="card-w2-monday" data-week="2" data-day="monday">
+        <div class="card-header">
+          <span class="day-badge">Monday</span>
+          <span class="live-badge">🎥 Live Class</span>
+          <span class="done-badge" id="done-w2-monday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🗺️ Welcome to Zeynep-Topia!</h2>
+        <p class="grammar-tag">Grammar: <strong>Prepositions + Conditionals — If we put the school here…</strong></p>
+
+        <div class="section-block live-block">
+          <div class="section-label">🎥 Live Class Activity</div>
+          <p>You are designing a city together on a blank map! Place the buildings and use prepositions and conditionals:</p>
+          <p><em>"Where is the hospital? If we put the school here, where will the park be? The park is next to the school and in front of the library."</em></p>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>You are the <strong>Mayor of Istanbul</strong> for one day! 🏛️</p>
+          <ul class="task-prompts">
+            <li>What is your <strong>first new rule</strong> for the city?</li>
+            <li>Use: <em>"If I am Mayor, I will…"</em></li>
+          </ul>
+          <p class="reminder">Example: <em>"If I am Mayor, I will build a big park near the Bosphorus. If there is a park, children will be happy!"</em> ⚡</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w2-monday">
+            <button class="record-btn" id="recordBtn-w2-monday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w2-monday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w2-monday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w2-monday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w2-monday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W2 Tuesday -->
+      <section class="day-card" id="card-w2-tuesday" data-week="2" data-day="tuesday">
+        <div class="card-header">
+          <span class="day-badge">Tuesday</span>
+          <span class="done-badge" id="done-w2-tuesday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🎬 City Vocabulary in the Real World</h2>
+        <p class="grammar-tag">Grammar: <strong>There is / There are · It has… It is next to…</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📺 Watch This First</div>
+          <p>Watch a real walk through a city. Look at the buildings, the streets, and the people. Listen to how she describes them!</p>
+          <a class="video-btn" href="https://www.youtube.com/watch?v=v1As2lKCBGU" target="_blank" rel="noopener">▶ City Vocabulary in English ft. Miami</a>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>Now it is a debate! Which city is better?</p>
+          <ul class="task-prompts">
+            <li>Is the video city better, or is <strong>Istanbul</strong> better?</li>
+            <li>Give me <strong>two reasons</strong></li>
+          </ul>
+          <p class="reminder">Example: <em>"Istanbul is better because it has the Bosphorus. Also, the food in Istanbul is more delicious!"</em> ⚡</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w2-tuesday">
+            <button class="record-btn" id="recordBtn-w2-tuesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w2-tuesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w2-tuesday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w2-tuesday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w2-tuesday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W2 Wednesday -->
+      <section class="day-card" id="card-w2-wednesday" data-week="2" data-day="wednesday">
+        <div class="card-header">
+          <span class="day-badge">Wednesday</span>
+          <span class="done-badge" id="done-w2-wednesday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🌳 City vs. Countryside — Debate Time!</h2>
+        <p class="grammar-tag">Grammar: <strong>First Conditional — If I live in the city, I will…</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📺 Watch This First</div>
+          <p>Watch and listen to city vocabulary. What places do you see?</p>
+          <a class="video-btn" href="https://www.youtube.com/watch?v=SxcFXDeH4uU" target="_blank" rel="noopener">▶ Places Vocabulary in English</a>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task — DEBATE!</div>
+          <p>Your teacher says: <em>"The countryside is better because it is quiet and clean."</em></p>
+          <ul class="task-prompts">
+            <li>Send a voice note telling me why I am <strong>WRONG</strong>! 😄</li>
+            <li>Use: <em>"If you live in the countryside, you will…"</em></li>
+            <li>Give at least <strong>two arguments</strong> for the city</li>
+          </ul>
+          <p class="reminder">Example: <em>"You are wrong! If you live in the countryside, you will be bored. The city has shops, cinemas, and friends!"</em> ⚡</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w2-wednesday">
+            <button class="record-btn" id="recordBtn-w2-wednesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w2-wednesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w2-wednesday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w2-wednesday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w2-wednesday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W2 Thursday -->
+      <section class="day-card" id="card-w2-thursday" data-week="2" data-day="thursday">
+        <div class="card-header">
+          <span class="day-badge">Thursday</span>
+          <span class="live-badge">🎥 Live Class</span>
+          <span class="done-badge" id="done-w2-thursday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🗼 The Great Tourist Guide!</h2>
+        <p class="grammar-tag">Grammar: <strong>Imperatives + Prepositions — Go to…, Turn left at…, You must see…</strong></p>
+
+        <div class="section-block live-block">
+          <div class="section-label">🎥 Live Class Activity</div>
+          <p>Your teacher is a clueless tourist in Istanbul! Zeynep must give directions and recommendations using pictures of famous places (Galata Tower, Bosphorus, Grand Bazaar).</p>
+          <p><em>"I want to eat fish and see the water — where do I go? How do I get there?"</em></p>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>A tourist has only <strong>ONE day</strong> in Istanbul!</p>
+          <ul class="task-prompts">
+            <li>What are the <strong>3 things</strong> they MUST do?</li>
+            <li>Use: <em>"You must go to…", "First go to… then…"</em></li>
+          </ul>
+          <p class="reminder">Example: <em>"First, you must go to the Grand Bazaar. Then, go to the Bosphorus. If you have time, you must eat a simit!"</em> ⚡</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w2-thursday">
+            <button class="record-btn" id="recordBtn-w2-thursday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w2-thursday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w2-thursday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w2-thursday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w2-thursday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W2 Friday -->
+      <section class="day-card" id="card-w2-friday" data-week="2" data-day="friday">
+        <div class="card-header">
+          <span class="day-badge">Friday</span>
+          <span class="done-badge" id="done-w2-friday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🎡 Build a Theme Park in Istanbul!</h2>
+        <p class="grammar-tag">Grammar: <strong>First Conditional — If you build a park, there will be…</strong></p>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>You have one million euros and you are building a <strong>theme park</strong> in the center of Istanbul! 🎢</p>
+          <ul class="task-prompts">
+            <li>What <strong>rides</strong> will be inside it?</li>
+            <li>What will people eat there?</li>
+            <li>Use: <em>"If you come to my park, you will…"</em></li>
+          </ul>
+          <p class="reminder">Example: <em>"My theme park is called Zeynep World. If you come, you will see a huge roller coaster. There will also be a chocolate river!"</em> ⚡</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w2-friday">
+            <button class="record-btn" id="recordBtn-w2-friday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w2-friday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w2-friday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w2-friday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w2-friday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────
+           WEEK 3 — The Art Detective
+      ───────────────────────────────── -->
+
+      <!-- W3 Monday -->
+      <section class="day-card" id="card-w3-monday" data-week="3" data-day="monday">
+        <div class="card-header">
+          <span class="day-badge">Monday</span>
+          <span class="live-badge">🎥 Live Class</span>
+          <span class="done-badge" id="done-w3-monday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🖼️ The Stolen Painting!</h2>
+        <p class="grammar-tag">Grammar: <strong>There is / There are · Prepositions · Description</strong></p>
+
+        <div class="section-block live-block">
+          <div class="section-label">🎥 Live Class Activity</div>
+          <p>Look at a famous, busy painting together (like <em>A Sunday on La Grande Jatte</em> by Seurat). Someone has stolen it — the police need a witness description!</p>
+          <p>Rapid-fire questions: <em>"What is the woman holding? How many dogs are there? What color is the man's hat? Where is the child?"</em></p>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>The thief left a painting in <strong>your house</strong>! Look around your room.</p>
+          <ul class="task-prompts">
+            <li>Describe a piece of art, a <strong>poster</strong>, or a <strong>photo</strong> on your wall</li>
+            <li>What do you see in it? What colors? What people or objects?</li>
+          </ul>
+          <p class="reminder">Example: <em>"On my wall there is a poster of a city. There are tall buildings and a blue sky. The buildings are next to a river."</em> ⚡</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w3-monday">
+            <button class="record-btn" id="recordBtn-w3-monday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w3-monday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w3-monday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w3-monday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w3-monday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W3 Tuesday -->
+      <section class="day-card" id="card-w3-tuesday" data-week="3" data-day="tuesday">
+        <div class="card-header">
+          <span class="day-badge">Tuesday</span>
+          <span class="done-badge" id="done-w3-tuesday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🎨 Famous Painters for Kids</h2>
+        <p class="grammar-tag">Grammar: <strong>First Conditional — If I have a million dollars, I will…</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📺 Watch This First</div>
+          <p>Learn about Picasso, Dalí, and Van Gogh! Watch their famous paintings and listen to their stories.</p>
+          <a class="video-btn" href="https://www.youtube.com/watch?v=HroALgGMpyA" target="_blank" rel="noopener">▶ Famous Painters for Kids — Picasso, Dalí, Van Gogh</a>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>A Van Gogh painting just sold for 90 million dollars!</p>
+          <ul class="task-prompts">
+            <li>If you have <strong>1 million dollars</strong>, will you buy a Van Gogh painting or a huge house?</li>
+            <li>Tell me <strong>why</strong>!</li>
+          </ul>
+          <p class="reminder">Example: <em>"If I have 1 million dollars, I will buy a huge house because I can invite all my friends. A painting is beautiful but I cannot live in it!"</em> ⚡</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w3-tuesday">
+            <button class="record-btn" id="recordBtn-w3-tuesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w3-tuesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w3-tuesday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w3-tuesday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w3-tuesday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W3 Wednesday -->
+      <section class="day-card" id="card-w3-wednesday" data-week="3" data-day="wednesday">
+        <div class="card-header">
+          <span class="day-badge">Wednesday</span>
+          <span class="done-badge" id="done-w3-wednesday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🖌️ Mix the Colors!</h2>
+        <p class="grammar-tag">Grammar: <strong>Colors · Present Continuous — I am drawing, I use…</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📺 Watch This First</div>
+          <p>Learn about the Japanese artist Hokusai and his famous painting <em>The Great Wave</em>. Look at the colors and shapes!</p>
+          <a class="video-btn" href="https://www.youtube.com/watch?v=kpHdCHThuzU" target="_blank" rel="noopener">▶ Katsushika Hokusai — Art History for Kids</a>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>You are a <strong>famous artist</strong>! Tell me about your art.</p>
+          <ul class="task-prompts">
+            <li>What <strong>colors</strong> do you use the most?</li>
+            <li>What do you like <strong>drawing or painting</strong>?</li>
+          </ul>
+          <p class="reminder">Example: <em>"I am a famous artist. I use blue and green the most because I love the sea. I am drawing a big wave like Hokusai!"</em> ⚡</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w3-wednesday">
+            <button class="record-btn" id="recordBtn-w3-wednesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w3-wednesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w3-wednesday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w3-wednesday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w3-wednesday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W3 Thursday -->
+      <section class="day-card" id="card-w3-thursday" data-week="3" data-day="thursday">
+        <div class="card-header">
+          <span class="day-badge">Thursday</span>
+          <span class="live-badge">🎥 Live Class</span>
+          <span class="done-badge" id="done-w3-thursday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>💰 The Art Auction!</h2>
+        <p class="grammar-tag">Grammar: <strong>Adjectives + Opinions — It is beautiful / terrible because…</strong></p>
+
+        <div class="section-block live-block">
+          <div class="section-label">🎥 Live Class Activity</div>
+          <p>Your teacher is an auctioneer trying to sell very weird, expensive modern art (a red square, a blank canvas, a banana taped to a wall).</p>
+          <p>Zeynep must debate: <em>"It's just a red square! Why is it worth a million dollars? This is not art!"</em> — and the teacher must defend it!</p>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>Draw a quick 1-minute picture — anything you like! 🖍️</p>
+          <ul class="task-prompts">
+            <li>Send a <strong>photo</strong> of your drawing to your teacher</li>
+            <li>Then send a <strong>voice note</strong> explaining what it is</li>
+            <li>Use adjectives: <em>beautiful, strange, colorful, big, small…</em></li>
+          </ul>
+          <p class="reminder">Example: <em>"This is my drawing. It is a colorful bird. It is sitting on a big tree. I think it is beautiful!"</em> ⚡</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w3-thursday">
+            <button class="record-btn" id="recordBtn-w3-thursday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w3-thursday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w3-thursday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w3-thursday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w3-thursday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W3 Friday -->
+      <section class="day-card" id="card-w3-friday" data-week="3" data-day="friday">
+        <div class="card-header">
+          <span class="day-badge">Friday</span>
+          <span class="done-badge" id="done-w3-friday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🏙️ Street Art — Beautiful or Messy?</h2>
+        <p class="grammar-tag">Grammar: <strong>Opinion language — I think…, In my opinion…, because…</strong></p>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task — Final Challenge!</div>
+          <p>Some people say street art is beautiful. Other people say it is messy and illegal. <strong>What do YOU think?</strong></p>
+          <ul class="task-prompts">
+            <li>Is street art <strong>beautiful</strong> or <strong>messy</strong>?</li>
+            <li>Use: <em>"I think…", "In my opinion…", "because…"</em></li>
+            <li>Give <strong>two reasons</strong> for your opinion</li>
+          </ul>
+          <p class="reminder">Example: <em>"In my opinion, street art is beautiful because it makes the city more colorful. I think artists should paint on boring grey walls!"</em> ⚡</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w3-friday">
+            <button class="record-btn" id="recordBtn-w3-friday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w3-friday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w3-friday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w3-friday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w3-friday"></div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </section><!-- /week-view -->
+
+  <footer>
+    <p>Made with ⚡ for Zeynep · Keep debating every day!</p>
+  </footer>
+
+  <script src="zeynep-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bilge's English Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       HEADER
+  ═══════════════════════════════════════ -->
+  <header>
+    <div class="header-emoji">🌸</div>
+    <h1>Bilge's English Hub</h1>
+    <p class="subtitle">Speaking &amp; Listening · A1 Level</p>
+    <p class="golden-rule">✨ The +1 Rule: Always add one more sentence!</p>
+  </header>
+
+  <!-- ═══════════════════════════════════════
+       LANDING — WEEK SELECTOR
+  ═══════════════════════════════════════ -->
+  <section id="landing">
+    <p class="landing-intro">Choose your week to begin your adventure! 👇</p>
+
+    <div class="week-cards">
+
+      <button class="week-card" data-week="1">
+        <span class="week-card-emoji">🏠</span>
+        <span class="week-card-text">
+          <span class="week-card-number">Week 1</span>
+          <span class="week-card-title">Home &amp; Hobbies</span>
+          <span class="week-card-desc">Volleyball, piano, and your daily routines</span>
+        </span>
+        <span class="week-card-arrow">→</span>
+      </button>
+
+      <button class="week-card" data-week="2">
+        <span class="week-card-emoji">🇬🇧</span>
+        <span class="week-card-text">
+          <span class="week-card-number">Week 2 · Chapter 1</span>
+          <span class="week-card-title">A Day in England</span>
+          <span class="week-card-desc">Travel to London &amp; make new friends</span>
+        </span>
+        <span class="week-card-arrow">→</span>
+      </button>
+
+      <button class="week-card" data-week="3">
+        <span class="week-card-emoji">🏚️</span>
+        <span class="week-card-text">
+          <span class="week-card-number">Week 3 · Chapter 2</span>
+          <span class="week-card-title">The Magical House</span>
+          <span class="week-card-desc">Explore mysterious rooms &amp; hidden things</span>
+        </span>
+        <span class="week-card-arrow">→</span>
+      </button>
+
+      <button class="week-card" data-week="4">
+        <span class="week-card-emoji">⚓</span>
+        <span class="week-card-text">
+          <span class="week-card-number">Week 4 · Chapter 3</span>
+          <span class="week-card-title">The Ancient Ships of Phoenicia</span>
+          <span class="week-card-desc">Sail the ancient seas &amp; discover history</span>
+        </span>
+        <span class="week-card-arrow">→</span>
+      </button>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       WEEK VIEW
+  ═══════════════════════════════════════ -->
+  <section id="week-view" style="display:none">
+
+    <div class="week-view-header">
+      <button id="back-btn" class="back-btn">← Back</button>
+      <div id="week-view-title" class="week-view-title"></div>
+    </div>
+
+    <!-- DAY TABS -->
+    <nav class="day-tabs" role="tablist" aria-label="Days of the week">
+      <button class="tab active" data-day="monday"    role="tab" aria-selected="true"><span class="tab-icon">1</span><span class="tab-label">Mon</span></button>
+      <button class="tab"        data-day="tuesday"   role="tab" aria-selected="false"><span class="tab-icon">2</span><span class="tab-label">Tue</span></button>
+      <button class="tab"        data-day="wednesday" role="tab" aria-selected="false"><span class="tab-icon">3</span><span class="tab-label">Wed</span></button>
+      <button class="tab"        data-day="thursday"  role="tab" aria-selected="false"><span class="tab-icon">4</span><span class="tab-label">Thu</span></button>
+      <button class="tab"        data-day="friday"    role="tab" aria-selected="false"><span class="tab-icon">5</span><span class="tab-label">Fri</span></button>
+    </nav>
+
+    <main>
+
+      <!-- ─────────────────────────────────
+           WEEK 1
+      ───────────────────────────────── -->
+
+      <!-- W1 Monday -->
+      <section class="day-card active" id="card-w1-monday" data-week="1" data-day="monday">
+        <div class="card-header">
+          <span class="day-badge">Monday</span>
+          <span class="live-badge">🎥 Live Class</span>
+          <span class="done-badge" id="done-w1-monday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🏐 Volleyball &amp; Present Continuous</h2>
+        <p class="grammar-tag">Grammar: <strong>What is she doing? Where is the ball?</strong></p>
+
+        <div class="section-block live-block">
+          <div class="section-label">🎥 Live Class Activity</div>
+          <p>Watch Türkiye vs Italy highlights together. Pause mid-play and ask: <em>"What is she doing? Where is the ball? What color is her shirt? Who is next to her?"</em></p>
+        </div>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📺 Watch This First</div>
+          <p>Watch the volleyball highlights. Look at the players carefully!</p>
+          <a class="video-btn" href="https://www.youtube.com/watch?v=gbrtrQvvEi0" target="_blank" rel="noopener">▶ Open Video on YouTube</a>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>Look at a volleyball player. Send me a <strong>30-second voice note</strong>.</p>
+          <ul class="task-prompts">
+            <li>What color is her uniform?</li>
+            <li>Where is she?</li>
+            <li>What is she doing?</li>
+          </ul>
+          <p class="reminder">Remember the +1 Rule: add one more sentence! 💜</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w1-monday">
+            <button class="record-btn" id="recordBtn-w1-monday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w1-monday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w1-monday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w1-monday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w1-monday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W1 Tuesday -->
+      <section class="day-card" id="card-w1-tuesday" data-week="1" data-day="tuesday">
+        <div class="card-header">
+          <span class="day-badge">Tuesday</span>
+          <span class="done-badge" id="done-w1-tuesday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>📅 Daily Routines</h2>
+        <p class="grammar-tag">Grammar: <strong>Present Simple — I wake up, I eat…</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📺 Watch This First</div>
+          <p>Watch for <strong>2 minutes</strong>. Listen to how the man talks about his day.</p>
+          <a class="video-btn" href="https://www.youtube.com/watch?v=bq6GBbh3uhU" target="_blank" rel="noopener">▶ Open Video on YouTube</a>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>The man wakes up at 7:00. Now tell me about <strong>your</strong> morning!</p>
+          <ul class="task-prompts">
+            <li>What time do YOU wake up on Tuesdays?</li>
+            <li>What do you eat for breakfast?</li>
+          </ul>
+          <p class="reminder">Use full sentences! Example: <em>"I wake up at 8 o'clock."</em> 💜</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w1-tuesday">
+            <button class="record-btn" id="recordBtn-w1-tuesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w1-tuesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w1-tuesday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w1-tuesday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w1-tuesday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W1 Wednesday -->
+      <section class="day-card" id="card-w1-wednesday" data-week="1" data-day="wednesday">
+        <div class="card-header">
+          <span class="day-badge">Wednesday</span>
+          <span class="done-badge" id="done-w1-wednesday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🎹 Music &amp; Adjectives</h2>
+        <p class="grammar-tag">Grammar: <strong>Adjectives — fast, slow, beautiful, loud…</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📺 Watch This First</div>
+          <p>Listen to this piano performance for <strong>1 minute</strong>.</p>
+          <a class="video-btn" href="https://www.youtube.com/watch?v=BS6ndUeF2_A" target="_blank" rel="noopener">▶ Open Video on YouTube</a>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <ul class="task-prompts">
+            <li>Is the song fast or slow?</li>
+            <li>Are there people singing, or is it only a piano?</li>
+            <li>Do you like it? Tell me why!</li>
+          </ul>
+          <p class="reminder">Example: <em>"The song is slow. It is only a piano. I like it."</em> 💜</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w1-wednesday">
+            <button class="record-btn" id="recordBtn-w1-wednesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w1-wednesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w1-wednesday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w1-wednesday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w1-wednesday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W1 Thursday -->
+      <section class="day-card" id="card-w1-thursday" data-week="1" data-day="thursday">
+        <div class="card-header">
+          <span class="day-badge">Thursday</span>
+          <span class="live-badge">🎥 Live Class</span>
+          <span class="done-badge" id="done-w1-thursday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🎵 Music Videos &amp; Prepositions</h2>
+        <p class="grammar-tag">Grammar: <strong>There is / There are · next to, under, behind</strong></p>
+
+        <div class="section-block live-block">
+          <div class="section-label">🎥 Live Class Activity</div>
+          <p>Play the <strong>"Pause &amp; Paint"</strong> game with a Manifest music video. Pause and describe the scene: <em>"There is a red guitar behind the singer."</em></p>
+        </div>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📺 Watch This First</div>
+          <p>Watch your favourite Manifest music video and look carefully at the scene!</p>
+          <a class="video-btn" href="https://www.youtube.com/results?search_query=Manifest+music+video" target="_blank" rel="noopener">▶ Search Manifest on YouTube</a>
+          <p class="video-note">💡 Your teacher will send you the exact video link on Thursday!</p>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>Go to your piano or bedroom. Look around carefully!</p>
+          <ul class="task-prompts">
+            <li>Where is your piano?</li>
+            <li>What is <em>on</em> it? What is <em>next to</em> it?</li>
+            <li>Use "There is…" and "There are…"</li>
+          </ul>
+          <p class="reminder">Example: <em>"There is a book on the piano."</em> 💜</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w1-thursday">
+            <button class="record-btn" id="recordBtn-w1-thursday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w1-thursday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w1-thursday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w1-thursday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w1-thursday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W1 Friday -->
+      <section class="day-card" id="card-w1-friday" data-week="1" data-day="friday">
+        <div class="card-header">
+          <span class="day-badge">Friday</span>
+          <span class="done-badge" id="done-w1-friday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🌅 Weekend Routines</h2>
+        <p class="grammar-tag">Grammar: <strong>Present Continuous — What is she doing right now?</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📺 Watch This First</div>
+          <p>Watch this short video about weekend hobbies.</p>
+          <a class="video-btn" href="https://www.youtube.com/watch?v=z595z_DmpmQ" target="_blank" rel="noopener">▶ Open Video on YouTube</a>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>It is Friday evening! Look around your house right now.</p>
+          <ul class="task-prompts">
+            <li>What is your <strong>mother</strong> doing right now?</li>
+            <li>What are <strong>you</strong> doing right now?</li>
+          </ul>
+          <p class="reminder">Example: <em>"My mother is cooking. I am sitting on the sofa."</em> 💜</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w1-friday">
+            <button class="record-btn" id="recordBtn-w1-friday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w1-friday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w1-friday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w1-friday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w1-friday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────
+           WEEK 2 — Chapter 1: England
+      ───────────────────────────────── -->
+
+      <!-- W2 Monday -->
+      <section class="day-card" id="card-w2-monday" data-week="2" data-day="monday">
+        <div class="card-header">
+          <span class="day-badge">Monday</span>
+          <span class="live-badge">🎥 Live Class</span>
+          <span class="done-badge" id="done-w2-monday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🇬🇧 Welcome to London!</h2>
+        <p class="grammar-tag">Grammar: <strong>What color is…? Where is…? There is / There are</strong></p>
+
+        <div class="section-block live-block">
+          <div class="section-label">🎥 Live Class Activity</div>
+          <p>Explore London together on Google Earth or a walking tour video. Look at Big Ben, the red buses, and the rain. Ask: <em>"What color is the bus? Where is the clock?"</em></p>
+        </div>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📺 Watch This First</div>
+          <p>Take a virtual tour of London! Look at the streets, the buildings, the buses.</p>
+          <a class="video-btn" href="https://www.youtube.com/watch?v=KtqVoo8iqeo" target="_blank" rel="noopener">▶ A Guide to London for Kids</a>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>Bilge, you are packing your bag for London! Tell me <strong>3 things</strong> in your bag.</p>
+          <ul class="task-prompts">
+            <li>Use "There is a… in my bag."</li>
+            <li>Example: <em>"There is a red umbrella in my bag."</em></li>
+            <li>What color are your things?</li>
+          </ul>
+          <p class="reminder">Don't forget the +1 Rule! 💜</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w2-monday">
+            <button class="record-btn" id="recordBtn-w2-monday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w2-monday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w2-monday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w2-monday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w2-monday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W2 Tuesday -->
+      <section class="day-card" id="card-w2-tuesday" data-week="2" data-day="tuesday">
+        <div class="card-header">
+          <span class="day-badge">Tuesday</span>
+          <span class="done-badge" id="done-w2-tuesday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🍳 English Breakfast vs. Turkish Breakfast</h2>
+        <p class="grammar-tag">Grammar: <strong>There is / There are · What is on the plate?</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📺 Watch This First</div>
+          <p>Watch the video about a traditional English breakfast. What is on the plate?</p>
+          <a class="video-btn" href="https://www.youtube.com/watch?v=x4ae3gQQ_Ds" target="_blank" rel="noopener">▶ Full English Breakfast · Easy English</a>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <ul class="task-prompts">
+            <li>What is on the English plate?</li>
+            <li>What do <strong>you</strong> eat for breakfast in Turkey?</li>
+          </ul>
+          <p class="reminder">Example: <em>"In England, there is toast on the plate. In Turkey, I eat cheese and bread."</em> 💜</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w2-tuesday">
+            <button class="record-btn" id="recordBtn-w2-tuesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w2-tuesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w2-tuesday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w2-tuesday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w2-tuesday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W2 Wednesday -->
+      <section class="day-card" id="card-w2-wednesday" data-week="2" data-day="wednesday">
+        <div class="card-header">
+          <span class="day-badge">Wednesday</span>
+          <span class="done-badge" id="done-w2-wednesday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>👋 Making New Friends</h2>
+        <p class="grammar-tag">Grammar: <strong>My name is… I am… I like…</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📺 Watch This First</div>
+          <p>Watch kids introducing themselves to new friends in English.</p>
+          <a class="video-btn" href="https://www.youtube.com/watch?v=lTvtp0Afkbw" target="_blank" rel="noopener">▶ Introducing Yourself in English · Kids</a>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>Imagine you meet a girl from London. Say hello to her!</p>
+          <ul class="task-prompts">
+            <li>Tell her your name and your age</li>
+            <li>Tell her your favourite hobby (piano or volleyball!)</li>
+          </ul>
+          <p class="reminder">Example: <em>"Hello! My name is Bilge. I am 11. I like playing piano."</em> 💜</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w2-wednesday">
+            <button class="record-btn" id="recordBtn-w2-wednesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w2-wednesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w2-wednesday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w2-wednesday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w2-wednesday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W2 Thursday -->
+      <section class="day-card" id="card-w2-thursday" data-week="2" data-day="thursday">
+        <div class="card-header">
+          <span class="day-badge">Thursday</span>
+          <span class="live-badge">🎥 Live Class</span>
+          <span class="done-badge" id="done-w2-thursday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🗺️ Lost in the City!</h2>
+        <p class="grammar-tag">Grammar: <strong>Prepositions — next to, behind, in front of</strong></p>
+
+        <div class="section-block live-block">
+          <div class="section-label">🎥 Live Class Activity</div>
+          <p>Use a simple colorful map of a town. Practice prepositions together: <em>"Where is the park? It is next to the school. Where is Bilge? She is behind the bus."</em></p>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>Look out your window right now!</p>
+          <ul class="task-prompts">
+            <li>Tell me <strong>2 things</strong> you see on your street</li>
+            <li>Use prepositions: next to, in front of, behind</li>
+          </ul>
+          <p class="reminder">Example: <em>"There is a car in front of my house. There is a tree next to it."</em> 💜</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w2-thursday">
+            <button class="record-btn" id="recordBtn-w2-thursday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w2-thursday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w2-thursday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w2-thursday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w2-thursday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W2 Friday -->
+      <section class="day-card" id="card-w2-friday" data-week="2" data-day="friday">
+        <div class="card-header">
+          <span class="day-badge">Friday</span>
+          <span class="done-badge" id="done-w2-friday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🌧️ A Rainy Day in London</h2>
+        <p class="grammar-tag">Grammar: <strong>Present Continuous — What are you wearing? What are you doing?</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📺 Watch This First</div>
+          <p>Watch a short video about London weather — rain, umbrellas, and fog!</p>
+          <a class="video-btn" href="https://www.youtube.com/results?search_query=London+weather+rain+umbrella+kids+English" target="_blank" rel="noopener">▶ Open Video on YouTube</a>
+          <p class="video-note">💡 Your teacher will send the exact link!</p>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>It is Friday in London and it is raining! You are inside the house.</p>
+          <ul class="task-prompts">
+            <li>What are you <strong>wearing</strong>?</li>
+            <li>What are you <strong>doing</strong> inside the house?</li>
+          </ul>
+          <p class="reminder">Example: <em>"I am wearing a blue jumper. I am drinking tea."</em> 💜</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w2-friday">
+            <button class="record-btn" id="recordBtn-w2-friday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w2-friday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w2-friday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w2-friday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w2-friday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────
+           WEEK 3 — Chapter 2: Magical House
+      ───────────────────────────────── -->
+
+      <!-- W3 Monday -->
+      <section class="day-card" id="card-w3-monday" data-week="3" data-day="monday">
+        <div class="card-header">
+          <span class="day-badge">Monday</span>
+          <span class="live-badge">🎥 Live Class</span>
+          <span class="done-badge" id="done-w3-monday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🏚️ The Upside-Down House!</h2>
+        <p class="grammar-tag">Grammar: <strong>There is / There are · Prepositions</strong></p>
+
+        <div class="section-block live-block">
+          <div class="section-label">🎥 Live Class Activity</div>
+          <p>Look at photos of weird upside-down houses together! Practice prepositions in funny ways: <em>"Where is the bed? It is on the ceiling! Where is the TV?"</em></p>
+        </div>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📺 Watch This First</div>
+          <p>Learn the rooms and things inside a house with this fun vocabulary video!</p>
+          <a class="video-btn" href="https://www.youtube.com/watch?v=aEM9d_8_i0k" target="_blank" rel="noopener">▶ Parts of the House — Kids Vocabulary</a>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>Go to your <strong>favourite room</strong> in your house right now.</p>
+          <ul class="task-prompts">
+            <li>Where are you? Which room is it?</li>
+            <li>What are you doing there?</li>
+          </ul>
+          <p class="reminder">Example: <em>"I am in my bedroom. I am sitting on my bed. There is a lamp next to me."</em> 💜</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w3-monday">
+            <button class="record-btn" id="recordBtn-w3-monday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w3-monday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w3-monday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w3-monday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w3-monday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W3 Tuesday -->
+      <section class="day-card" id="card-w3-tuesday" data-week="3" data-day="tuesday">
+        <div class="card-header">
+          <span class="day-badge">Tuesday</span>
+          <span class="done-badge" id="done-w3-tuesday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🧹 Chores in the House</h2>
+        <p class="grammar-tag">Grammar: <strong>Present Continuous — is cleaning, is cooking…</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📺 Watch This First</div>
+          <p>Watch an Easy English video about chores at home.</p>
+          <a class="video-btn" href="https://www.youtube.com/watch?v=EHxVzjjrvMY" target="_blank" rel="noopener">▶ Daily Routines &amp; Household Chores</a>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>In the video, the boy is cleaning. Now tell me about <strong>your</strong> house right now!</p>
+          <ul class="task-prompts">
+            <li>What is your <strong>mother</strong> doing in the house right now?</li>
+            <li>What are <strong>you</strong> doing?</li>
+          </ul>
+          <p class="reminder">Example: <em>"My mother is washing the dishes. I am doing my homework."</em> 💜</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w3-tuesday">
+            <button class="record-btn" id="recordBtn-w3-tuesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w3-tuesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w3-tuesday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w3-tuesday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w3-tuesday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W3 Wednesday -->
+      <section class="day-card" id="card-w3-wednesday" data-week="3" data-day="wednesday">
+        <div class="card-header">
+          <span class="day-badge">Wednesday</span>
+          <span class="done-badge" id="done-w3-wednesday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>👯 Best Friends!</h2>
+        <p class="grammar-tag">Grammar: <strong>Her name is… She likes… She has…</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📺 Watch This First</div>
+          <p>Watch a video about best friends and what they like to do together.</p>
+          <a class="video-btn" href="https://www.youtube.com/results?search_query=Best+Friends+Easy+English+kids+conversation" target="_blank" rel="noopener">▶ Open Video on YouTube</a>
+          <p class="video-note">💡 Your teacher will send the exact link!</p>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>Tell me about your <strong>best friend</strong> in Turkey!</p>
+          <ul class="task-prompts">
+            <li>What is her name?</li>
+            <li>What does she like to do?</li>
+          </ul>
+          <p class="reminder">Example: <em>"My best friend is Ayşe. She likes playing volleyball. She is funny."</em> 💜</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w3-wednesday">
+            <button class="record-btn" id="recordBtn-w3-wednesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w3-wednesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w3-wednesday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w3-wednesday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w3-wednesday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W3 Thursday -->
+      <section class="day-card" id="card-w3-thursday" data-week="3" data-day="thursday">
+        <div class="card-header">
+          <span class="day-badge">Thursday</span>
+          <span class="live-badge">🎥 Live Class</span>
+          <span class="done-badge" id="done-w3-thursday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🎉 The Sleepover Guest!</h2>
+        <p class="grammar-tag">Grammar: <strong>Do you want…? Let's… I have…</strong></p>
+
+        <div class="section-block live-block">
+          <div class="section-label">🎥 Live Class Activity</div>
+          <p>Roleplay! Your teacher is an English friend visiting your house. Practice offering things: <em>"Do you want tea? Let's play a game. I have biscuits!"</em></p>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>Your English friend is coming to stay at your house tonight!</p>
+          <ul class="task-prompts">
+            <li>Where is she <strong>sleeping</strong>?</li>
+            <li>What are you <strong>eating</strong> together?</li>
+          </ul>
+          <p class="reminder">Example: <em>"She is sleeping in my room. We are eating pizza. There is chocolate on the table."</em> 💜</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w3-thursday">
+            <button class="record-btn" id="recordBtn-w3-thursday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w3-thursday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w3-thursday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w3-thursday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w3-thursday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W3 Friday -->
+      <section class="day-card" id="card-w3-friday" data-week="3" data-day="friday">
+        <div class="card-header">
+          <span class="day-badge">Friday</span>
+          <span class="done-badge" id="done-w3-friday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🏠 House Tour &amp; Weekend Plans</h2>
+        <p class="grammar-tag">Grammar: <strong>Present Simple · I am staying / I am going…</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📺 Watch This First</div>
+          <p>Watch a fun animated video of a house tour.</p>
+          <a class="video-btn" href="https://www.youtube.com/watch?v=WHYMGNbPv2U" target="_blank" rel="noopener">▶ Let's Learn English Around the House</a>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>It is the weekend!</p>
+          <ul class="task-prompts">
+            <li>Are you staying <strong>in the house</strong>, or are you going <strong>out</strong>?</li>
+            <li>Tell me your Saturday routine.</li>
+          </ul>
+          <p class="reminder">Example: <em>"On Saturday, I wake up at 9. I go to volleyball practice. Then I come home."</em> 💜</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w3-friday">
+            <button class="record-btn" id="recordBtn-w3-friday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w3-friday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w3-friday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w3-friday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w3-friday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────
+           WEEK 4 — Chapter 3: Phoenicia
+      ───────────────────────────────── -->
+
+      <!-- W4 Monday -->
+      <section class="day-card" id="card-w4-monday" data-week="4" data-day="monday">
+        <div class="card-header">
+          <span class="day-badge">Monday</span>
+          <span class="live-badge">🎥 Live Class</span>
+          <span class="done-badge" id="done-w4-monday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>⚓ The Ancient Ship!</h2>
+        <p class="grammar-tag">Grammar: <strong>How many are there? What color is…? Where is…?</strong></p>
+
+        <div class="section-block live-block">
+          <div class="section-label">🎥 Live Class Activity</div>
+          <p>Look at a colorful illustration of an ancient Phoenician wooden ship on the sea. Describe the scene: <em>"How many men are there? What color is the water? Where is the sun?"</em></p>
+        </div>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📺 Watch This First</div>
+          <p>Learn about the ancient Phoenician sailors who sailed the whole world!</p>
+          <a class="video-btn" href="https://www.youtube.com/watch?v=jvzXRtAe0Mw" target="_blank" rel="noopener">▶ Who Were the Phoenicians? (mute &amp; describe!)</a>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>Imagine you are on the ancient ship sailing the sea!</p>
+          <ul class="task-prompts">
+            <li>Are you <strong>happy</strong> or <strong>scared</strong>?</li>
+            <li>What do you <strong>see</strong> in the water?</li>
+          </ul>
+          <p class="reminder">Example: <em>"I am on the ship. I am a little scared. I can see big blue waves."</em> 💜</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w4-monday">
+            <button class="record-btn" id="recordBtn-w4-monday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w4-monday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w4-monday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w4-monday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w4-monday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W4 Tuesday -->
+      <section class="day-card" id="card-w4-tuesday" data-week="4" data-day="tuesday">
+        <div class="card-header">
+          <span class="day-badge">Tuesday</span>
+          <span class="done-badge" id="done-w4-tuesday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>💜 The Color Purple!</h2>
+        <p class="grammar-tag">Grammar: <strong>Colors · I like… I have… There is…</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📺 Watch This First</div>
+          <p>The ancient Phoenicians made the color purple from sea snails! Watch how they did it.</p>
+          <a class="video-btn" href="https://www.youtube.com/watch?v=Nm_B4qj31Jk" target="_blank" rel="noopener">▶ Ancient Purple Dye — Where Did It Come From?</a>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>The sailors worked hard to make the color purple — it was very special!</p>
+          <ul class="task-prompts">
+            <li>Do <strong>you</strong> like purple?</li>
+            <li>Tell me <strong>one thing</strong> in your house that is purple.</li>
+          </ul>
+          <p class="reminder">Example: <em>"I like purple. There is a purple pen on my desk."</em> 💜</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w4-tuesday">
+            <button class="record-btn" id="recordBtn-w4-tuesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w4-tuesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w4-tuesday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w4-tuesday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w4-tuesday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W4 Wednesday -->
+      <section class="day-card" id="card-w4-wednesday" data-week="4" data-day="wednesday">
+        <div class="card-header">
+          <span class="day-badge">Wednesday</span>
+          <span class="done-badge" id="done-w4-wednesday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>✍️ The First Alphabet!</h2>
+        <p class="grammar-tag">Grammar: <strong>Present Continuous · I am writing, I am reading…</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📺 Watch This First</div>
+          <p>The Phoenicians invented the first alphabet — the letters we use today came from them!</p>
+          <a class="video-btn" href="https://www.youtube.com/watch?v=I4KPkdhzQ0E" target="_blank" rel="noopener">▶ The Phoenicians — Creators of the Alphabet</a>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>The sailors are writing the first letters. Now think about <strong>you</strong> at school!</p>
+          <ul class="task-prompts">
+            <li>What are <strong>you</strong> doing right now?</li>
+            <li>Do you write in a notebook at school?</li>
+          </ul>
+          <p class="reminder">Example: <em>"Right now I am studying English. Yes, I write in a notebook at school."</em> 💜</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w4-wednesday">
+            <button class="record-btn" id="recordBtn-w4-wednesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w4-wednesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w4-wednesday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w4-wednesday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w4-wednesday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W4 Thursday -->
+      <section class="day-card" id="card-w4-thursday" data-week="4" data-day="thursday">
+        <div class="card-header">
+          <span class="day-badge">Thursday</span>
+          <span class="live-badge">🎥 Live Class</span>
+          <span class="done-badge" id="done-w4-thursday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🏺 The Ancient Market!</h2>
+        <p class="grammar-tag">Grammar: <strong>I have… There is / There are… What do you have?</strong></p>
+
+        <div class="section-block live-block">
+          <div class="section-label">🎥 Live Class Activity</div>
+          <p>Look at a picture of an ancient bazaar with fruits, gold, wood, and cloth. Roleplay the market! <em>"I have apples. What do you have? There is gold on the table!"</em></p>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>You are buying a gift for your friend at the ancient market!</p>
+          <ul class="task-prompts">
+            <li>What are you <strong>buying</strong>?</li>
+            <li>What <strong>color</strong> is it?</li>
+          </ul>
+          <p class="reminder">Example: <em>"I am buying a purple scarf for my friend. It is soft and beautiful."</em> 💜</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w4-thursday">
+            <button class="record-btn" id="recordBtn-w4-thursday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w4-thursday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w4-thursday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w4-thursday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w4-thursday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W4 Friday -->
+      <section class="day-card" id="card-w4-friday" data-week="4" data-day="friday">
+        <div class="card-header">
+          <span class="day-badge">Friday</span>
+          <span class="done-badge" id="done-w4-friday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🌊 The Ship Goes Home</h2>
+        <p class="grammar-tag">Grammar: <strong>Are you tired? What time do you…?</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📺 Watch This First</div>
+          <p>Listen to beautiful instrumental sea music. Close your eyes and imagine the ship sailing home.</p>
+          <a class="video-btn" href="https://www.youtube.com/results?search_query=beautiful+instrumental+sea+shanty+ocean+music" target="_blank" rel="noopener">▶ Open Video on YouTube</a>
+          <p class="video-note">💡 Your teacher will send the exact link!</p>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📝 Your Voice Note Task</div>
+          <p>The ship is going home. The great journey is over! 🌊</p>
+          <ul class="task-prompts">
+            <li>Are you <strong>tired</strong> after the journey?</li>
+            <li>What time do you <strong>sleep</strong> tonight?</li>
+          </ul>
+          <p class="reminder">Example: <em>"Yes, I am very tired! I sleep at 10 o'clock tonight. The sea was beautiful."</em> 💜</p>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice Note</div>
+          <div class="recorder" id="recorder-w4-friday">
+            <button class="record-btn" id="recordBtn-w4-friday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w4-friday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w4-friday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w4-friday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w4-friday"></div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </section><!-- /week-view -->
+
+  <footer>
+    <p>Made with 💜 for Bilge · Keep exploring every day!</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

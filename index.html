@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>English Adventure Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-emoji">🌟</div>
+    <h1>English Adventure Hub</h1>
+    <p class="subtitle">Speaking &amp; Listening · Select Your Name</p>
+  </header>
+
+  <section id="selector">
+    <p class="selector-intro">Who is learning today? 👇</p>
+
+    <div class="student-cards">
+
+      <button class="student-card" data-student="bilge">
+        <span class="student-card-emoji">🌸</span>
+        <span class="student-card-text">
+          <span class="student-card-name">Bilge</span>
+          <span class="student-card-sub">4-Week Programme</span>
+        </span>
+      </button>
+
+      <button class="student-card" data-student="zeynep">
+        <span class="student-card-emoji">⚡</span>
+        <span class="student-card-text">
+          <span class="student-card-name">Zeynep</span>
+          <span class="student-card-sub">3-Week Programme</span>
+        </span>
+      </button>
+
+    </div>
+
+    <div id="password-box" style="display:none">
+      <p id="password-prompt" class="password-prompt"></p>
+      <div class="password-input-row">
+        <input id="password-field" type="password" autocomplete="off"
+               placeholder="Enter password…" />
+        <button id="enter-btn" aria-label="Go">→</button>
+      </div>
+      <p id="password-error" class="password-error" style="display:none">
+        ❌ Wrong password. Try again!
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Made with 💜 for Bilge &amp; Zeynep · Keep exploring every day!</p>
+  </footer>
+
+  <script>
+    const STUDENTS = {
+      bilge:  { password: "bilge0802",  url: "bilge.html",  greeting: "Hello, Bilge!"   },
+      zeynep: { password: "zeynep1604", url: "zeynep.html", greeting: "Hello, Zeynep!"  }
+    };
+
+    let selectedStudent = null;
+
+    const passwordBox   = document.getElementById("password-box");
+    const passwordField = document.getElementById("password-field");
+    const passwordError = document.getElementById("password-error");
+    const passwordPrompt = document.getElementById("password-prompt");
+    const enterBtn      = document.getElementById("enter-btn");
+
+    // Student card click
+    document.querySelectorAll(".student-card").forEach(card => {
+      card.addEventListener("click", () => {
+        // Highlight selected card
+        document.querySelectorAll(".student-card").forEach(c => c.classList.remove("selected"));
+        card.classList.add("selected");
+
+        selectedStudent = card.dataset.student;
+        passwordPrompt.textContent = STUDENTS[selectedStudent].greeting + " Enter your password:";
+        passwordError.style.display = "none";
+        passwordField.value = "";
+        passwordBox.style.display = "block";
+        passwordField.focus();
+      });
+    });
+
+    // Submit password
+    function tryLogin() {
+      if (!selectedStudent) return;
+      const entered = passwordField.value;
+      if (entered === STUDENTS[selectedStudent].password) {
+        window.location.href = STUDENTS[selectedStudent].url;
+      } else {
+        passwordError.style.display = "block";
+        passwordField.value = "";
+        // Shake animation
+        passwordBox.classList.remove("shake");
+        void passwordBox.offsetWidth; // reflow to restart animation
+        passwordBox.classList.add("shake");
+        passwordBox.addEventListener("animationend", () => {
+          passwordBox.classList.remove("shake");
+        }, { once: true });
+        passwordField.focus();
+      }
+    }
+
+    enterBtn.addEventListener("click", tryLogin);
+    passwordField.addEventListener("keydown", e => {
+      if (e.key === "Enter") tryLogin();
+    });
+  </script>
+
+</body>
+</html>
