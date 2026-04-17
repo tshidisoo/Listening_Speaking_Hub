@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selim's ABC Adventure!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Selim-specific overrides ─────────────────── */
+    .selim-header-emoji { font-size: 4rem; display: block; text-align: center; margin-bottom: 6px; }
+
+    /* Big ABC song button */
+    .abc-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: linear-gradient(135deg, #f97316, #ef4444);
+      color: #fff;
+      font-size: 1.25rem;
+      font-weight: 800;
+      font-family: 'Nunito', sans-serif;
+      border: none;
+      border-radius: 18px;
+      padding: 18px 28px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(239,68,68,0.35);
+      transition: transform 0.15s, box-shadow 0.15s;
+      width: 100%;
+      margin: 8px 0;
+    }
+    .abc-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(239,68,68,0.4); }
+    .abc-btn:active { transform: scale(0.97); }
+    .abc-btn-icon { font-size: 2rem; }
+
+    /* Letter grid */
+    .letter-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin: 12px 0;
+    }
+    .letter-tile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #fff;
+      border: 3px solid #e9d5ff;
+      border-radius: 14px;
+      padding: 10px 8px 8px;
+      min-width: 70px;
+      box-shadow: 0 3px 10px rgba(124,58,237,0.1);
+    }
+    .letter-tile .letter-big {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--purple);
+      line-height: 1;
+    }
+    .letter-tile .letter-emoji { font-size: 1.6rem; margin: 2px 0; }
+    .letter-tile .letter-word {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--text-mid);
+      text-transform: lowercase;
+    }
+
+    /* Done button */
+    .done-btn {
+      display: block;
+      width: 100%;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 800;
+      font-family: 'Nunito', sans-serif;
+      border: none;
+      border-radius: 14px;
+      padding: 16px;
+      cursor: pointer;
+      margin-top: 8px;
+      box-shadow: 0 4px 16px rgba(16,185,129,0.3);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .done-btn:hover { transform: translateY(-2px); }
+    .done-btn:disabled { background: #d1fae5; color: #059669; cursor: default; box-shadow: none; transform: none; }
+
+    /* Confetti celebration inline */
+    .star-row { text-align: center; font-size: 1.8rem; letter-spacing: 4px; margin: 8px 0; }
+
+    @media (max-width: 380px) {
+      .letter-tile { min-width: 60px; padding: 8px 6px 6px; }
+      .letter-tile .letter-big { font-size: 1.8rem; }
+      .abc-btn { font-size: 1.1rem; padding: 15px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-emoji">🚀</div>
+    <h1>Selim's ABC Adventure!</h1>
+    <p class="subtitle">CoComelon · The Alphabet Song</p>
+    <p class="golden-rule">✨ Sing every letter OUT LOUD and have fun!</p>
+  </header>
+
+  <!-- ═══════════════════════════════════════
+       WEEK VIEW — single week, day tabs
+  ═══════════════════════════════════════ -->
+  <section id="week-view">
+
+    <nav class="day-tabs" role="tablist" aria-label="Days of the week">
+      <button class="tab active" data-day="monday"    role="tab" aria-selected="true" ><span class="tab-icon">🎵</span><span class="tab-label">Mon</span></button>
+      <button class="tab"        data-day="tuesday"   role="tab" aria-selected="false"><span class="tab-icon">🎵</span><span class="tab-label">Tue</span></button>
+      <button class="tab"        data-day="wednesday" role="tab" aria-selected="false"><span class="tab-icon">🎵</span><span class="tab-label">Wed</span></button>
+      <button class="tab"        data-day="thursday"  role="tab" aria-selected="false"><span class="tab-icon">⭐</span><span class="tab-label">Thu</span></button>
+      <button class="tab"        data-day="friday"    role="tab" aria-selected="false"><span class="tab-icon">🏆</span><span class="tab-label">Fri</span></button>
+    </nav>
+
+    <main>
+
+      <!-- ─────────────────────────────────
+           MONDAY — A to J (sing twice!)
+      ───────────────────────────────── -->
+      <section class="day-card active" id="card-monday" data-day="monday">
+        <div class="card-header">
+          <span class="day-badge">Monday</span>
+          <span class="live-badge">🎵 Sing A to J!</span>
+          <span class="done-badge" id="done-monday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🎶 A B C … up to J!</h2>
+        <p class="grammar-tag">Today: <strong>Letters A · B · C · D · E · F · G · H · I · J</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">▶ Press Play — Sing Along!</div>
+          <p style="text-align:center;font-size:0.9rem;color:var(--text-mid);margin-bottom:10px;">Press the big button and sing! Sing it <strong>twice</strong> today! 🎵🎵</p>
+          <a class="abc-btn" href="https://www.youtube.com/watch?v=75p-N9YKqNo" target="_blank" rel="noopener">
+            <span class="abc-btn-icon">▶</span>
+            CoComelon ABC Song!
+          </a>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📖 Today's Letters — A to J</div>
+          <div class="letter-grid">
+            <div class="letter-tile"><span class="letter-big">A</span><span class="letter-emoji">🍎</span><span class="letter-word">apple</span></div>
+            <div class="letter-tile"><span class="letter-big">B</span><span class="letter-emoji">⚽</span><span class="letter-word">ball</span></div>
+            <div class="letter-tile"><span class="letter-big">C</span><span class="letter-emoji">🐱</span><span class="letter-word">cat</span></div>
+            <div class="letter-tile"><span class="letter-big">D</span><span class="letter-emoji">🐶</span><span class="letter-word">dog</span></div>
+            <div class="letter-tile"><span class="letter-big">E</span><span class="letter-emoji">🥚</span><span class="letter-word">egg</span></div>
+            <div class="letter-tile"><span class="letter-big">F</span><span class="letter-emoji">🐟</span><span class="letter-word">fish</span></div>
+            <div class="letter-tile"><span class="letter-big">G</span><span class="letter-emoji">💚</span><span class="letter-word">green</span></div>
+            <div class="letter-tile"><span class="letter-big">H</span><span class="letter-emoji">🚁</span><span class="letter-word">helicopter</span></div>
+            <div class="letter-tile"><span class="letter-big">I</span><span class="letter-emoji">🦎</span><span class="letter-word">iguana</span></div>
+            <div class="letter-tile"><span class="letter-big">J</span><span class="letter-emoji">🌴</span><span class="letter-word">jungle</span></div>
+          </div>
+          <div class="reminder">🎤 Point to each letter as you sing — A, B, C, D, E, F, G…!</div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">⭐ Mark Your Day!</div>
+          <button class="done-btn" id="doneBtn-monday">⭐ I sang it! Mark as done!</button>
+          <div class="star-row" id="stars-monday" style="display:none">🌟🌟🌟 Amazing, Selim! 🌟🌟🌟</div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────
+           TUESDAY — A to P
+      ───────────────────────────────── -->
+      <section class="day-card" id="card-tuesday" data-day="tuesday">
+        <div class="card-header">
+          <span class="day-badge">Tuesday</span>
+          <span class="live-badge">🎵 Sing A to P!</span>
+          <span class="done-badge" id="done-tuesday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🎶 A B C … up to P!</h2>
+        <p class="grammar-tag">Today: <strong>Letters A · B · C · D · E · F · G · H · I · J · K · L · M · N · O · P</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">▶ Press Play — Sing Along!</div>
+          <p style="text-align:center;font-size:0.9rem;color:var(--text-mid);margin-bottom:10px;">Sing all the way to <strong>P for Panda</strong>! 🐼</p>
+          <a class="abc-btn" href="https://www.youtube.com/watch?v=75p-N9YKqNo" target="_blank" rel="noopener">
+            <span class="abc-btn-icon">▶</span>
+            CoComelon ABC Song!
+          </a>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📖 Today's Letters — A to P</div>
+          <div class="letter-grid">
+            <div class="letter-tile"><span class="letter-big">A</span><span class="letter-emoji">🍎</span><span class="letter-word">apple</span></div>
+            <div class="letter-tile"><span class="letter-big">B</span><span class="letter-emoji">⚽</span><span class="letter-word">ball</span></div>
+            <div class="letter-tile"><span class="letter-big">C</span><span class="letter-emoji">🐱</span><span class="letter-word">cat</span></div>
+            <div class="letter-tile"><span class="letter-big">D</span><span class="letter-emoji">🐶</span><span class="letter-word">dog</span></div>
+            <div class="letter-tile"><span class="letter-big">E</span><span class="letter-emoji">🥚</span><span class="letter-word">egg</span></div>
+            <div class="letter-tile"><span class="letter-big">F</span><span class="letter-emoji">🐟</span><span class="letter-word">fish</span></div>
+            <div class="letter-tile"><span class="letter-big">G</span><span class="letter-emoji">💚</span><span class="letter-word">green</span></div>
+            <div class="letter-tile"><span class="letter-big">H</span><span class="letter-emoji">🚁</span><span class="letter-word">helicopter</span></div>
+            <div class="letter-tile"><span class="letter-big">I</span><span class="letter-emoji">🦎</span><span class="letter-word">iguana</span></div>
+            <div class="letter-tile"><span class="letter-big">J</span><span class="letter-emoji">🌴</span><span class="letter-word">jungle</span></div>
+            <div class="letter-tile"><span class="letter-big">K</span><span class="letter-emoji">🦘</span><span class="letter-word">kangaroo</span></div>
+            <div class="letter-tile"><span class="letter-big">L</span><span class="letter-emoji">🦙</span><span class="letter-word">llama</span></div>
+            <div class="letter-tile"><span class="letter-big">M</span><span class="letter-emoji">🐭</span><span class="letter-word">mouse</span></div>
+            <div class="letter-tile"><span class="letter-big">N</span><span class="letter-emoji">9️⃣</span><span class="letter-word">nine</span></div>
+            <div class="letter-tile"><span class="letter-big">O</span><span class="letter-emoji">🦤</span><span class="letter-word">ostrich</span></div>
+            <div class="letter-tile"><span class="letter-big">P</span><span class="letter-emoji">🐼</span><span class="letter-word">panda</span></div>
+          </div>
+          <div class="reminder">🎤 You know six more letters today — K, L, M, N, O, P! Great job!</div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">⭐ Mark Your Day!</div>
+          <button class="done-btn" id="doneBtn-tuesday">⭐ I sang it! Mark as done!</button>
+          <div class="star-row" id="stars-tuesday" style="display:none">🌟🌟🌟 Superstar, Selim! 🌟🌟🌟</div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────
+           WEDNESDAY — Full A to Z!
+      ───────────────────────────────── -->
+      <section class="day-card" id="card-wednesday" data-day="wednesday">
+        <div class="card-header">
+          <span class="day-badge">Wednesday</span>
+          <span class="live-badge">🎵 Sing A to Z!</span>
+          <span class="done-badge" id="done-wednesday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🎶 The Whole Alphabet — A to Z!</h2>
+        <p class="grammar-tag">Today: <strong>All 26 letters — A all the way to Z!</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">▶ Press Play — Sing Along!</div>
+          <p style="text-align:center;font-size:0.9rem;color:var(--text-mid);margin-bottom:10px;">You know ALL the letters now — sing the <strong>whole song</strong>! 🏆</p>
+          <a class="abc-btn" href="https://www.youtube.com/watch?v=75p-N9YKqNo" target="_blank" rel="noopener">
+            <span class="abc-btn-icon">▶</span>
+            CoComelon ABC Song!
+          </a>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📖 All 26 Letters — A to Z!</div>
+          <div class="letter-grid">
+            <div class="letter-tile"><span class="letter-big">A</span><span class="letter-emoji">🍎</span><span class="letter-word">apple</span></div>
+            <div class="letter-tile"><span class="letter-big">B</span><span class="letter-emoji">⚽</span><span class="letter-word">ball</span></div>
+            <div class="letter-tile"><span class="letter-big">C</span><span class="letter-emoji">🐱</span><span class="letter-word">cat</span></div>
+            <div class="letter-tile"><span class="letter-big">D</span><span class="letter-emoji">🐶</span><span class="letter-word">dog</span></div>
+            <div class="letter-tile"><span class="letter-big">E</span><span class="letter-emoji">🥚</span><span class="letter-word">egg</span></div>
+            <div class="letter-tile"><span class="letter-big">F</span><span class="letter-emoji">🐟</span><span class="letter-word">fish</span></div>
+            <div class="letter-tile"><span class="letter-big">G</span><span class="letter-emoji">💚</span><span class="letter-word">green</span></div>
+            <div class="letter-tile"><span class="letter-big">H</span><span class="letter-emoji">🚁</span><span class="letter-word">helicopter</span></div>
+            <div class="letter-tile"><span class="letter-big">I</span><span class="letter-emoji">🦎</span><span class="letter-word">iguana</span></div>
+            <div class="letter-tile"><span class="letter-big">J</span><span class="letter-emoji">🌴</span><span class="letter-word">jungle</span></div>
+            <div class="letter-tile"><span class="letter-big">K</span><span class="letter-emoji">🦘</span><span class="letter-word">kangaroo</span></div>
+            <div class="letter-tile"><span class="letter-big">L</span><span class="letter-emoji">🦙</span><span class="letter-word">llama</span></div>
+            <div class="letter-tile"><span class="letter-big">M</span><span class="letter-emoji">🐭</span><span class="letter-word">mouse</span></div>
+            <div class="letter-tile"><span class="letter-big">N</span><span class="letter-emoji">9️⃣</span><span class="letter-word">nine</span></div>
+            <div class="letter-tile"><span class="letter-big">O</span><span class="letter-emoji">🦤</span><span class="letter-word">ostrich</span></div>
+            <div class="letter-tile"><span class="letter-big">P</span><span class="letter-emoji">🐼</span><span class="letter-word">panda</span></div>
+            <div class="letter-tile"><span class="letter-big">Q</span><span class="letter-emoji">❓</span><span class="letter-word">question</span></div>
+            <div class="letter-tile"><span class="letter-big">R</span><span class="letter-emoji">🔴</span><span class="letter-word">red</span></div>
+            <div class="letter-tile"><span class="letter-big">S</span><span class="letter-emoji">🚢</span><span class="letter-word">submarine</span></div>
+            <div class="letter-tile"><span class="letter-big">T</span><span class="letter-emoji">🚂</span><span class="letter-word">train</span></div>
+            <div class="letter-tile"><span class="letter-big">U</span><span class="letter-emoji">⬆️</span><span class="letter-word">up</span></div>
+            <div class="letter-tile"><span class="letter-big">V</span><span class="letter-emoji">🎻</span><span class="letter-word">violin</span></div>
+            <div class="letter-tile"><span class="letter-big">W</span><span class="letter-emoji">⌚</span><span class="letter-word">watch</span></div>
+            <div class="letter-tile"><span class="letter-big">X</span><span class="letter-emoji">🪓</span><span class="letter-word">ax</span></div>
+            <div class="letter-tile"><span class="letter-big">Y</span><span class="letter-emoji">💛</span><span class="letter-word">yellow</span></div>
+            <div class="letter-tile"><span class="letter-big">Z</span><span class="letter-emoji">🦒</span><span class="letter-word">zoo</span></div>
+          </div>
+          <div class="reminder">🏆 All 26 letters from A to Z — you are a champion, Selim!</div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">⭐ Mark Your Day!</div>
+          <button class="done-btn" id="doneBtn-wednesday">⭐ I sang it! Mark as done!</button>
+          <div class="star-row" id="stars-wednesday" style="display:none">🌟🌟🌟 CHAMPION! A to Z! 🌟🌟🌟</div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────
+           THURSDAY — Whole Song!
+      ───────────────────────────────── -->
+      <section class="day-card" id="card-thursday" data-day="thursday">
+        <div class="card-header">
+          <span class="day-badge">Thursday</span>
+          <span class="live-badge" style="background:#fde68a;color:#92400e;">⭐ Star Day!</span>
+          <span class="done-badge" id="done-thursday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>⭐ Star Day — Full Song, A to Z!</h2>
+        <p class="grammar-tag">Today: <strong>Sing the whole ABC song — all 26 letters!</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">▶ Press Play — Sing Along!</div>
+          <p style="text-align:center;font-size:0.9rem;color:var(--text-mid);margin-bottom:10px;">It's your Star Day! Sing the whole song as <strong>loud</strong> as you can! 🌟</p>
+          <a class="abc-btn" href="https://www.youtube.com/watch?v=75p-N9YKqNo" target="_blank" rel="noopener">
+            <span class="abc-btn-icon">▶</span>
+            CoComelon ABC Song!
+          </a>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📖 All 26 Letters — Can you name them all?</div>
+          <div class="letter-grid">
+            <div class="letter-tile"><span class="letter-big">A</span><span class="letter-emoji">🍎</span><span class="letter-word">apple</span></div>
+            <div class="letter-tile"><span class="letter-big">B</span><span class="letter-emoji">⚽</span><span class="letter-word">ball</span></div>
+            <div class="letter-tile"><span class="letter-big">C</span><span class="letter-emoji">🐱</span><span class="letter-word">cat</span></div>
+            <div class="letter-tile"><span class="letter-big">D</span><span class="letter-emoji">🐶</span><span class="letter-word">dog</span></div>
+            <div class="letter-tile"><span class="letter-big">E</span><span class="letter-emoji">🥚</span><span class="letter-word">egg</span></div>
+            <div class="letter-tile"><span class="letter-big">F</span><span class="letter-emoji">🐟</span><span class="letter-word">fish</span></div>
+            <div class="letter-tile"><span class="letter-big">G</span><span class="letter-emoji">💚</span><span class="letter-word">green</span></div>
+            <div class="letter-tile"><span class="letter-big">H</span><span class="letter-emoji">🚁</span><span class="letter-word">helicopter</span></div>
+            <div class="letter-tile"><span class="letter-big">I</span><span class="letter-emoji">🦎</span><span class="letter-word">iguana</span></div>
+            <div class="letter-tile"><span class="letter-big">J</span><span class="letter-emoji">🌴</span><span class="letter-word">jungle</span></div>
+            <div class="letter-tile"><span class="letter-big">K</span><span class="letter-emoji">🦘</span><span class="letter-word">kangaroo</span></div>
+            <div class="letter-tile"><span class="letter-big">L</span><span class="letter-emoji">🦙</span><span class="letter-word">llama</span></div>
+            <div class="letter-tile"><span class="letter-big">M</span><span class="letter-emoji">🐭</span><span class="letter-word">mouse</span></div>
+            <div class="letter-tile"><span class="letter-big">N</span><span class="letter-emoji">9️⃣</span><span class="letter-word">nine</span></div>
+            <div class="letter-tile"><span class="letter-big">O</span><span class="letter-emoji">🦤</span><span class="letter-word">ostrich</span></div>
+            <div class="letter-tile"><span class="letter-big">P</span><span class="letter-emoji">🐼</span><span class="letter-word">panda</span></div>
+            <div class="letter-tile"><span class="letter-big">Q</span><span class="letter-emoji">❓</span><span class="letter-word">question</span></div>
+            <div class="letter-tile"><span class="letter-big">R</span><span class="letter-emoji">🔴</span><span class="letter-word">red</span></div>
+            <div class="letter-tile"><span class="letter-big">S</span><span class="letter-emoji">🚢</span><span class="letter-word">submarine</span></div>
+            <div class="letter-tile"><span class="letter-big">T</span><span class="letter-emoji">🚂</span><span class="letter-word">train</span></div>
+            <div class="letter-tile"><span class="letter-big">U</span><span class="letter-emoji">⬆️</span><span class="letter-word">up</span></div>
+            <div class="letter-tile"><span class="letter-big">V</span><span class="letter-emoji">🎻</span><span class="letter-word">violin</span></div>
+            <div class="letter-tile"><span class="letter-big">W</span><span class="letter-emoji">⌚</span><span class="letter-word">watch</span></div>
+            <div class="letter-tile"><span class="letter-big">X</span><span class="letter-emoji">🪓</span><span class="letter-word">ax</span></div>
+            <div class="letter-tile"><span class="letter-big">Y</span><span class="letter-emoji">💛</span><span class="letter-word">yellow</span></div>
+            <div class="letter-tile"><span class="letter-big">Z</span><span class="letter-emoji">🦒</span><span class="letter-word">zoo</span></div>
+          </div>
+          <div class="reminder">⭐ Point to every letter and say its word — you are doing SO well!</div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">⭐ Mark Your Day!</div>
+          <button class="done-btn" id="doneBtn-thursday">⭐ I sang it! Mark as done!</button>
+          <div class="star-row" id="stars-thursday" style="display:none">🌟🌟🌟 STAR OF THE DAY! 🌟🌟🌟</div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────
+           FRIDAY — Grand Finale!
+      ───────────────────────────────── -->
+      <section class="day-card" id="card-friday" data-day="friday">
+        <div class="card-header">
+          <span class="day-badge">Friday</span>
+          <span class="live-badge" style="background:#fde68a;color:#92400e;">🏆 Champion Day!</span>
+          <span class="done-badge" id="done-friday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🏆 Champion Day — A to Z!</h2>
+        <p class="grammar-tag">Today: <strong>The Grand Finale — sing the whole song like a champion!</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">▶ Press Play — Sing Along!</div>
+          <p style="text-align:center;font-size:0.9rem;color:var(--text-mid);margin-bottom:10px;">You did it all week! Sing it one more time and be a <strong>Champion</strong>! 🏆🎉</p>
+          <a class="abc-btn" href="https://www.youtube.com/watch?v=75p-N9YKqNo" target="_blank" rel="noopener">
+            <span class="abc-btn-icon">▶</span>
+            CoComelon ABC Song!
+          </a>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">📖 All 26 Letters — You know them ALL!</div>
+          <div class="letter-grid">
+            <div class="letter-tile"><span class="letter-big">A</span><span class="letter-emoji">🍎</span><span class="letter-word">apple</span></div>
+            <div class="letter-tile"><span class="letter-big">B</span><span class="letter-emoji">⚽</span><span class="letter-word">ball</span></div>
+            <div class="letter-tile"><span class="letter-big">C</span><span class="letter-emoji">🐱</span><span class="letter-word">cat</span></div>
+            <div class="letter-tile"><span class="letter-big">D</span><span class="letter-emoji">🐶</span><span class="letter-word">dog</span></div>
+            <div class="letter-tile"><span class="letter-big">E</span><span class="letter-emoji">🥚</span><span class="letter-word">egg</span></div>
+            <div class="letter-tile"><span class="letter-big">F</span><span class="letter-emoji">🐟</span><span class="letter-word">fish</span></div>
+            <div class="letter-tile"><span class="letter-big">G</span><span class="letter-emoji">💚</span><span class="letter-word">green</span></div>
+            <div class="letter-tile"><span class="letter-big">H</span><span class="letter-emoji">🚁</span><span class="letter-word">helicopter</span></div>
+            <div class="letter-tile"><span class="letter-big">I</span><span class="letter-emoji">🦎</span><span class="letter-word">iguana</span></div>
+            <div class="letter-tile"><span class="letter-big">J</span><span class="letter-emoji">🌴</span><span class="letter-word">jungle</span></div>
+            <div class="letter-tile"><span class="letter-big">K</span><span class="letter-emoji">🦘</span><span class="letter-word">kangaroo</span></div>
+            <div class="letter-tile"><span class="letter-big">L</span><span class="letter-emoji">🦙</span><span class="letter-word">llama</span></div>
+            <div class="letter-tile"><span class="letter-big">M</span><span class="letter-emoji">🐭</span><span class="letter-word">mouse</span></div>
+            <div class="letter-tile"><span class="letter-big">N</span><span class="letter-emoji">9️⃣</span><span class="letter-word">nine</span></div>
+            <div class="letter-tile"><span class="letter-big">O</span><span class="letter-emoji">🦤</span><span class="letter-word">ostrich</span></div>
+            <div class="letter-tile"><span class="letter-big">P</span><span class="letter-emoji">🐼</span><span class="letter-word">panda</span></div>
+            <div class="letter-tile"><span class="letter-big">Q</span><span class="letter-emoji">❓</span><span class="letter-word">question</span></div>
+            <div class="letter-tile"><span class="letter-big">R</span><span class="letter-emoji">🔴</span><span class="letter-word">red</span></div>
+            <div class="letter-tile"><span class="letter-big">S</span><span class="letter-emoji">🚢</span><span class="letter-word">submarine</span></div>
+            <div class="letter-tile"><span class="letter-big">T</span><span class="letter-emoji">🚂</span><span class="letter-word">train</span></div>
+            <div class="letter-tile"><span class="letter-big">U</span><span class="letter-emoji">⬆️</span><span class="letter-word">up</span></div>
+            <div class="letter-tile"><span class="letter-big">V</span><span class="letter-emoji">🎻</span><span class="letter-word">violin</span></div>
+            <div class="letter-tile"><span class="letter-big">W</span><span class="letter-emoji">⌚</span><span class="letter-word">watch</span></div>
+            <div class="letter-tile"><span class="letter-big">X</span><span class="letter-emoji">🪓</span><span class="letter-word">ax</span></div>
+            <div class="letter-tile"><span class="letter-big">Y</span><span class="letter-emoji">💛</span><span class="letter-word">yellow</span></div>
+            <div class="letter-tile"><span class="letter-big">Z</span><span class="letter-emoji">🦒</span><span class="letter-word">zoo</span></div>
+          </div>
+          <div class="reminder">🎉 You finished the whole week! You are an ABC Champion, Selim! 🏆🌈</div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🏆 Mark Your Day!</div>
+          <button class="done-btn" id="doneBtn-friday">🏆 I sang it! I'm a Champion!</button>
+          <div class="star-row" id="stars-friday" style="display:none">🏆🌟🎉 ABC CHAMPION! WELL DONE SELIM! 🎉🌟🏆</div>
+        </div>
+      </section>
+
+    </main>
+  </section>
+
+  <footer>
+    <p>Made with 🚀 for Selim · You are an ABC Star!</p>
+  </footer>
+
+  <script src="selim-script.js"></script>
+</body>
+</html>
