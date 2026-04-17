@@ -49,6 +49,15 @@ function doPost(e) {
     var date     = payload.date;       // e.g. "2026-04-14"
     var student  = payload.student || "Bilge";  // "Bilge" or "Zeynep"
 
+    // Normalise audio/webm → video/webm so Google Drive's player can play it.
+    // The WebM container is identical; Drive's video player handles Opus audio
+    // tracks fine, but its audio player does not recognise audio/webm.
+    if (mimeType && mimeType.indexOf("audio/webm") === 0) {
+      mimeType = "video/webm";
+      // Ensure the filename carries a .webm extension
+      if (filename.lastIndexOf(".") === -1) filename += ".webm";
+    }
+
     // Decode base64 → binary blob
     var decoded  = Utilities.base64Decode(base64);
     var blob     = Utilities.newBlob(decoded, mimeType, filename);
