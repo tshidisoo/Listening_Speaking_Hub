@@ -235,7 +235,7 @@ header h1 {
 /* --- Student Selector (index.html) --- */
 #selector {
   padding: 0 16px 40px;
-  max-width: 480px;
+  max-width: 720px;
   margin: 0 auto;
 }
 
@@ -1047,18 +1047,29 @@ footer {
    speaking-hub.html + speaking-app.html
 ═══════════════════════════════════════ */
 
-/* --- 4-up student card grid (speaking-hub.html) --- */
+/* --- 4-up student card grid (index.html + speaking-hub.html) --- */
 .student-cards.four-up {
   flex-wrap: wrap;
-  max-width: 380px;
+  justify-content: center;
+  gap: 16px;
+  max-width: 720px;
   margin-left: auto;
   margin-right: auto;
 }
 
+/* Mobile default: 2 cards per row */
 .student-cards.four-up .student-card {
-  flex: 1 1 calc(50% - 8px);
-  min-width: 110px;
-  max-width: 175px;
+  flex: 1 1 calc(50% - 16px);
+  min-width: 130px;
+  max-width: calc(50% - 8px);
+}
+
+/* Tablet / desktop: all 4 in one row */
+@media (min-width: 600px) {
+  .student-cards.four-up .student-card {
+    flex: 1 1 140px;
+    max-width: 180px;
+  }
 }
 
 /* --- Day landing grid --- */
