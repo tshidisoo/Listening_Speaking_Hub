@@ -309,6 +309,75 @@ header h1 {
   letter-spacing: 0.5px;
 }
 
+/* --- Hub Portal link (index.html → speaking-hub.html) --- */
+.hub-portal {
+  margin-bottom: 28px;
+}
+
+.hub-portal-label {
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-soft);
+  margin-bottom: 10px;
+}
+
+.hub-portal-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: linear-gradient(135deg, #1e1b4b, #3730a3);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(55, 48, 163, 0.30);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.hub-portal-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(55, 48, 163, 0.40);
+}
+
+.hub-portal-btn:active { transform: scale(0.98); }
+
+.hub-portal-emoji {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.hub-portal-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.hub-portal-name {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.hub-portal-sub {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #a5b4fc;
+}
+
+.hub-portal-arrow {
+  font-size: 1.3rem;
+  color: #a5b4fc;
+  flex-shrink: 0;
+  transition: transform 0.18s ease;
+}
+
+.hub-portal-btn:hover .hub-portal-arrow {
+  transform: translateX(4px);
+}
+
 /* --- Password Box --- */
 #password-box {
   background: var(--white);
