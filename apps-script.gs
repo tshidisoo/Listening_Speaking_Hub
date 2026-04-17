@@ -32,10 +32,10 @@ var ALIYA_FOLDER_ID    = "1KH_f8Vbe38yaS-0fNdql0rf6LMMMRASP";
 //  Find the ID in the folder URL:
 //  https://drive.google.com/drive/folders/THIS_IS_THE_ID
 //
-var YAHYA_FOLDER_ID    = "YOUR_YAHYA_FOLDER_ID_HERE";
-var MOHAMMED_FOLDER_ID = "YOUR_MOHAMMED_FOLDER_ID_HERE";
-var MEHMET_FOLDER_ID   = "YOUR_MEHMET_FOLDER_ID_HERE";
-var FEYSAL_FOLDER_ID   = "YOUR_FEYSAL_FOLDER_ID_HERE";
+var YAHYA_FOLDER_ID    = "1hHgvYV7jkvsQzdI-dQiidv6NqIXp2_UA";
+var MOHAMMED_FOLDER_ID = "14QDCgVmirfPFrKgWglOtfkrfOHoyjax3";
+var MEHMET_FOLDER_ID   = "1OAEwV3idMEcusOjCk_ky70Y2yRNGT2pN";
+var FEYSAL_FOLDER_ID   = "1LJiWI1SNWv8SDotF08K-inkXKN5r9htD";
 
 // ── MAIN HANDLER ──────────────────────────────────────────────────
 function doPost(e) {
