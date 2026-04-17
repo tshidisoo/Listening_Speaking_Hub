@@ -973,6 +973,223 @@ footer {
   .emoji-item         { font-size: 1.8rem; }
 }
 
+/* ═══════════════════════════════════════
+   SPEAKING HUB ADDITIONS
+   speaking-hub.html + speaking-app.html
+═══════════════════════════════════════ */
+
+/* --- 4-up student card grid (speaking-hub.html) --- */
+.student-cards.four-up {
+  flex-wrap: wrap;
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.student-cards.four-up .student-card {
+  flex: 1 1 calc(50% - 8px);
+  min-width: 110px;
+  max-width: 175px;
+}
+
+/* --- Day landing grid --- */
+#day-landing {
+  padding: 0 16px 40px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.speaking-day-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* --- Speaking day card --- */
+.speaking-day-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: var(--white);
+  border: 2px solid var(--purple-light);
+  border-radius: var(--radius);
+  padding: 14px 12px 12px;
+  cursor: pointer;
+  text-align: left;
+  font-family: 'Nunito', sans-serif;
+  box-shadow: var(--shadow);
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+  position: relative;
+}
+
+.speaking-day-card:hover:not(.locked) {
+  transform: translateY(-3px);
+  border-color: var(--purple-mid);
+  box-shadow: 0 8px 28px rgba(124, 58, 237, 0.18);
+}
+
+.speaking-day-card:active:not(.locked) { transform: scale(0.97); }
+
+.speaking-day-card.locked {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #f5f5f5;
+  border-color: #e5e7eb;
+  box-shadow: none;
+}
+
+.speaking-day-card.done {
+  border-color: #10b981;
+  background: #f0fdf4;
+}
+
+.day-card-number {
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-soft);
+}
+
+.day-card-date {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-mid);
+  margin-bottom: 6px;
+}
+
+.day-card-units {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.day-card-unit {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--purple);
+  background: var(--lavender);
+  border-radius: 6px;
+  padding: 3px 7px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.day-card-unit.locked-unit {
+  color: var(--text-soft);
+  background: #f3f4f6;
+}
+
+.lock-overlay {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+.day-done-chip {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #10b981;
+  color: white;
+  font-size: 0.6rem;
+  font-weight: 800;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 20px;
+  text-align: center;
+}
+
+/* --- Unit tabs (inside day view) --- */
+.unit-tabs {
+  display: flex;
+  gap: 10px;
+  padding: 0 16px 20px;
+  justify-content: center;
+}
+
+/* --- Vocab block & chips --- */
+.vocab-block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0 4px;
+}
+
+.vocab-chip {
+  display: inline-block;
+  background: var(--purple);
+  color: var(--white);
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 5px 13px;
+  border-radius: 20px;
+  letter-spacing: 0.2px;
+}
+
+/* --- Dialogue block (speech bubbles) --- */
+.dialogue-block {
+  background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+  border: 1px solid #7dd3fc;
+  border-radius: var(--radius-sm);
+  padding: 14px 14px 12px;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dialogue-q {
+  background: #0284c7;
+  color: #ffffff;
+  padding: 9px 14px;
+  border-radius: 14px 14px 14px 4px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  align-self: flex-start;
+  max-width: 92%;
+  line-height: 1.4;
+}
+
+.dialogue-a {
+  background: var(--white);
+  color: var(--text-dark);
+  padding: 9px 14px;
+  border-radius: 14px 14px 4px 14px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  align-self: flex-end;
+  max-width: 92%;
+  border: 1px solid #bae6fd;
+  line-height: 1.4;
+}
+
+/* --- Coming soon block --- */
+.coming-soon-block {
+  text-align: center;
+  padding: 36px 20px 28px;
+}
+
+.coming-soon-block .lock-icon {
+  font-size: 3rem;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.coming-soon-block p {
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  color: var(--text-mid) !important;
+  margin-bottom: 0 !important;
+}
+
 /* ── Desktop (900px+) ────────────────────
    Full desktop / wide tablets.           */
 @media (min-width: 900px) {

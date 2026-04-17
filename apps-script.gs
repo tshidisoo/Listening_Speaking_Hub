@@ -23,9 +23,19 @@
 //  One folder per student. Find the ID in the Drive folder URL:
 //  https://drive.google.com/drive/folders/THIS_IS_THE_ID
 //
-var BILGE_FOLDER_ID  = "1SwQDApb0ywl40UgAMVcGShVOzWBdAuU2";
-var ZEYNEP_FOLDER_ID = "1wScbMlm2spAdmyaKLhoiAWAvJYJsnter";
-var ALIYA_FOLDER_ID  = "1KH_f8Vbe38yaS-0fNdql0rf6LMMMRASP";
+var BILGE_FOLDER_ID    = "1SwQDApb0ywl40UgAMVcGShVOzWBdAuU2";
+var ZEYNEP_FOLDER_ID   = "1wScbMlm2spAdmyaKLhoiAWAvJYJsnter";
+var ALIYA_FOLDER_ID    = "1KH_f8Vbe38yaS-0fNdql0rf6LMMMRASP";
+
+// ── Boys' Speaking Hub ─────────────────────────────────────────────
+//  Paste each student's Drive folder ID below (see README.md).
+//  Find the ID in the folder URL:
+//  https://drive.google.com/drive/folders/THIS_IS_THE_ID
+//
+var YAHYA_FOLDER_ID    = "YOUR_YAHYA_FOLDER_ID_HERE";
+var MOHAMMED_FOLDER_ID = "YOUR_MOHAMMED_FOLDER_ID_HERE";
+var MEHMET_FOLDER_ID   = "YOUR_MEHMET_FOLDER_ID_HERE";
+var FEYSAL_FOLDER_ID   = "YOUR_FEYSAL_FOLDER_ID_HERE";
 
 // ── MAIN HANDLER ──────────────────────────────────────────────────
 function doPost(e) {
@@ -43,8 +53,12 @@ function doPost(e) {
     var blob     = Utilities.newBlob(decoded, mimeType, filename);
 
     // Route to the correct student folder
-    var folderId = (student === "Zeynep") ? ZEYNEP_FOLDER_ID
-                 : (student === "Aliya")  ? ALIYA_FOLDER_ID
+    var folderId = (student === "Zeynep")   ? ZEYNEP_FOLDER_ID
+                 : (student === "Aliya")    ? ALIYA_FOLDER_ID
+                 : (student === "Yahya")    ? YAHYA_FOLDER_ID
+                 : (student === "Mohammed") ? MOHAMMED_FOLDER_ID
+                 : (student === "Mehmet")   ? MEHMET_FOLDER_ID
+                 : (student === "Feysal")   ? FEYSAL_FOLDER_ID
                  : BILGE_FOLDER_ID;
     var folder   = DriveApp.getFolderById(folderId);
     var file     = folder.createFile(blob);

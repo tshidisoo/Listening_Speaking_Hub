@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Speaking Hub · Primary 2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       HEADER
+  ═══════════════════════════════════════ -->
+  <header>
+    <div class="header-emoji">🎤</div>
+    <h1 id="student-name">Speaking Hub</h1>
+    <p class="subtitle">Primary 2 · 8-Day Speaking Marathon</p>
+    <p class="golden-rule">✨ Say every answer OUT LOUD before you record!</p>
+  </header>
+
+  <!-- ═══════════════════════════════════════
+       DAY LANDING
+  ═══════════════════════════════════════ -->
+  <section id="day-landing">
+    <p class="landing-intro">Choose your day! 📅</p>
+
+    <div class="speaking-day-grid">
+
+      <!-- Day 1 — Unlocked -->
+      <button class="speaking-day-card" data-day="1">
+        <span class="day-card-number">Day 1</span>
+        <span class="day-card-date">Fri 17 Apr</span>
+        <div class="day-card-units">
+          <span class="day-card-unit">A · The Classroom</span>
+          <span class="day-card-unit">B · Feelings</span>
+        </div>
+        <span class="day-done-chip" id="chip-d1" style="display:none">✓</span>
+      </button>
+
+      <!-- Day 2 — Unlocked -->
+      <button class="speaking-day-card" data-day="2">
+        <span class="day-card-number">Day 2</span>
+        <span class="day-card-date">Sat 18 Apr</span>
+        <div class="day-card-units">
+          <span class="day-card-unit">A · Prepositions</span>
+          <span class="day-card-unit">B · The Fruit Shop</span>
+        </div>
+        <span class="day-done-chip" id="chip-d2" style="display:none">✓</span>
+      </button>
+
+      <!-- Day 3 — Unlocked -->
+      <button class="speaking-day-card" data-day="3">
+        <span class="day-card-number">Day 3</span>
+        <span class="day-card-date">Sun 19 Apr</span>
+        <div class="day-card-units">
+          <span class="day-card-unit">A · School Places</span>
+          <span class="day-card-unit locked-unit">B · Coming soon 🔒</span>
+        </div>
+        <span class="day-done-chip" id="chip-d3" style="display:none">✓</span>
+      </button>
+
+      <!-- Day 4 — Locked -->
+      <button class="speaking-day-card locked" disabled>
+        <span class="day-card-number">Day 4</span>
+        <span class="day-card-date">Mon 20 Apr</span>
+        <div class="day-card-units">
+          <span class="day-card-unit locked-unit">Coming soon</span>
+        </div>
+        <span class="lock-overlay">🔒</span>
+      </button>
+
+      <!-- Day 5 — Locked -->
+      <button class="speaking-day-card locked" disabled>
+        <span class="day-card-number">Day 5</span>
+        <span class="day-card-date">Tue 21 Apr</span>
+        <div class="day-card-units">
+          <span class="day-card-unit locked-unit">Coming soon</span>
+        </div>
+        <span class="lock-overlay">🔒</span>
+      </button>
+
+      <!-- Day 6 — Locked -->
+      <button class="speaking-day-card locked" disabled>
+        <span class="day-card-number">Day 6</span>
+        <span class="day-card-date">Wed 22 Apr</span>
+        <div class="day-card-units">
+          <span class="day-card-unit locked-unit">Coming soon</span>
+        </div>
+        <span class="lock-overlay">🔒</span>
+      </button>
+
+      <!-- Day 7 — Locked -->
+      <button class="speaking-day-card locked" disabled>
+        <span class="day-card-number">Day 7</span>
+        <span class="day-card-date">Thu 23 Apr</span>
+        <div class="day-card-units">
+          <span class="day-card-unit locked-unit">Coming soon</span>
+        </div>
+        <span class="lock-overlay">🔒</span>
+      </button>
+
+      <!-- Day 8 — Locked -->
+      <button class="speaking-day-card locked" disabled>
+        <span class="day-card-number">Day 8</span>
+        <span class="day-card-date">Fri 24 Apr</span>
+        <div class="day-card-units">
+          <span class="day-card-unit locked-unit">Coming soon</span>
+        </div>
+        <span class="lock-overlay">🔒</span>
+      </button>
+
+    </div>
+  </section><!-- /day-landing -->
+
+  <!-- ═══════════════════════════════════════
+       DAY VIEW
+  ═══════════════════════════════════════ -->
+  <section id="day-view" style="display:none">
+
+    <div class="week-view-header">
+      <button id="back-btn" class="back-btn">← Back</button>
+      <div id="day-view-title" class="week-view-title"></div>
+    </div>
+
+    <!-- UNIT TABS -->
+    <nav class="unit-tabs" role="tablist" aria-label="Units">
+      <button class="tab active" data-unit="a" role="tab" aria-selected="true">
+        <span class="tab-icon">📖</span><span class="tab-label">Unit A</span>
+      </button>
+      <button class="tab" data-unit="b" role="tab" aria-selected="false">
+        <span class="tab-icon">📗</span><span class="tab-label">Unit B</span>
+      </button>
+    </nav>
+
+    <main>
+
+      <!-- ─────────────────────────────────
+           D1-UA · Unit 1 — The Classroom
+      ───────────────────────────────── -->
+      <section class="day-card active" id="card-d1-ua" data-day="1" data-unit="a">
+        <div class="card-header">
+          <span class="day-badge">Day 1 · Unit A</span>
+          <span class="live-badge">🎤 Speaking</span>
+          <span class="done-badge" id="done-d1-ua" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🏫 The Classroom!</h2>
+        <p class="grammar-tag">Grammar: <strong>How many…? · There are… · Colours · Possessives</strong></p>
+
+        <div class="section-block task-block">
+          <div class="section-label">📦 Vocabulary</div>
+          <p>Say each word OUT LOUD first!</p>
+          <div class="vocab-block">
+            <span class="vocab-chip">boys</span>
+            <span class="vocab-chip">girls</span>
+            <span class="vocab-chip">teachers</span>
+            <span class="vocab-chip">windows</span>
+            <span class="vocab-chip">doors</span>
+          </div>
+        </div>
+
+        <div class="section-block listen-block">
+          <div class="section-label">💬 Practise the Dialogues</div>
+          <p>Read the questions and answers aloud. Try both sides!</p>
+
+          <div class="dialogue-block">
+            <div class="dialogue-q">❓ How many girls are there?</div>
+            <div class="dialogue-a">👦 There are ___ girls.</div>
+          </div>
+
+          <div class="dialogue-block">
+            <div class="dialogue-q">❓ What colour is his hair?</div>
+            <div class="dialogue-a">👦 It's ___.</div>
+          </div>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">🎯 Your Speaking Task</div>
+          <p>Look around your classroom (or imagine one!) and answer these questions in full sentences:</p>
+          <ul class="task-prompts">
+            <li>How many boys are there in your class?</li>
+            <li>How many girls are there?</li>
+            <li>How many windows are there?</li>
+            <li>How many doors are there?</li>
+            <li>What colour is your teacher's hair?</li>
+          </ul>
+          <div class="reminder">🗣️ Remember: <em>"There are four boys."</em> — use a full sentence every time!</div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Answers</div>
+          <div class="recorder" id="recorder-d1-ua">
+            <button class="record-btn" id="recordBtn-d1-ua"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-d1-ua" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-d1-ua" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-d1-ua" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-d1-ua"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────
+           D1-UB · Unit 2 — Feelings
+      ───────────────────────────────── -->
+      <section class="day-card" id="card-d1-ub" data-day="1" data-unit="b">
+        <div class="card-header">
+          <span class="day-badge">Day 1 · Unit B</span>
+          <span class="live-badge">🎤 Speaking</span>
+          <span class="done-badge" id="done-d1-ub" style="display:none">✅ Done!</span>
+        </div>
+        <h2>😊 Feelings!</h2>
+        <p class="grammar-tag">Grammar: <strong>Is he/she…? · No, he/she isn't. · He's/She's…</strong></p>
+
+        <div class="section-block task-block">
+          <div class="section-label">📦 Vocabulary</div>
+          <p>Say each feeling OUT LOUD and make the face!</p>
+          <div class="vocab-block">
+            <span class="vocab-chip">happy 😄</span>
+            <span class="vocab-chip">sad 😢</span>
+            <span class="vocab-chip">tired 😴</span>
+            <span class="vocab-chip">cold 🥶</span>
+            <span class="vocab-chip">scared 😨</span>
+            <span class="vocab-chip">hungry 🤤</span>
+          </div>
+        </div>
+
+        <div class="section-block listen-block">
+          <div class="section-label">💬 Practise the Dialogues</div>
+          <p>Read out loud — try to answer with a DIFFERENT feeling each time!</p>
+
+          <div class="dialogue-block">
+            <div class="dialogue-q">❓ Is he sad?</div>
+            <div class="dialogue-a">👦 No, he isn't. He's ___.</div>
+          </div>
+
+          <div class="dialogue-block">
+            <div class="dialogue-q">❓ Is she cold?</div>
+            <div class="dialogue-a">👦 No, she isn't. She's ___.</div>
+          </div>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">🎯 Your Speaking Task</div>
+          <p>Answer these questions about a friend or family member — use your imagination!</p>
+          <ul class="task-prompts">
+            <li>Is your friend happy? <em>(Say yes or no + the real feeling!)</em></li>
+            <li>Is your mum tired? <em>(No, she isn't. She's…)</em></li>
+            <li>Is your teacher scared? <em>(No, he/she isn't. He's/She's…)</em></li>
+            <li>Are YOU hungry right now?</li>
+          </ul>
+          <div class="reminder">🗣️ Always give a FULL answer: <em>"No, he isn't. He's happy."</em></div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Answers</div>
+          <div class="recorder" id="recorder-d1-ub">
+            <button class="record-btn" id="recordBtn-d1-ub"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-d1-ub" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-d1-ub" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-d1-ub" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-d1-ub"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────
+           D2-UA · Unit 3 — Prepositions
+      ───────────────────────────────── -->
+      <section class="day-card" id="card-d2-ua" data-day="2" data-unit="a">
+        <div class="card-header">
+          <span class="day-badge">Day 2 · Unit A</span>
+          <span class="live-badge">🎤 Speaking</span>
+          <span class="done-badge" id="done-d2-ua" style="display:none">✅ Done!</span>
+        </div>
+        <h2>📍 Where Is It?</h2>
+        <p class="grammar-tag">Grammar: <strong>Prepositions of place · Where is…? · It's / They're…</strong></p>
+
+        <div class="section-block task-block">
+          <div class="section-label">📦 Vocabulary</div>
+          <p>Say each phrase clearly — these are tricky!</p>
+          <div class="vocab-block">
+            <span class="vocab-chip">in front of</span>
+            <span class="vocab-chip">behind</span>
+            <span class="vocab-chip">next to</span>
+            <span class="vocab-chip">between</span>
+          </div>
+        </div>
+
+        <div class="section-block listen-block">
+          <div class="section-label">💬 Practise the Dialogues</div>
+          <p>Read these aloud and really think about where the objects are!</p>
+
+          <div class="dialogue-block">
+            <div class="dialogue-q">❓ Where's the skateboard?</div>
+            <div class="dialogue-a">👦 It's in front of the table.</div>
+          </div>
+
+          <div class="dialogue-block">
+            <div class="dialogue-q">❓ Where are the books?</div>
+            <div class="dialogue-a">👦 They're between the bag and the chair.</div>
+          </div>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">🎯 Your Speaking Task</div>
+          <p>Look at the objects around you RIGHT NOW and describe where they are:</p>
+          <ul class="task-prompts">
+            <li>Where is your bag? <em>(It's next to / behind / in front of…)</em></li>
+            <li>Where is your phone or tablet? <em>(It's…)</em></li>
+            <li>Where is the door? <em>(It's…)</em></li>
+            <li>Where is the table? <em>(It's between… and …)</em></li>
+          </ul>
+          <div class="reminder">🗣️ <em>"The bag is behind the chair."</em> — always start with <strong>It's</strong> or <strong>They're</strong>!</div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Answers</div>
+          <div class="recorder" id="recorder-d2-ua">
+            <button class="record-btn" id="recordBtn-d2-ua"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-d2-ua" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-d2-ua" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-d2-ua" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-d2-ua"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────
+           D2-UB · Unit 4 — The Fruit Shop
+      ───────────────────────────────── -->
+      <section class="day-card" id="card-d2-ub" data-day="2" data-unit="b">
+        <div class="card-header">
+          <span class="day-badge">Day 2 · Unit B</span>
+          <span class="live-badge">🎤 Speaking</span>
+          <span class="done-badge" id="done-d2-ub" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🍎 The Fruit Shop!</h2>
+        <p class="grammar-tag">Grammar: <strong>Have you got…? · Yes, we have. / No, we haven't.</strong></p>
+
+        <div class="section-block task-block">
+          <div class="section-label">📦 Vocabulary</div>
+          <p>Say each fruit and point to it if you can find one!</p>
+          <div class="vocab-block">
+            <span class="vocab-chip">🍎 apples</span>
+            <span class="vocab-chip">🍌 bananas</span>
+            <span class="vocab-chip">🍇 grapes</span>
+            <span class="vocab-chip">🍐 pears</span>
+            <span class="vocab-chip">🫐 figs</span>
+            <span class="vocab-chip">🍊 oranges</span>
+          </div>
+        </div>
+
+        <div class="section-block listen-block">
+          <div class="section-label">💬 Practise the Dialogues</div>
+          <p>Imagine you're the shopkeeper! Answer the customer's questions.</p>
+
+          <div class="dialogue-block">
+            <div class="dialogue-q">🛒 Have you got apples?</div>
+            <div class="dialogue-a">🧑‍🍳 Yes, we have!</div>
+          </div>
+
+          <div class="dialogue-block">
+            <div class="dialogue-q">🛒 Have you got figs?</div>
+            <div class="dialogue-a">🧑‍🍳 No, we haven't. Sorry!</div>
+          </div>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">🎯 Your Speaking Task</div>
+          <p>You are the shopkeeper! Record yourself answering ALL these customer questions. Decide yourself — YES or NO for each fruit!</p>
+          <ul class="task-prompts">
+            <li>Have you got bananas?</li>
+            <li>Have you got grapes?</li>
+            <li>Have you got pears?</li>
+            <li>Have you got oranges?</li>
+            <li>Have you got figs?</li>
+          </ul>
+          <div class="reminder">🗣️ <em>"Yes, we have!"</em> or <em>"No, we haven't."</em> — be a confident shopkeeper!</div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Answers</div>
+          <div class="recorder" id="recorder-d2-ub">
+            <button class="record-btn" id="recordBtn-d2-ub"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-d2-ub" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-d2-ub" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-d2-ub" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-d2-ub"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────
+           D3-UA · Unit 5 — School Places
+      ───────────────────────────────── -->
+      <section class="day-card" id="card-d3-ua" data-day="3" data-unit="a">
+        <div class="card-header">
+          <span class="day-badge">Day 3 · Unit A</span>
+          <span class="live-badge">🎤 Speaking</span>
+          <span class="done-badge" id="done-d3-ua" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🏫 School Places!</h2>
+        <p class="grammar-tag">Grammar: <strong>What have we got…? · We've got… · Where are…? · They're…</strong></p>
+
+        <div class="section-block task-block">
+          <div class="section-label">📦 Vocabulary</div>
+          <p>Say each word — can you find any of these in YOUR school?</p>
+          <div class="vocab-block">
+            <span class="vocab-chip">sports field</span>
+            <span class="vocab-chip">art room</span>
+            <span class="vocab-chip">computer room</span>
+            <span class="vocab-chip">football nets</span>
+            <span class="vocab-chip">whiteboard</span>
+            <span class="vocab-chip">crayons</span>
+            <span class="vocab-chip">computers</span>
+          </div>
+        </div>
+
+        <div class="section-block listen-block">
+          <div class="section-label">💬 Practise the Dialogues</div>
+          <p>Read both sides aloud — be the teacher AND the student!</p>
+
+          <div class="dialogue-block">
+            <div class="dialogue-q">❓ What have we got in the art room?</div>
+            <div class="dialogue-a">👦 We've got crayons and a whiteboard.</div>
+          </div>
+
+          <div class="dialogue-block">
+            <div class="dialogue-q">❓ Where are the children?</div>
+            <div class="dialogue-a">👦 They're in the computer room.</div>
+          </div>
+        </div>
+
+        <div class="section-block task-block">
+          <div class="section-label">🎯 Your Speaking Task</div>
+          <p>Think about YOUR school and answer these questions in full sentences:</p>
+          <ul class="task-prompts">
+            <li>What have you got in your classroom? <em>(We've got…)</em></li>
+            <li>What have you got in the computer room? <em>(We've got…)</em></li>
+            <li>Have you got a sports field at your school?</li>
+            <li>Where are the football nets? <em>(They're…)</em></li>
+            <li>What is your favourite room at school? Why?</li>
+          </ul>
+          <div class="reminder">🗣️ <em>"We've got computers and a whiteboard in our classroom."</em> — talk about YOUR real school!</div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Answers</div>
+          <div class="recorder" id="recorder-d3-ua">
+            <button class="record-btn" id="recordBtn-d3-ua"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-d3-ua" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-d3-ua" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-d3-ua" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-d3-ua"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────
+           D3-UB · Coming Soon
+      ───────────────────────────────── -->
+      <section class="day-card" id="card-d3-ub" data-day="3" data-unit="b">
+        <div class="card-header">
+          <span class="day-badge">Day 3 · Unit B</span>
+          <span class="live-badge" style="background:#fef3c7;color:#92400e;">🔒 Coming Soon</span>
+        </div>
+        <div class="coming-soon-block">
+          <div class="lock-icon">🔒</div>
+          <p>Your teacher is preparing this unit!</p>
+          <p style="font-size:0.85rem;color:var(--text-soft);margin-top:8px;font-weight:600;">Check back very soon. Great work on Unit A! 🎉</p>
+        </div>
+      </section>
+
+    </main>
+  </section><!-- /day-view -->
+
+  <footer>
+    <p>Made with 💪 for the Speaking Champions · Keep going!</p>
+  </footer>
+
+  <script src="speaking-script.js"></script>
+</body>
+</html>
