@@ -3,20 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aliya's Phonics Hub</title>
+  <title>Elif's Phonics Hub</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ═══════════════════════════════════════
-       HEADER
-  ═══════════════════════════════════════ -->
   <header>
-    <div class="header-emoji">🌈</div>
-    <h1>Aliya's Phonics Hub</h1>
-    <p class="subtitle">Oxford Phonics World 2 · Phonics &amp; Sight Words</p>
+    <div class="header-emoji">🌟</div>
+    <h1>Elif's Phonics Hub</h1>
+    <p class="subtitle">Short Vowels &amp; Sight Words</p>
     <p class="golden-rule">✨ Say every word OUT LOUD when you read it!</p>
   </header>
 
@@ -24,33 +21,24 @@
        LANDING
   ═══════════════════════════════════════ -->
   <section id="landing">
-    <p class="landing-intro">Ready for your phonics adventure? 🎉</p>
+    <p class="landing-intro">Choose your week! 📅</p>
 
     <div class="week-cards">
-      <button class="week-card" data-week="1">
-        <span class="week-card-emoji">📖</span>
-        <span class="week-card-text">
-          <span class="week-card-number">Week 1</span>
-          <span class="week-card-title">Short 'a' Words</span>
-          <span class="week-card-desc">cat · ant · yak · jam · fan · can</span>
-        </span>
-        <span class="week-card-arrow">→</span>
-      </button>
 
-      <button class="week-card" data-week="2">
+      <button class="week-card" data-week="1">
         <span class="week-card-emoji">🔤</span>
         <span class="week-card-text">
-          <span class="week-card-number">Week 2</span>
+          <span class="week-card-number">Week 1</span>
           <span class="week-card-title">Short Vowels</span>
           <span class="week-card-desc">a · e · i · o · u — one vowel per day!</span>
         </span>
         <span class="week-card-arrow">→</span>
       </button>
 
-      <button class="week-card" data-week="3">
+      <button class="week-card" data-week="2">
         <span class="week-card-emoji">💬</span>
         <span class="week-card-text">
-          <span class="week-card-number">Week 3</span>
+          <span class="week-card-number">Week 2</span>
           <span class="week-card-title">Sight Words</span>
           <span class="week-card-desc">I · you · he · she · we · they</span>
         </span>
@@ -70,217 +58,24 @@
       <div id="week-view-title" class="week-view-title"></div>
     </div>
 
-    <!-- DAY TABS -->
     <nav class="day-tabs" role="tablist" aria-label="Days of the week">
       <button class="tab active" data-day="monday"    role="tab" aria-selected="true" ><span class="tab-icon">🎤</span><span class="tab-label">Mon</span></button>
-      <button class="tab"        data-day="tuesday"   role="tab" aria-selected="false"><span class="tab-icon">🎮</span><span class="tab-label">Tue</span></button>
+      <button class="tab"        data-day="tuesday"   role="tab" aria-selected="false"><span class="tab-icon">🎤</span><span class="tab-label">Tue</span></button>
       <button class="tab"        data-day="wednesday" role="tab" aria-selected="false"><span class="tab-icon">🎤</span><span class="tab-label">Wed</span></button>
-      <button class="tab"        data-day="thursday"  role="tab" aria-selected="false"><span class="tab-icon">🎮</span><span class="tab-label">Thu</span></button>
+      <button class="tab"        data-day="thursday"  role="tab" aria-selected="false"><span class="tab-icon">🎤</span><span class="tab-label">Thu</span></button>
       <button class="tab"        data-day="friday"    role="tab" aria-selected="false"><span class="tab-icon">⭐</span><span class="tab-label">Fri</span></button>
     </nav>
 
     <main>
 
       <!-- ─────────────────────────────────
-           MONDAY — Speaking Day
+           W1 MONDAY — Short A /æ/
       ───────────────────────────────── -->
       <section class="day-card active" id="card-w1-monday" data-week="1" data-day="monday">
         <div class="card-header">
           <span class="day-badge">Monday</span>
           <span class="live-badge">🎤 Speaking Day</span>
           <span class="done-badge" id="done-w1-monday" style="display:none">✅ Done!</span>
-        </div>
-        <h2>🐈 The 'a' &amp; '-am' Words!</h2>
-        <p class="grammar-tag">Phonics: <strong>Short 'a' · CVC words · cat · ant · yak · ax · ram · jam</strong></p>
-
-        <div class="section-block listen-block">
-          <div class="section-label">📺 Watch &amp; Sing First!</div>
-          <p>Watch the Oxford Phonics song and sing along! Listen carefully to how each word sounds.</p>
-          <a class="video-btn" href="https://youtu.be/0bvAWePdvTY?si=tqm_XhgULErsAjjj" target="_blank" rel="noopener">▶ Oxford Phonics World 2 · Short 'a' Song</a>
-        </div>
-
-        <div class="section-block task-block">
-          <div class="section-label">📝 Your Speaking Task</div>
-          <p>Read these words clearly, one by one. Say each sound: <strong>c–a–t… cat!</strong></p>
-          <ul class="task-prompts">
-            <li>🐈 cat &nbsp; 🐜 ant &nbsp; 🐂 yak &nbsp; 🪓 ax</li>
-            <li>🐏 ram &nbsp; 🍯 jam</li>
-          </ul>
-          <p style="margin-top:10px; font-size:0.92rem; color:var(--text-dark);">Then say the chant:</p>
-          <div class="reminder">🗣️ <em>"I see an ant and an ax."</em></div>
-        </div>
-
-        <div class="section-block record-block">
-          <div class="section-label">🎙 Record Your Voice Note</div>
-          <div class="recorder" id="recorder-w1-monday">
-            <button class="record-btn" id="recordBtn-w1-monday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
-            <div class="timer" id="timer-w1-monday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
-            <audio class="playback" id="playback-w1-monday" controls style="display:none"></audio>
-            <button class="submit-btn" id="submitBtn-w1-monday" style="display:none">✓ Submit to Teacher</button>
-            <div class="status-msg" id="status-w1-monday"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ─────────────────────────────────
-           TUESDAY — Game Day (6 pairs)
-      ───────────────────────────────── -->
-      <section class="day-card" id="card-w1-tuesday" data-week="1" data-day="tuesday">
-        <div class="card-header">
-          <span class="day-badge">Tuesday</span>
-          <span class="live-badge" style="background:#fef3c7;color:#92400e;">🎮 Game Day</span>
-          <span class="done-badge" id="done-w1-tuesday" style="display:none">✅ Done!</span>
-        </div>
-        <h2>🎮 Word Match — Round 1!</h2>
-        <p class="grammar-tag">Phonics: <strong>Match the word to its picture · cat · ant · yak · ax · ram · jam</strong></p>
-
-        <div class="section-block game-block">
-          <div class="section-label">🎮 Match the Word to the Emoji!</div>
-          <p style="font-size:0.88rem;color:var(--text-dark);margin-bottom:4px;">Click a <strong>word</strong>, then click the matching <strong>picture</strong>. Say the word out loud every time! 🗣️</p>
-
-          <div class="match-game" id="game-tuesday">
-            <div class="match-grid">
-              <div class="match-col">
-                <div class="match-col-label">Words</div>
-                <div class="words-col"></div>
-              </div>
-              <div class="match-col">
-                <div class="match-col-label">Pictures</div>
-                <div class="emojis-col"></div>
-              </div>
-            </div>
-            <p class="match-score">Matched: <span class="match-score-count">0</span> / 6 ⭐</p>
-            <div class="match-celebration" style="display:none">
-              <p>🎉 Amazing, Aliya! You matched them all! 🎉</p>
-              <button class="replay-btn" data-game="game-tuesday" data-set="tuesday">🔄 Play Again!</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ─────────────────────────────────
-           WEDNESDAY — Speaking Day
-      ───────────────────────────────── -->
-      <section class="day-card" id="card-w1-wednesday" data-week="1" data-day="wednesday">
-        <div class="card-header">
-          <span class="day-badge">Wednesday</span>
-          <span class="live-badge">🎤 Speaking Day</span>
-          <span class="done-badge" id="done-w1-wednesday" style="display:none">✅ Done!</span>
-        </div>
-        <h2>🪭 The '-an' Words!</h2>
-        <p class="grammar-tag">Phonics: <strong>Short 'a' · '-an' family · yam · dam · fan · man · pan · can</strong></p>
-
-        <div class="section-block task-block">
-          <div class="section-label">📝 Your Speaking Task</div>
-          <p>New word family today! Read these words clearly, one by one.</p>
-          <ul class="task-prompts">
-            <li>🍠 yam &nbsp; 🧱 dam &nbsp; 🪭 fan &nbsp; 👨 man</li>
-            <li>🍳 pan &nbsp; 🥫 can</li>
-          </ul>
-          <p style="margin-top:10px; font-size:0.92rem; color:var(--text-dark);">Then say the chant:</p>
-          <div class="reminder">🗣️ <em>"The man has a can and a pan."</em></div>
-        </div>
-
-        <div class="section-block record-block">
-          <div class="section-label">🎙 Record Your Voice Note</div>
-          <div class="recorder" id="recorder-w1-wednesday">
-            <button class="record-btn" id="recordBtn-w1-wednesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
-            <div class="timer" id="timer-w1-wednesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
-            <audio class="playback" id="playback-w1-wednesday" controls style="display:none"></audio>
-            <button class="submit-btn" id="submitBtn-w1-wednesday" style="display:none">✓ Submit to Teacher</button>
-            <div class="status-msg" id="status-w1-wednesday"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ─────────────────────────────────
-           THURSDAY — Grand Challenge (12 pairs)
-      ───────────────────────────────── -->
-      <section class="day-card" id="card-w1-thursday" data-week="1" data-day="thursday">
-        <div class="card-header">
-          <span class="day-badge">Thursday</span>
-          <span class="live-badge" style="background:#fef3c7;color:#92400e;">🎮 Game Day</span>
-          <span class="done-badge" id="done-w1-thursday" style="display:none">✅ Done!</span>
-        </div>
-        <h2>🏆 The Grand Challenge — All 12 Words!</h2>
-        <p class="grammar-tag">Phonics: <strong>All short 'a' words · Can you beat your Tuesday score?</strong></p>
-
-        <div class="section-block game-block">
-          <div class="section-label">🏆 Grand Challenge — All 12 Words!</div>
-          <p style="font-size:0.88rem;color:var(--text-dark);margin-bottom:4px;">All 12 words from this week! Can you match them faster than Tuesday? Say each word out loud! 🗣️</p>
-
-          <div class="match-game" id="game-thursday">
-            <div class="match-grid">
-              <div class="match-col">
-                <div class="match-col-label">Words</div>
-                <div class="words-col"></div>
-              </div>
-              <div class="match-col">
-                <div class="match-col-label">Pictures</div>
-                <div class="emojis-col"></div>
-              </div>
-            </div>
-            <p class="match-score">Matched: <span class="match-score-count">0</span> / 12 ⭐</p>
-            <div class="match-celebration" style="display:none">
-              <p>🏆 YOU DID IT! All 12 words! You are a Phonics Champion, Aliya! 🌈</p>
-              <button class="replay-btn" data-game="game-thursday" data-set="thursday">🔄 Play Again!</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ─────────────────────────────────
-           FRIDAY — Singing Star
-      ───────────────────────────────── -->
-      <section class="day-card" id="card-w1-friday" data-week="1" data-day="friday">
-        <div class="card-header">
-          <span class="day-badge">Friday</span>
-          <span class="live-badge" style="background:#fde68a;color:#92400e;">⭐ Singing Star</span>
-          <span class="done-badge" id="done-w1-friday" style="display:none">✅ Done!</span>
-        </div>
-        <h2>⭐ Singing Star Friday!</h2>
-        <p class="grammar-tag">Phonics: <strong>All short 'a' words · Sing the whole song!</strong></p>
-
-        <div class="section-block listen-block">
-          <div class="section-label">📺 Sing Along!</div>
-          <p>Open the song and sing along to the <strong>whole video</strong>! Be as loud and clear as you can!</p>
-          <a class="video-btn" href="https://youtu.be/0bvAWePdvTY?si=tqm_XhgULErsAjjj" target="_blank" rel="noopener">▶ Oxford Phonics World 2 · Short 'a' Song</a>
-        </div>
-
-        <div class="section-block task-block">
-          <div class="section-label">🌟 Your Singing Star Mission</div>
-          <p>Send your teacher a <strong>voice note</strong> of you singing along!</p>
-          <ul class="task-prompts">
-            <li>🎨 First, draw your <strong>favourite word</strong> from this week (a pink cat? a red jam jar?)</li>
-            <li>🎤 Then record yourself singing the song while holding your drawing!</li>
-          </ul>
-          <div class="reminder">🌈 You learned 12 new words this week. That is AMAZING! ⭐</div>
-        </div>
-
-        <div class="section-block record-block">
-          <div class="section-label">🎙 Record Your Singing!</div>
-          <div class="recorder" id="recorder-w1-friday">
-            <button class="record-btn" id="recordBtn-w1-friday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
-            <div class="timer" id="timer-w1-friday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
-            <audio class="playback" id="playback-w1-friday" controls style="display:none"></audio>
-            <button class="submit-btn" id="submitBtn-w1-friday" style="display:none">✓ Submit to Teacher</button>
-            <div class="status-msg" id="status-w1-friday"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ═══════════════════════════════════════
-           WEEK 2 — SHORT VOWELS
-      ═══════════════════════════════════════ -->
-
-      <!-- ─────────────────────────────────
-           W2 MONDAY — Short A /æ/
-      ───────────────────────────────── -->
-      <section class="day-card" id="card-w2-monday" data-week="2" data-day="monday">
-        <div class="card-header">
-          <span class="day-badge">Monday</span>
-          <span class="live-badge">🎤 Speaking Day</span>
-          <span class="done-badge" id="done-w2-monday" style="display:none">✅ Done!</span>
         </div>
         <h2>🔤 Short A — /æ/</h2>
         <p class="grammar-tag">Phonics: <strong>Short 'a' · CVC words · -at · -an · -ap · -am families</strong></p>
@@ -320,24 +115,24 @@
         <div class="section-block record-block">
           <div class="section-label">🎙 Record Your Voice</div>
           <p style="font-size:0.88rem;color:var(--text-dark);text-align:center;margin-bottom:4px;">Read the <strong>words</strong> first, then the five <strong>sentences</strong>.</p>
-          <div class="recorder" id="recorder-w2-monday">
-            <button class="record-btn" id="recordBtn-w2-monday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
-            <div class="timer" id="timer-w2-monday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
-            <audio class="playback" id="playback-w2-monday" controls style="display:none"></audio>
-            <button class="submit-btn" id="submitBtn-w2-monday" style="display:none">✓ Submit to Teacher</button>
-            <div class="status-msg" id="status-w2-monday"></div>
+          <div class="recorder" id="recorder-w1-monday">
+            <button class="record-btn" id="recordBtn-w1-monday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w1-monday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w1-monday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w1-monday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w1-monday"></div>
           </div>
         </div>
       </section>
 
       <!-- ─────────────────────────────────
-           W2 TUESDAY — Short E /ɛ/
+           W1 TUESDAY — Short E /ɛ/
       ───────────────────────────────── -->
-      <section class="day-card" id="card-w2-tuesday" data-week="2" data-day="tuesday">
+      <section class="day-card" id="card-w1-tuesday" data-week="1" data-day="tuesday">
         <div class="card-header">
           <span class="day-badge">Tuesday</span>
           <span class="live-badge">🎤 Speaking Day</span>
-          <span class="done-badge" id="done-w2-tuesday" style="display:none">✅ Done!</span>
+          <span class="done-badge" id="done-w1-tuesday" style="display:none">✅ Done!</span>
         </div>
         <h2>🔤 Short E — /ɛ/</h2>
         <p class="grammar-tag">Phonics: <strong>Short 'e' · CVC words · -ed · -en · -eg · -et · -est families</strong></p>
@@ -377,24 +172,24 @@
         <div class="section-block record-block">
           <div class="section-label">🎙 Record Your Voice</div>
           <p style="font-size:0.88rem;color:var(--text-dark);text-align:center;margin-bottom:4px;">Read the <strong>words</strong> first, then the five <strong>sentences</strong>.</p>
-          <div class="recorder" id="recorder-w2-tuesday">
-            <button class="record-btn" id="recordBtn-w2-tuesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
-            <div class="timer" id="timer-w2-tuesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
-            <audio class="playback" id="playback-w2-tuesday" controls style="display:none"></audio>
-            <button class="submit-btn" id="submitBtn-w2-tuesday" style="display:none">✓ Submit to Teacher</button>
-            <div class="status-msg" id="status-w2-tuesday"></div>
+          <div class="recorder" id="recorder-w1-tuesday">
+            <button class="record-btn" id="recordBtn-w1-tuesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w1-tuesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w1-tuesday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w1-tuesday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w1-tuesday"></div>
           </div>
         </div>
       </section>
 
       <!-- ─────────────────────────────────
-           W2 WEDNESDAY — Short I /ɪ/
+           W1 WEDNESDAY — Short I /ɪ/
       ───────────────────────────────── -->
-      <section class="day-card" id="card-w2-wednesday" data-week="2" data-day="wednesday">
+      <section class="day-card" id="card-w1-wednesday" data-week="1" data-day="wednesday">
         <div class="card-header">
           <span class="day-badge">Wednesday</span>
           <span class="live-badge">🎤 Speaking Day</span>
-          <span class="done-badge" id="done-w2-wednesday" style="display:none">✅ Done!</span>
+          <span class="done-badge" id="done-w1-wednesday" style="display:none">✅ Done!</span>
         </div>
         <h2>🔤 Short I — /ɪ/</h2>
         <p class="grammar-tag">Phonics: <strong>Short 'i' · CVC words · -ig · -in · -ip · -ix · -id families</strong></p>
@@ -434,24 +229,24 @@
         <div class="section-block record-block">
           <div class="section-label">🎙 Record Your Voice</div>
           <p style="font-size:0.88rem;color:var(--text-dark);text-align:center;margin-bottom:4px;">Read the <strong>words</strong> first, then the five <strong>sentences</strong>.</p>
-          <div class="recorder" id="recorder-w2-wednesday">
-            <button class="record-btn" id="recordBtn-w2-wednesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
-            <div class="timer" id="timer-w2-wednesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
-            <audio class="playback" id="playback-w2-wednesday" controls style="display:none"></audio>
-            <button class="submit-btn" id="submitBtn-w2-wednesday" style="display:none">✓ Submit to Teacher</button>
-            <div class="status-msg" id="status-w2-wednesday"></div>
+          <div class="recorder" id="recorder-w1-wednesday">
+            <button class="record-btn" id="recordBtn-w1-wednesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w1-wednesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w1-wednesday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w1-wednesday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w1-wednesday"></div>
           </div>
         </div>
       </section>
 
       <!-- ─────────────────────────────────
-           W2 THURSDAY — Short O /ɑ/
+           W1 THURSDAY — Short O /ɑ/
       ───────────────────────────────── -->
-      <section class="day-card" id="card-w2-thursday" data-week="2" data-day="thursday">
+      <section class="day-card" id="card-w1-thursday" data-week="1" data-day="thursday">
         <div class="card-header">
           <span class="day-badge">Thursday</span>
           <span class="live-badge">🎤 Speaking Day</span>
-          <span class="done-badge" id="done-w2-thursday" style="display:none">✅ Done!</span>
+          <span class="done-badge" id="done-w1-thursday" style="display:none">✅ Done!</span>
         </div>
         <h2>🔤 Short O — /ɑ/</h2>
         <p class="grammar-tag">Phonics: <strong>Short 'o' · CVC words · -og · -ox · -ot · -op families</strong></p>
@@ -489,24 +284,24 @@
         <div class="section-block record-block">
           <div class="section-label">🎙 Record Your Voice</div>
           <p style="font-size:0.88rem;color:var(--text-dark);text-align:center;margin-bottom:4px;">Read the <strong>words</strong> first, then the five <strong>sentences</strong>.</p>
-          <div class="recorder" id="recorder-w2-thursday">
-            <button class="record-btn" id="recordBtn-w2-thursday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
-            <div class="timer" id="timer-w2-thursday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
-            <audio class="playback" id="playback-w2-thursday" controls style="display:none"></audio>
-            <button class="submit-btn" id="submitBtn-w2-thursday" style="display:none">✓ Submit to Teacher</button>
-            <div class="status-msg" id="status-w2-thursday"></div>
+          <div class="recorder" id="recorder-w1-thursday">
+            <button class="record-btn" id="recordBtn-w1-thursday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w1-thursday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w1-thursday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w1-thursday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w1-thursday"></div>
           </div>
         </div>
       </section>
 
       <!-- ─────────────────────────────────
-           W2 FRIDAY — Short U /ʌ/
+           W1 FRIDAY — Short U /ʌ/
       ───────────────────────────────── -->
-      <section class="day-card" id="card-w2-friday" data-week="2" data-day="friday">
+      <section class="day-card" id="card-w1-friday" data-week="1" data-day="friday">
         <div class="card-header">
           <span class="day-badge">Friday</span>
           <span class="live-badge" style="background:#fde68a;color:#92400e;">⭐ Star Day</span>
-          <span class="done-badge" id="done-w2-friday" style="display:none">✅ Done!</span>
+          <span class="done-badge" id="done-w1-friday" style="display:none">✅ Done!</span>
         </div>
         <h2>🔤 Short U — /ʌ/</h2>
         <p class="grammar-tag">Phonics: <strong>Short 'u' · CVC words · -ug · -un · -up · -ut · -ub · -ud families</strong></p>
@@ -539,34 +334,30 @@
             <li>I see a <strong>jug</strong> and a <strong>tub</strong>.</li>
             <li>A <strong>nut</strong> is in the <strong>cup</strong>.</li>
           </ul>
-          <div class="reminder">🌟 You have practised ALL five short vowels this week — that is AMAZING, Aliya! ⭐</div>
+          <div class="reminder">🌟 You have practised ALL five short vowels this week — that is AMAZING, Elif! ⭐</div>
         </div>
 
         <div class="section-block record-block">
           <div class="section-label">🎙 Record Your Voice</div>
           <p style="font-size:0.88rem;color:var(--text-dark);text-align:center;margin-bottom:4px;">Read the <strong>words</strong> first, then the five <strong>sentences</strong>.</p>
-          <div class="recorder" id="recorder-w2-friday">
-            <button class="record-btn" id="recordBtn-w2-friday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
-            <div class="timer" id="timer-w2-friday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
-            <audio class="playback" id="playback-w2-friday" controls style="display:none"></audio>
-            <button class="submit-btn" id="submitBtn-w2-friday" style="display:none">✓ Submit to Teacher</button>
-            <div class="status-msg" id="status-w2-friday"></div>
+          <div class="recorder" id="recorder-w1-friday">
+            <button class="record-btn" id="recordBtn-w1-friday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w1-friday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w1-friday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w1-friday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w1-friday"></div>
           </div>
         </div>
       </section>
 
-      <!-- ═══════════════════════════════════════
-           WEEK 3 — SIGHT WORDS & PRONOUNS
-      ═══════════════════════════════════════ -->
-
       <!-- ─────────────────────────────────
-           W3 MONDAY — I & You
+           W2 MONDAY — I & You
       ───────────────────────────────── -->
-      <section class="day-card" id="card-w3-monday" data-week="3" data-day="monday">
+      <section class="day-card" id="card-w2-monday" data-week="2" data-day="monday">
         <div class="card-header">
           <span class="day-badge">Monday</span>
           <span class="live-badge">🎤 Speaking Day</span>
-          <span class="done-badge" id="done-w3-monday" style="display:none">✅ Done!</span>
+          <span class="done-badge" id="done-w2-monday" style="display:none">✅ Done!</span>
         </div>
         <h2>💬 I and You</h2>
         <p class="grammar-tag">Grammar: <strong>Subject Pronouns · I · you · using short vowel words in sentences</strong></p>
@@ -605,24 +396,24 @@
         <div class="section-block record-block">
           <div class="section-label">🎙 Record Your Voice</div>
           <p style="font-size:0.88rem;color:var(--text-dark);text-align:center;margin-bottom:4px;">Say <strong>I</strong> and <strong>you</strong> clearly at the start of each sentence!</p>
-          <div class="recorder" id="recorder-w3-monday">
-            <button class="record-btn" id="recordBtn-w3-monday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
-            <div class="timer" id="timer-w3-monday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
-            <audio class="playback" id="playback-w3-monday" controls style="display:none"></audio>
-            <button class="submit-btn" id="submitBtn-w3-monday" style="display:none">✓ Submit to Teacher</button>
-            <div class="status-msg" id="status-w3-monday"></div>
+          <div class="recorder" id="recorder-w2-monday">
+            <button class="record-btn" id="recordBtn-w2-monday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w2-monday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w2-monday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w2-monday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w2-monday"></div>
           </div>
         </div>
       </section>
 
       <!-- ─────────────────────────────────
-           W3 TUESDAY — My & Your
+           W2 TUESDAY — My & Your
       ───────────────────────────────── -->
-      <section class="day-card" id="card-w3-tuesday" data-week="3" data-day="tuesday">
+      <section class="day-card" id="card-w2-tuesday" data-week="2" data-day="tuesday">
         <div class="card-header">
           <span class="day-badge">Tuesday</span>
           <span class="live-badge">🎤 Speaking Day</span>
-          <span class="done-badge" id="done-w3-tuesday" style="display:none">✅ Done!</span>
+          <span class="done-badge" id="done-w2-tuesday" style="display:none">✅ Done!</span>
         </div>
         <h2>💬 My and Your</h2>
         <p class="grammar-tag">Grammar: <strong>Possessive Adjectives · my · your · using short vowel words in sentences</strong></p>
@@ -660,24 +451,24 @@
         <div class="section-block record-block">
           <div class="section-label">🎙 Record Your Voice</div>
           <p style="font-size:0.88rem;color:var(--text-dark);text-align:center;margin-bottom:4px;">Say <strong>my</strong> and <strong>your</strong> clearly at the start of each sentence!</p>
-          <div class="recorder" id="recorder-w3-tuesday">
-            <button class="record-btn" id="recordBtn-w3-tuesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
-            <div class="timer" id="timer-w3-tuesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
-            <audio class="playback" id="playback-w3-tuesday" controls style="display:none"></audio>
-            <button class="submit-btn" id="submitBtn-w3-tuesday" style="display:none">✓ Submit to Teacher</button>
-            <div class="status-msg" id="status-w3-tuesday"></div>
+          <div class="recorder" id="recorder-w2-tuesday">
+            <button class="record-btn" id="recordBtn-w2-tuesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w2-tuesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w2-tuesday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w2-tuesday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w2-tuesday"></div>
           </div>
         </div>
       </section>
 
       <!-- ─────────────────────────────────
-           W3 WEDNESDAY — He, She & It
+           W2 WEDNESDAY — He, She & It
       ───────────────────────────────── -->
-      <section class="day-card" id="card-w3-wednesday" data-week="3" data-day="wednesday">
+      <section class="day-card" id="card-w2-wednesday" data-week="2" data-day="wednesday">
         <div class="card-header">
           <span class="day-badge">Wednesday</span>
           <span class="live-badge">🎤 Speaking Day</span>
-          <span class="done-badge" id="done-w3-wednesday" style="display:none">✅ Done!</span>
+          <span class="done-badge" id="done-w2-wednesday" style="display:none">✅ Done!</span>
         </div>
         <h2>💬 He, She and It</h2>
         <p class="grammar-tag">Grammar: <strong>Subject Pronouns · he · she · it · using short vowel words in sentences</strong></p>
@@ -717,24 +508,24 @@
         <div class="section-block record-block">
           <div class="section-label">🎙 Record Your Voice</div>
           <p style="font-size:0.88rem;color:var(--text-dark);text-align:center;margin-bottom:4px;">Say <strong>he</strong>, <strong>she</strong> and <strong>it</strong> clearly at the start of each sentence!</p>
-          <div class="recorder" id="recorder-w3-wednesday">
-            <button class="record-btn" id="recordBtn-w3-wednesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
-            <div class="timer" id="timer-w3-wednesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
-            <audio class="playback" id="playback-w3-wednesday" controls style="display:none"></audio>
-            <button class="submit-btn" id="submitBtn-w3-wednesday" style="display:none">✓ Submit to Teacher</button>
-            <div class="status-msg" id="status-w3-wednesday"></div>
+          <div class="recorder" id="recorder-w2-wednesday">
+            <button class="record-btn" id="recordBtn-w2-wednesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w2-wednesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w2-wednesday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w2-wednesday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w2-wednesday"></div>
           </div>
         </div>
       </section>
 
       <!-- ─────────────────────────────────
-           W3 THURSDAY — His & Her
+           W2 THURSDAY — His & Her
       ───────────────────────────────── -->
-      <section class="day-card" id="card-w3-thursday" data-week="3" data-day="thursday">
+      <section class="day-card" id="card-w2-thursday" data-week="2" data-day="thursday">
         <div class="card-header">
           <span class="day-badge">Thursday</span>
           <span class="live-badge">🎤 Speaking Day</span>
-          <span class="done-badge" id="done-w3-thursday" style="display:none">✅ Done!</span>
+          <span class="done-badge" id="done-w2-thursday" style="display:none">✅ Done!</span>
         </div>
         <h2>💬 His and Her</h2>
         <p class="grammar-tag">Grammar: <strong>Possessive Adjectives · his · her · using short vowel words in sentences</strong></p>
@@ -772,24 +563,24 @@
         <div class="section-block record-block">
           <div class="section-label">🎙 Record Your Voice</div>
           <p style="font-size:0.88rem;color:var(--text-dark);text-align:center;margin-bottom:4px;">Say <strong>his</strong> and <strong>her</strong> clearly at the start of each sentence!</p>
-          <div class="recorder" id="recorder-w3-thursday">
-            <button class="record-btn" id="recordBtn-w3-thursday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
-            <div class="timer" id="timer-w3-thursday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
-            <audio class="playback" id="playback-w3-thursday" controls style="display:none"></audio>
-            <button class="submit-btn" id="submitBtn-w3-thursday" style="display:none">✓ Submit to Teacher</button>
-            <div class="status-msg" id="status-w3-thursday"></div>
+          <div class="recorder" id="recorder-w2-thursday">
+            <button class="record-btn" id="recordBtn-w2-thursday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w2-thursday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w2-thursday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w2-thursday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w2-thursday"></div>
           </div>
         </div>
       </section>
 
       <!-- ─────────────────────────────────
-           W3 FRIDAY — We & They
+           W2 FRIDAY — We & They
       ───────────────────────────────── -->
-      <section class="day-card" id="card-w3-friday" data-week="3" data-day="friday">
+      <section class="day-card" id="card-w2-friday" data-week="2" data-day="friday">
         <div class="card-header">
           <span class="day-badge">Friday</span>
           <span class="live-badge" style="background:#fde68a;color:#92400e;">⭐ Star Day</span>
-          <span class="done-badge" id="done-w3-friday" style="display:none">✅ Done!</span>
+          <span class="done-badge" id="done-w2-friday" style="display:none">✅ Done!</span>
         </div>
         <h2>💬 We and They</h2>
         <p class="grammar-tag">Grammar: <strong>Subject Pronouns · we · they · using short vowel words in sentences</strong></p>
@@ -834,18 +625,18 @@
             <li><strong>They</strong> see a big red bus.</li>
             <li><strong>We</strong> can see a hen and a pig.</li>
           </ul>
-          <div class="reminder">🌈 You finished Week 3! You know all the pronouns AND short vowel words. You are a Phonics Champion, Aliya! 🏆</div>
+          <div class="reminder">🌟 You finished Week 2! You know all the pronouns AND short vowel words. Incredible, Elif! 🎉</div>
         </div>
 
         <div class="section-block record-block">
           <div class="section-label">🎙 Record Your Voice</div>
           <p style="font-size:0.88rem;color:var(--text-dark);text-align:center;margin-bottom:4px;">Say <strong>we</strong> and <strong>they</strong> clearly — finish strong! ⭐</p>
-          <div class="recorder" id="recorder-w3-friday">
-            <button class="record-btn" id="recordBtn-w3-friday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
-            <div class="timer" id="timer-w3-friday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
-            <audio class="playback" id="playback-w3-friday" controls style="display:none"></audio>
-            <button class="submit-btn" id="submitBtn-w3-friday" style="display:none">✓ Submit to Teacher</button>
-            <div class="status-msg" id="status-w3-friday"></div>
+          <div class="recorder" id="recorder-w2-friday">
+            <button class="record-btn" id="recordBtn-w2-friday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w2-friday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w2-friday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w2-friday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w2-friday"></div>
           </div>
         </div>
       </section>
@@ -854,9 +645,9 @@
   </section><!-- /week-view -->
 
   <footer>
-    <p>Made with 🌈 for Aliya · You are a Phonics Star!</p>
+    <p>Made with 🌟 for Elif · You are a Phonics Star!</p>
   </footer>
 
-  <script src="aliya-script.js"></script>
+  <script src="elif-script.js"></script>
 </body>
 </html>
