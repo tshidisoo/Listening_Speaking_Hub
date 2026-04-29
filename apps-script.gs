@@ -28,6 +28,7 @@ var ZEYNEP_FOLDER_ID   = "1wScbMlm2spAdmyaKLhoiAWAvJYJsnter";
 var ALIYA_FOLDER_ID    = "1KH_f8Vbe38yaS-0fNdql0rf6LMMMRASP";
 var ELIF_FOLDER_ID     = "1EAhgZd6ED2eT8Jkw-FdDG3AqT6Rlt24N";
 var SELIM_FOLDER_ID    = "1Kod-EqXjiiud_4qnPdHERk9gUuyGKbjJ";
+var ARAS_FOLDER_ID     = "15_Tc1qvaJrZIeqvpRqz0_JmrOG3_ye5L";
 
 // ── Boys' Speaking Hub ─────────────────────────────────────────────
 //  Paste each student's Drive folder ID below (see README.md).
@@ -68,6 +69,7 @@ function doPost(e) {
                  : (student === "Aliya")    ? ALIYA_FOLDER_ID
                  : (student === "Elif")     ? ELIF_FOLDER_ID
                  : (student === "Selim")    ? SELIM_FOLDER_ID
+                 : (student === "Aras")     ? ARAS_FOLDER_ID
                  : (student === "Yahya")    ? YAHYA_FOLDER_ID
                  : (student === "Mohammed") ? MOHAMMED_FOLDER_ID
                  : (student === "Mehmet")   ? MEHMET_FOLDER_ID
