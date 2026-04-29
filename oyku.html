@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Öykü's Speaking Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Öykü-specific overrides ─────────────────────────── */
+
+    /* Dialogue box for role-play cards */
+    .dialogue-box {
+      background: #f5f3ff;
+      border-left: 4px solid var(--purple);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin: 10px 0;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+    .dialogue-box .speaker {
+      font-weight: 800;
+      color: var(--purple);
+    }
+    .dialogue-box p { margin: 4px 0; }
+
+    /* Free-production prompt box */
+    .free-prompt {
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      border: 2px solid #f59e0b;
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin: 12px 0;
+      font-size: 0.9rem;
+      color: #78350f;
+      font-weight: 700;
+    }
+    .free-prompt .fp-label {
+      display: block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+      color: #92400e;
+    }
+
+    /* Week difficulty badge on week-cards */
+    .week-card-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      padding: 3px 9px;
+      border-radius: 20px;
+      margin-top: 4px;
+      background: #ede9fe;
+      color: var(--purple);
+    }
+    .week-card-badge.hard   { background: #fce7f3; color: #9d174d; }
+    .week-card-badge.finale { background: #fde68a; color: #92400e; }
+
+    /* Grammar tip block */
+    .grammar-tip {
+      background: #ecfdf5;
+      border: 2px solid #6ee7b7;
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-size: 0.85rem;
+      color: #065f46;
+      margin: 8px 0 12px;
+    }
+    .grammar-tip strong { color: #047857; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-emoji">💬</div>
+    <h1>Öykü's Speaking Hub</h1>
+    <p class="subtitle">A1 Speaking Practice · 6-Week Programme</p>
+    <p class="golden-rule">✨ Speak clearly, speak confidently — every session counts!</p>
+  </header>
+
+  <!-- ═══════════════════════════════════════
+       LANDING — choose your week
+  ═══════════════════════════════════════ -->
+  <section id="landing">
+    <p class="landing-intro">Choose your week! 📅</p>
+
+    <div class="week-cards">
+
+      <button class="week-card" data-week="1">
+        <span class="week-card-emoji">⭐</span>
+        <span class="week-card-text">
+          <span class="week-card-number">Week 1</span>
+          <span class="week-card-title">Hello Again!</span>
+          <span class="week-card-desc">Personal info · Family · Adjectives</span>
+          <span class="week-card-badge">Warm-Up</span>
+        </span>
+        <span class="week-card-arrow">→</span>
+      </button>
+
+      <button class="week-card" data-week="2">
+        <span class="week-card-emoji">🏠</span>
+        <span class="week-card-text">
+          <span class="week-card-number">Week 2</span>
+          <span class="week-card-title">My World</span>
+          <span class="week-card-desc">Home · Food & Drink · Daily Routines</span>
+          <span class="week-card-badge">Guided</span>
+        </span>
+        <span class="week-card-arrow">→</span>
+      </button>
+
+      <button class="week-card" data-week="3">
+        <span class="week-card-emoji">💪</span>
+        <span class="week-card-text">
+          <span class="week-card-number">Week 3</span>
+          <span class="week-card-title">Can Do!</span>
+          <span class="week-card-desc">Abilities · Places · Shopping</span>
+          <span class="week-card-badge">Q &amp; A</span>
+        </span>
+        <span class="week-card-arrow">→</span>
+      </button>
+
+      <button class="week-card" data-week="4">
+        <span class="week-card-emoji">🎭</span>
+        <span class="week-card-text">
+          <span class="week-card-number">Week 4</span>
+          <span class="week-card-title">Real Life</span>
+          <span class="week-card-desc">Café · Meeting People · Descriptions</span>
+          <span class="week-card-badge hard">Scenarios</span>
+        </span>
+        <span class="week-card-arrow">→</span>
+      </button>
+
+      <button class="week-card" data-week="5">
+        <span class="week-card-emoji">⏰</span>
+        <span class="week-card-text">
+          <span class="week-card-number">Week 5</span>
+          <span class="week-card-title">Then &amp; Now</span>
+          <span class="week-card-desc">Present · Past Simple · Extended Speaking</span>
+          <span class="week-card-badge hard">Advanced</span>
+        </span>
+        <span class="week-card-arrow">→</span>
+      </button>
+
+      <button class="week-card" data-week="6">
+        <span class="week-card-emoji">🏆</span>
+        <span class="week-card-text">
+          <span class="week-card-number">Week 6</span>
+          <span class="week-card-title">Grand Finale!</span>
+          <span class="week-card-desc">All About Me · Compare · My Story</span>
+          <span class="week-card-badge finale">Free Speaking</span>
+        </span>
+        <span class="week-card-arrow">→</span>
+      </button>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       WEEK VIEW
+  ═══════════════════════════════════════ -->
+  <section id="week-view" style="display:none">
+
+    <div class="week-view-header">
+      <button id="back-btn" class="back-btn">← Back</button>
+      <div id="week-view-title" class="week-view-title"></div>
+    </div>
+
+    <nav class="day-tabs" role="tablist" aria-label="Recording days">
+      <button class="tab active" data-day="monday"    role="tab" aria-selected="true" ><span class="tab-icon">🗣</span><span class="tab-label">Mon</span></button>
+      <button class="tab"        data-day="wednesday" role="tab" aria-selected="false"><span class="tab-icon">🎤</span><span class="tab-label">Wed</span></button>
+      <button class="tab"        data-day="thursday"  role="tab" aria-selected="false"><span class="tab-icon">⭐</span><span class="tab-label">Thu</span></button>
+    </nav>
+
+    <main>
+
+      <!-- ═══════════════════════════════════════
+           WEEK 1 — Hello Again!
+      ═══════════════════════════════════════ -->
+
+      <!-- W1 MON: Me, Myself & I -->
+      <section class="day-card active" id="card-w1-monday" data-week="1" data-day="monday">
+        <div class="card-header">
+          <span class="day-badge">Monday</span>
+          <span class="live-badge">💬 Speaking Practice</span>
+          <span class="done-badge" id="done-w1-monday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>👤 Me, Myself &amp; I</h2>
+        <p class="grammar-tag">Grammar: <strong>to be (I'm / My name is) · personal pronouns · articles a/an</strong></p>
+
+        <div class="section-block task-block">
+          <div class="section-label">🎯 Key Vocabulary</div>
+          <div class="vocab-block">
+            <span class="vocab-chip chip-teal">name</span>
+            <span class="vocab-chip chip-teal">age</span>
+            <span class="vocab-chip chip-teal">country</span>
+            <span class="vocab-chip chip-teal">city</span>
+            <span class="vocab-chip chip-teal">nationality</span>
+            <span class="vocab-chip chip-teal">job / student</span>
+            <span class="vocab-chip chip-teal">single / married</span>
+          </div>
+          <div class="grammar-tip">💡 <strong>I am</strong> → <strong>I'm</strong> &nbsp;|&nbsp; <strong>My name is</strong> Öykü &nbsp;|&nbsp; <strong>I'm from</strong> Turkey &nbsp;|&nbsp; <strong>I'm a</strong> student</div>
+        </div>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📝 Read These 6 Sentences Aloud</div>
+          <p>Say each sentence clearly. Use <strong>I'm</strong> and <strong>My</strong> — they are your best friends today!</p>
+          <ul class="task-prompts">
+            <li>My name is Öykü and I'm from Turkey.</li>
+            <li>I'm a student. I study English.</li>
+            <li>I live in a big city.</li>
+            <li>I'm twenty-five years old. / I'm … years old.</li>
+            <li>I'm single. / I'm married.</li>
+            <li>I'm happy to speak English today!</li>
+          </ul>
+          <div class="reminder">🔊 <em>Tip: Say <strong>I'm</strong> as one smooth word — not "I am" with a big gap!</em></div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice</div>
+          <p style="font-size:0.88rem;color:var(--text-dark);text-align:center;margin-bottom:4px;">Read all six sentences — speak slowly and clearly! 💬</p>
+          <div class="recorder" id="recorder-w1-monday">
+            <button class="record-btn" id="recordBtn-w1-monday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w1-monday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w1-monday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w1-monday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w1-monday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W1 WED: My Family -->
+      <section class="day-card" id="card-w1-wednesday" data-week="1" data-day="wednesday">
+        <div class="card-header">
+          <span class="day-badge">Wednesday</span>
+          <span class="live-badge">💬 Speaking Practice</span>
+          <span class="done-badge" id="done-w1-wednesday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>👨‍👩‍👧 My Family</h2>
+        <p class="grammar-tag">Grammar: <strong>possessive adjectives (my / his / her) · to be · family vocabulary</strong></p>
+
+        <div class="section-block task-block">
+          <div class="section-label">🎯 Key Vocabulary</div>
+          <div class="vocab-block">
+            <span class="vocab-chip chip-teal">mother</span>
+            <span class="vocab-chip chip-teal">father</span>
+            <span class="vocab-chip chip-teal">sister</span>
+            <span class="vocab-chip chip-teal">brother</span>
+            <span class="vocab-chip chip-teal">husband</span>
+            <span class="vocab-chip chip-teal">wife</span>
+            <span class="vocab-chip chip-teal">daughter</span>
+            <span class="vocab-chip chip-teal">son</span>
+          </div>
+          <div class="grammar-tip">💡 <strong>My</strong> mother's name is… &nbsp;|&nbsp; <strong>She is</strong> a teacher. &nbsp;|&nbsp; <strong>He is</strong> … years old. &nbsp;|&nbsp; <strong>Her / His</strong> name is…</div>
+        </div>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📝 Read These 5 Sentences Aloud</div>
+          <p>Talk about your family. Change the names and details to make them <strong>true for you</strong>!</p>
+          <ul class="task-prompts">
+            <li>My mother's name is … She is a <strong>teacher</strong> / <strong>doctor</strong> / …</li>
+            <li>My father is … years old. He works in a <strong>bank</strong> / <strong>school</strong> / …</li>
+            <li>I have one <strong>sister</strong>. Her name is …</li>
+            <li>I don't have a <strong>brother</strong>. / I have one brother.</li>
+            <li>My family is <strong>small</strong> / <strong>big</strong>. There are … people in my family.</li>
+          </ul>
+          <div class="reminder">🔊 <em>Tip: <strong>His</strong> = for a man. <strong>Her</strong> = for a woman. Don't mix them up!</em></div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice</div>
+          <p style="font-size:0.88rem;color:var(--text-dark);text-align:center;margin-bottom:4px;">Talk about YOUR real family — use their real names! 👨‍👩‍👧</p>
+          <div class="recorder" id="recorder-w1-wednesday">
+            <button class="record-btn" id="recordBtn-w1-wednesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w1-wednesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w1-wednesday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w1-wednesday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w1-wednesday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W1 THU: My Things -->
+      <section class="day-card" id="card-w1-thursday" data-week="1" data-day="thursday">
+        <div class="card-header">
+          <span class="day-badge">Thursday</span>
+          <span class="live-badge" style="background:#fde68a;color:#92400e;">⭐ Star Session</span>
+          <span class="done-badge" id="done-w1-thursday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🎨 My Things — Colours &amp; Adjectives</h2>
+        <p class="grammar-tag">Grammar: <strong>adjectives · colours · a/an/the · This is… / That is…</strong></p>
+
+        <div class="section-block task-block">
+          <div class="section-label">🎯 Key Vocabulary</div>
+          <div class="vocab-block">
+            <span class="vocab-chip">big</span>
+            <span class="vocab-chip">small</span>
+            <span class="vocab-chip">old</span>
+            <span class="vocab-chip">new</span>
+            <span class="vocab-chip">nice</span>
+            <span class="vocab-chip">beautiful</span>
+            <span class="vocab-chip chip-teal">red</span>
+            <span class="vocab-chip chip-teal">blue</span>
+            <span class="vocab-chip chip-teal">black</span>
+            <span class="vocab-chip chip-teal">white</span>
+            <span class="vocab-chip chip-teal">green</span>
+            <span class="vocab-chip chip-teal">yellow</span>
+          </div>
+          <div class="grammar-tip">💡 Adjective comes <strong>before</strong> the noun: a <strong>big red</strong> bag &nbsp;|&nbsp; Or after <strong>to be</strong>: My bag <strong>is big and red</strong>.</div>
+        </div>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📝 Read These 5 Sentences Aloud</div>
+          <p>Describe five things around you. Look at them — then speak!</p>
+          <ul class="task-prompts">
+            <li>This is my <strong>bag</strong>. It is <strong>big and black</strong>.</li>
+            <li>My <strong>phone</strong> is <strong>new</strong>. It is <strong>white and small</strong>.</li>
+            <li>That is a <strong>beautiful</strong> red <strong>chair</strong>.</li>
+            <li>My <strong>book</strong> is <strong>old</strong> but very <strong>good</strong>.</li>
+            <li>This <strong>coffee</strong> is <strong>hot</strong>! It is very <strong>nice</strong>.</li>
+          </ul>
+          <div class="reminder">⭐ You finished Week 1! That is a wonderful start, Öykü — well done! 🎉</div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice</div>
+          <p style="font-size:0.88rem;color:var(--text-dark);text-align:center;margin-bottom:4px;">Describe five things YOU can see right now! 🎨</p>
+          <div class="recorder" id="recorder-w1-thursday">
+            <button class="record-btn" id="recordBtn-w1-thursday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w1-thursday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w1-thursday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w1-thursday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w1-thursday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════
+           WEEK 2 — My World
+      ═══════════════════════════════════════ -->
+
+      <!-- W2 MON: My Home -->
+      <section class="day-card" id="card-w2-monday" data-week="2" data-day="monday">
+        <div class="card-header">
+          <span class="day-badge">Monday</span>
+          <span class="live-badge">💬 Speaking Practice</span>
+          <span class="done-badge" id="done-w2-monday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🏠 My Home</h2>
+        <p class="grammar-tag">Grammar: <strong>There is / There are · There isn't · prepositions in/on/next to</strong></p>
+
+        <div class="section-block task-block">
+          <div class="section-label">🎯 Key Vocabulary</div>
+          <div class="vocab-block">
+            <span class="vocab-chip chip-teal">bedroom</span>
+            <span class="vocab-chip chip-teal">kitchen</span>
+            <span class="vocab-chip chip-teal">bathroom</span>
+            <span class="vocab-chip chip-teal">living room</span>
+            <span class="vocab-chip">bed</span>
+            <span class="vocab-chip">sofa</span>
+            <span class="vocab-chip">table</span>
+            <span class="vocab-chip">TV</span>
+            <span class="vocab-chip">lamp</span>
+            <span class="vocab-chip">window</span>
+          </div>
+          <div class="grammar-tip">💡 <strong>There is</strong> a sofa. (one thing) &nbsp;|&nbsp; <strong>There are</strong> two beds. (more than one) &nbsp;|&nbsp; <strong>There isn't</strong> a garden.</div>
+        </div>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📝 Read These 6 Sentences Aloud</div>
+          <p>Describe your home. Change the details to make them true!</p>
+          <ul class="task-prompts">
+            <li>I live in a flat / house. It is <strong>big</strong> / <strong>small</strong>.</li>
+            <li>There is a <strong>kitchen</strong> and a <strong>living room</strong>.</li>
+            <li>There are two <strong>bedrooms</strong> in my home.</li>
+            <li>There is a big <strong>sofa</strong> in the living room.</li>
+            <li>My desk is <strong>next to</strong> the window.</li>
+            <li>There isn't a <strong>garden</strong>. / There is a small garden.</li>
+          </ul>
+          <div class="free-prompt">
+            <span class="fp-label">🗣 Now YOU speak!</span>
+            How many rooms are in your home? Tell us about your favourite room!
+          </div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice</div>
+          <p style="font-size:0.88rem;color:var(--text-dark);text-align:center;margin-bottom:4px;">Read the sentences, then describe YOUR home! 🏠</p>
+          <div class="recorder" id="recorder-w2-monday">
+            <button class="record-btn" id="recordBtn-w2-monday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w2-monday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w2-monday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w2-monday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w2-monday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W2 WED: Food I Love -->
+      <section class="day-card" id="card-w2-wednesday" data-week="2" data-day="wednesday">
+        <div class="card-header">
+          <span class="day-badge">Wednesday</span>
+          <span class="live-badge">💬 Speaking Practice</span>
+          <span class="done-badge" id="done-w2-wednesday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🍕 Food &amp; Drink I Love</h2>
+        <p class="grammar-tag">Grammar: <strong>I like / I don't like · I love / I hate · always / sometimes / never</strong></p>
+
+        <div class="section-block task-block">
+          <div class="section-label">🎯 Key Vocabulary</div>
+          <div class="vocab-block">
+            <span class="vocab-chip chip-teal">bread</span>
+            <span class="vocab-chip chip-teal">coffee</span>
+            <span class="vocab-chip chip-teal">tea</span>
+            <span class="vocab-chip chip-teal">chicken</span>
+            <span class="vocab-chip chip-teal">rice</span>
+            <span class="vocab-chip chip-teal">fruit</span>
+            <span class="vocab-chip chip-teal">water</span>
+            <span class="vocab-chip chip-teal">pizza</span>
+            <span class="vocab-chip">always</span>
+            <span class="vocab-chip">sometimes</span>
+            <span class="vocab-chip">never</span>
+          </div>
+          <div class="grammar-tip">💡 <strong>I always</strong> have tea. &nbsp;|&nbsp; <strong>I sometimes</strong> eat pizza. &nbsp;|&nbsp; <strong>I never</strong> drink coffee.</div>
+        </div>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📝 Read These 5 Sentences Aloud</div>
+          <p>Use frequency words — <strong>always, sometimes, never</strong> — to make your answers interesting!</p>
+          <ul class="task-prompts">
+            <li>I <strong>always</strong> have tea in the morning.</li>
+            <li>I like <strong>chicken</strong> and <strong>rice</strong> for lunch.</li>
+            <li>I <strong>sometimes</strong> eat pizza at the weekend.</li>
+            <li>I <strong>don't like</strong> coffee. / I <strong>love</strong> coffee!</li>
+            <li>I <strong>never</strong> eat breakfast very late.</li>
+          </ul>
+          <div class="free-prompt">
+            <span class="fp-label">🗣 Now YOU speak!</span>
+            What do you eat for breakfast? What food do you love? What do you never eat?
+          </div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice</div>
+          <p style="font-size:0.88rem;color:var(--text-dark);text-align:center;margin-bottom:4px;">Read the sentences, then talk about YOUR favourite food! 🍕</p>
+          <div class="recorder" id="recorder-w2-wednesday">
+            <button class="record-btn" id="recordBtn-w2-wednesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w2-wednesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w2-wednesday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w2-wednesday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w2-wednesday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W2 THU: My Typical Day -->
+      <section class="day-card" id="card-w2-thursday" data-week="2" data-day="thursday">
+        <div class="card-header">
+          <span class="day-badge">Thursday</span>
+          <span class="live-badge" style="background:#fde68a;color:#92400e;">⭐ Star Session</span>
+          <span class="done-badge" id="done-w2-thursday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>⏰ My Typical Day</h2>
+        <p class="grammar-tag">Grammar: <strong>present simple routines · telling the time · prepositions at/in</strong></p>
+
+        <div class="section-block task-block">
+          <div class="section-label">🎯 Key Vocabulary</div>
+          <div class="vocab-block">
+            <span class="vocab-chip chip-teal">wake up</span>
+            <span class="vocab-chip chip-teal">get up</span>
+            <span class="vocab-chip chip-teal">have breakfast</span>
+            <span class="vocab-chip chip-teal">go to work</span>
+            <span class="vocab-chip chip-teal">have lunch</span>
+            <span class="vocab-chip chip-teal">go home</span>
+            <span class="vocab-chip chip-teal">have dinner</span>
+            <span class="vocab-chip chip-teal">go to bed</span>
+          </div>
+          <div class="grammar-tip">💡 <strong>at</strong> seven o'clock &nbsp;|&nbsp; <strong>at</strong> half past eight &nbsp;|&nbsp; <strong>in</strong> the morning &nbsp;|&nbsp; <strong>in</strong> the evening</div>
+        </div>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📝 Read These 5 Sentences Aloud</div>
+          <p>Change the times to match <strong>your</strong> real day!</p>
+          <ul class="task-prompts">
+            <li>I get up <strong>at seven o'clock</strong> in the morning.</li>
+            <li>I have breakfast <strong>at half past seven</strong>.</li>
+            <li>I go to work / school <strong>at eight o'clock</strong>.</li>
+            <li>I have lunch <strong>at one o'clock</strong>.</li>
+            <li>I go to bed <strong>at eleven o'clock</strong> in the evening.</li>
+          </ul>
+          <div class="free-prompt">
+            <span class="fp-label">🗣 Now YOU speak!</span>
+            What time do YOU have dinner? What do you do in the evening? Tell your teacher!
+          </div>
+          <div class="reminder">⭐ Fantastic work this week, Öykü! Week 2 is complete! 🌟</div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice</div>
+          <p style="font-size:0.88rem;color:var(--text-dark);text-align:center;margin-bottom:4px;">Read the sentences, then describe YOUR day! ⏰</p>
+          <div class="recorder" id="recorder-w2-thursday">
+            <button class="record-btn" id="recordBtn-w2-thursday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w2-thursday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w2-thursday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w2-thursday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w2-thursday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════
+           WEEK 3 — Can Do!
+      ═══════════════════════════════════════ -->
+
+      <!-- W3 MON: Skills & Hobbies -->
+      <section class="day-card" id="card-w3-monday" data-week="3" data-day="monday">
+        <div class="card-header">
+          <span class="day-badge">Monday</span>
+          <span class="live-badge">🎤 Q &amp; A Practice</span>
+          <span class="done-badge" id="done-w3-monday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>💪 Skills &amp; Hobbies</h2>
+        <p class="grammar-tag">Grammar: <strong>can / can't · I love + -ing · What can you do? Yes, I can. / No, I can't.</strong></p>
+
+        <div class="section-block task-block">
+          <div class="section-label">🎯 Key Vocabulary</div>
+          <div class="vocab-block">
+            <span class="vocab-chip chip-teal">swim</span>
+            <span class="vocab-chip chip-teal">drive</span>
+            <span class="vocab-chip chip-teal">cook</span>
+            <span class="vocab-chip chip-teal">sing</span>
+            <span class="vocab-chip chip-teal">dance</span>
+            <span class="vocab-chip chip-teal">play guitar</span>
+            <span class="vocab-chip chip-teal">speak English</span>
+            <span class="vocab-chip chip-teal">ride a bike</span>
+          </div>
+          <div class="grammar-tip">💡 <strong>I can</strong> swim. &nbsp;|&nbsp; <strong>I can't</strong> drive. &nbsp;|&nbsp; <strong>Can you</strong> cook? — <strong>Yes, I can!</strong> / <strong>No, I can't.</strong></div>
+        </div>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📝 Step 1 — Read These 5 Sentences</div>
+          <ul class="task-prompts">
+            <li>I can speak <strong>English</strong> and <strong>Turkish</strong>.</li>
+            <li>I can't <strong>drive</strong>, but I can <strong>ride a bike</strong>.</li>
+            <li>I love <strong>reading</strong>. I read every day.</li>
+            <li>I can <strong>swim</strong>, but I can't play <strong>tennis</strong>.</li>
+            <li>I enjoy <strong>cooking</strong>. I can cook pasta!</li>
+          </ul>
+          <div class="section-label" style="margin-top:14px;">💬 Step 2 — Now Answer These Questions About YOU</div>
+          <div class="free-prompt">
+            <span class="fp-label">🗣 Answer each question in a full sentence!</span>
+            1. Can you swim? → "Yes, I can!" / "No, I can't."<br>
+            2. What sport or hobby can you do well?<br>
+            3. What can't you do, but want to learn?
+          </div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice</div>
+          <p style="font-size:0.88rem;color:var(--text-dark);text-align:center;margin-bottom:4px;">Read the sentences, then answer the three questions! 💪</p>
+          <div class="recorder" id="recorder-w3-monday">
+            <button class="record-btn" id="recordBtn-w3-monday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w3-monday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w3-monday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w3-monday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w3-monday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W3 WED: Around Town -->
+      <section class="day-card" id="card-w3-wednesday" data-week="3" data-day="wednesday">
+        <div class="card-header">
+          <span class="day-badge">Wednesday</span>
+          <span class="live-badge">🎤 Q &amp; A Practice</span>
+          <span class="done-badge" id="done-w3-wednesday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🏙 Around Town</h2>
+        <p class="grammar-tag">Grammar: <strong>there is/are · prepositions of place · Where is…? · on/in/next to/behind/in front of</strong></p>
+
+        <div class="section-block task-block">
+          <div class="section-label">🎯 Key Vocabulary</div>
+          <div class="vocab-block">
+            <span class="vocab-chip chip-teal">supermarket</span>
+            <span class="vocab-chip chip-teal">café</span>
+            <span class="vocab-chip chip-teal">bank</span>
+            <span class="vocab-chip chip-teal">school</span>
+            <span class="vocab-chip chip-teal">hospital</span>
+            <span class="vocab-chip chip-teal">park</span>
+            <span class="vocab-chip chip-teal">station</span>
+            <span class="vocab-chip chip-teal">restaurant</span>
+            <span class="vocab-chip">next to</span>
+            <span class="vocab-chip">behind</span>
+            <span class="vocab-chip">in front of</span>
+          </div>
+          <div class="grammar-tip">💡 <strong>The café is next to</strong> the bank. &nbsp;|&nbsp; <strong>There is a park in front of</strong> the school. &nbsp;|&nbsp; <strong>Where is</strong> the supermarket?</div>
+        </div>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📝 Step 1 — Read These 5 Sentences</div>
+          <ul class="task-prompts">
+            <li>There is a <strong>supermarket</strong> next to my house.</li>
+            <li>The <strong>bank</strong> is in front of the park.</li>
+            <li>My <strong>school</strong> is behind the café on the main street.</li>
+            <li>There isn't a <strong>cinema</strong> in my street — it's far away.</li>
+            <li>The <strong>hospital</strong> is big. It is next to the station.</li>
+          </ul>
+          <div class="section-label" style="margin-top:14px;">💬 Step 2 — Now Answer These Questions</div>
+          <div class="free-prompt">
+            <span class="fp-label">🗣 Think about your neighbourhood!</span>
+            1. Is there a café near your home? Where is it?<br>
+            2. What is next to your school / work?<br>
+            3. Is there a park in your neighbourhood?
+          </div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice</div>
+          <p style="font-size:0.88rem;color:var(--text-dark);text-align:center;margin-bottom:4px;">Read the sentences, then describe YOUR neighbourhood! 🏙</p>
+          <div class="recorder" id="recorder-w3-wednesday">
+            <button class="record-btn" id="recordBtn-w3-wednesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w3-wednesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w3-wednesday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w3-wednesday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w3-wednesday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W3 THU: Shopping -->
+      <section class="day-card" id="card-w3-thursday" data-week="3" data-day="thursday">
+        <div class="card-header">
+          <span class="day-badge">Thursday</span>
+          <span class="live-badge" style="background:#fde68a;color:#92400e;">⭐ Star Session</span>
+          <span class="done-badge" id="done-w3-thursday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🛍 Shopping</h2>
+        <p class="grammar-tag">Grammar: <strong>this / that / these / those · How much is…? · Can I have…? · prices</strong></p>
+
+        <div class="section-block task-block">
+          <div class="section-label">🎯 Key Vocabulary</div>
+          <div class="vocab-block">
+            <span class="vocab-chip chip-teal">shirt</span>
+            <span class="vocab-chip chip-teal">jeans</span>
+            <span class="vocab-chip chip-teal">shoes</span>
+            <span class="vocab-chip chip-teal">dress</span>
+            <span class="vocab-chip chip-teal">jacket</span>
+            <span class="vocab-chip">small</span>
+            <span class="vocab-chip">medium</span>
+            <span class="vocab-chip">large</span>
+            <span class="vocab-chip">expensive</span>
+            <span class="vocab-chip">cheap</span>
+          </div>
+          <div class="grammar-tip">💡 <strong>This</strong> shirt (near, singular) &nbsp;|&nbsp; <strong>These</strong> shoes (near, plural) &nbsp;|&nbsp; <strong>That</strong> jacket (far, singular) &nbsp;|&nbsp; <strong>Those</strong> jeans (far, plural)</div>
+        </div>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📝 Read This Shopping Dialogue Aloud</div>
+          <p>Read the <strong>full conversation</strong> — play both roles!</p>
+          <div class="dialogue-box">
+            <p><span class="speaker">Assistant:</span> Good morning! Can I help you?</p>
+            <p><span class="speaker">You:</span> Yes, please! How much is <strong>this blue shirt</strong>?</p>
+            <p><span class="speaker">Assistant:</span> It's twenty pounds.</p>
+            <p><span class="speaker">You:</span> And how much are <strong>these black jeans</strong>?</p>
+            <p><span class="speaker">Assistant:</span> They are thirty-five pounds.</p>
+            <p><span class="speaker">You:</span> The shirt is not expensive! <strong>Can I have this shirt, please?</strong></p>
+            <p><span class="speaker">Assistant:</span> Of course. What size?</p>
+            <p><span class="speaker">You:</span> Medium, please. Thank you!</p>
+          </div>
+          <div class="free-prompt">
+            <span class="fp-label">🗣 Now YOU speak!</span>
+            What is your favourite colour for clothes? Do you like shopping? Why or why not?
+          </div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice</div>
+          <p style="font-size:0.88rem;color:var(--text-dark);text-align:center;margin-bottom:4px;">Read the dialogue, then answer the questions! 🛍</p>
+          <div class="recorder" id="recorder-w3-thursday">
+            <button class="record-btn" id="recordBtn-w3-thursday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w3-thursday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w3-thursday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w3-thursday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w3-thursday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════
+           WEEK 4 — Real Life Scenarios
+      ═══════════════════════════════════════ -->
+
+      <!-- W4 MON: At the Café -->
+      <section class="day-card" id="card-w4-monday" data-week="4" data-day="monday">
+        <div class="card-header">
+          <span class="day-badge">Monday</span>
+          <span class="live-badge">🎭 Real-Life Scenario</span>
+          <span class="done-badge" id="done-w4-monday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>☕ At the Café</h2>
+        <p class="grammar-tag">Grammar: <strong>Can I have…? · I'd like… · polite requests · food &amp; drink vocabulary</strong></p>
+
+        <div class="section-block task-block">
+          <div class="section-label">🎯 Key Vocabulary</div>
+          <div class="vocab-block">
+            <span class="vocab-chip chip-teal">coffee</span>
+            <span class="vocab-chip chip-teal">tea</span>
+            <span class="vocab-chip chip-teal">water</span>
+            <span class="vocab-chip chip-teal">orange juice</span>
+            <span class="vocab-chip chip-teal">sandwich</span>
+            <span class="vocab-chip chip-teal">cake</span>
+            <span class="vocab-chip">please</span>
+            <span class="vocab-chip">thank you</span>
+            <span class="vocab-chip">hot / cold</span>
+            <span class="vocab-chip">the bill</span>
+          </div>
+          <div class="grammar-tip">💡 <strong>Can I have</strong> a coffee, please? &nbsp;|&nbsp; <strong>How much is</strong> the sandwich? &nbsp;|&nbsp; <strong>Here you are!</strong> — <strong>Thank you very much!</strong></div>
+        </div>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📝 Read This Café Dialogue Aloud</div>
+          <div class="dialogue-box">
+            <p><span class="speaker">Waiter:</span> Good morning! What can I get you?</p>
+            <p><span class="speaker">You:</span> Good morning! <strong>Can I have</strong> a coffee and a sandwich, please?</p>
+            <p><span class="speaker">Waiter:</span> Of course. Hot or cold coffee?</p>
+            <p><span class="speaker">You:</span> <strong>Hot, please.</strong> And is the sandwich expensive?</p>
+            <p><span class="speaker">Waiter:</span> No, it's only four pounds.</p>
+            <p><span class="speaker">You:</span> Great! <strong>Can I have</strong> an orange juice too, please?</p>
+            <p><span class="speaker">Waiter:</span> Sure! Here you are.</p>
+            <p><span class="speaker">You:</span> <strong>Thank you very much!</strong></p>
+          </div>
+          <div class="free-prompt">
+            <span class="fp-label">🗣 Now YOU answer!</span>
+            1. What do you usually order at a café?<br>
+            2. Do you prefer coffee or tea? Why?
+          </div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice</div>
+          <p style="font-size:0.88rem;color:var(--text-dark);text-align:center;margin-bottom:4px;">Read the dialogue, then answer the two questions! ☕</p>
+          <div class="recorder" id="recorder-w4-monday">
+            <button class="record-btn" id="recordBtn-w4-monday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w4-monday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w4-monday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w4-monday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w4-monday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W4 WED: Nice to Meet You -->
+      <section class="day-card" id="card-w4-wednesday" data-week="4" data-day="wednesday">
+        <div class="card-header">
+          <span class="day-badge">Wednesday</span>
+          <span class="live-badge">🎭 Real-Life Scenario</span>
+          <span class="done-badge" id="done-w4-wednesday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🤝 Nice to Meet You!</h2>
+        <p class="grammar-tag">Grammar: <strong>to be questions · What do you do? · Where are you from? · question words what/where/who</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📝 Read This Meeting Dialogue Aloud</div>
+          <div class="dialogue-box">
+            <p><span class="speaker">A:</span> Hello! I'm Sara. <strong>What's your name?</strong></p>
+            <p><span class="speaker">You:</span> Hi! My name's Öykü. <strong>Nice to meet you!</strong></p>
+            <p><span class="speaker">A:</span> Nice to meet you too! <strong>Where are you from?</strong></p>
+            <p><span class="speaker">You:</span> I'm from <strong>Turkey</strong>. And you?</p>
+            <p><span class="speaker">A:</span> I'm from Spain. <strong>What do you do?</strong></p>
+            <p><span class="speaker">You:</span> I'm a <strong>student</strong>. I study English. And you?</p>
+            <p><span class="speaker">A:</span> I'm a <strong>teacher</strong>. Do you like Istanbul?</p>
+            <p><span class="speaker">You:</span> Yes, I love it! It's a <strong>beautiful</strong> city!</p>
+          </div>
+          <div class="free-prompt">
+            <span class="fp-label">🗣 Now answer these questions about YOU!</span>
+            1. Where are you from? What is your city like?<br>
+            2. What do you do — are you a student or do you work?<br>
+            3. What is one thing you love about your city?
+          </div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice</div>
+          <p style="font-size:0.88rem;color:var(--text-dark);text-align:center;margin-bottom:4px;">Read the dialogue, then answer all three questions! 🤝</p>
+          <div class="recorder" id="recorder-w4-wednesday">
+            <button class="record-btn" id="recordBtn-w4-wednesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w4-wednesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w4-wednesday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w4-wednesday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w4-wednesday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W4 THU: Describe My Room -->
+      <section class="day-card" id="card-w4-thursday" data-week="4" data-day="thursday">
+        <div class="card-header">
+          <span class="day-badge">Thursday</span>
+          <span class="live-badge" style="background:#fde68a;color:#92400e;">⭐ Star Session</span>
+          <span class="done-badge" id="done-w4-thursday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🛋 Describe My Room</h2>
+        <p class="grammar-tag">Grammar: <strong>there is/are · adjectives · all prepositions of place · extended description</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📝 Read This Room Description</div>
+          <p>Listen to this model description — read it aloud first, then create your own!</p>
+          <div class="dialogue-box">
+            <p>"This is my <strong>bedroom</strong>. There is a <strong>big white bed</strong> next to the window. My <strong>desk</strong> is in front of the door. There is a <strong>small blue lamp</strong> on the desk. My <strong>books</strong> are on the shelf behind the desk. The walls are <strong>white</strong>. There is a <strong>red carpet</strong> on the floor. I love my room — it is <strong>small but very comfortable</strong>!"</p>
+          </div>
+          <div class="free-prompt">
+            <span class="fp-label">🗣 Now describe YOUR room!</span>
+            Talk about your room or your favourite room at home. Use:<br>
+            <strong>There is / There are… · It is… · next to / on / in front of / behind</strong><br>
+            Try to speak for at least 6–8 sentences!
+          </div>
+          <div class="reminder">⭐ Amazing work on Week 4, Öykü — you are speaking in real situations now! 🎭</div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice</div>
+          <p style="font-size:0.88rem;color:var(--text-dark);text-align:center;margin-bottom:4px;">Read the model, then describe YOUR room — go for 6–8 sentences! 🛋</p>
+          <div class="recorder" id="recorder-w4-thursday">
+            <button class="record-btn" id="recordBtn-w4-thursday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w4-thursday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w4-thursday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w4-thursday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w4-thursday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════
+           WEEK 5 — Then & Now
+      ═══════════════════════════════════════ -->
+
+      <!-- W5 MON: Now vs Every Day -->
+      <section class="day-card" id="card-w5-monday" data-week="5" data-day="monday">
+        <div class="card-header">
+          <span class="day-badge">Monday</span>
+          <span class="live-badge">🚀 Extended Speaking</span>
+          <span class="done-badge" id="done-w5-monday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🔄 Now vs Every Day</h2>
+        <p class="grammar-tag">Grammar: <strong>present simple (routine) vs present continuous (right now) · I usually… / I am …ing now</strong></p>
+
+        <div class="section-block task-block">
+          <div class="section-label">🎯 Key Contrast</div>
+          <div class="grammar-tip">
+            💡 <strong>Present Simple</strong> = habits &amp; routines → <em>I usually work in the morning.</em><br>
+            💡 <strong>Present Continuous</strong> = right now → <em>I am sitting at home right now.</em>
+          </div>
+        </div>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📝 Read These 5 Pairs of Sentences</div>
+          <p>Notice the difference — routine vs. right now!</p>
+          <ul class="task-prompts">
+            <li>I <strong>usually</strong> drink tea in the morning. → Right now, I <strong>am drinking</strong> water.</li>
+            <li>She <strong>usually</strong> works at an office. → Today, she <strong>is working</strong> at home.</li>
+            <li>They <strong>usually</strong> watch TV in the evening. → Now, they <strong>are reading</strong> books.</li>
+            <li>I <strong>usually</strong> go to school by bus. → Today, I <strong>am walking</strong>.</li>
+            <li>He <strong>usually</strong> cooks dinner. → Right now, he <strong>is eating</strong> pizza!</li>
+          </ul>
+          <div class="free-prompt">
+            <span class="fp-label">🗣 Now YOU speak — two parts!</span>
+            <strong>Part 1:</strong> What do you USUALLY do in the evening?<br>
+            <strong>Part 2:</strong> What are you doing RIGHT NOW at this moment?<br>
+            Try to use both tenses clearly!
+          </div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice</div>
+          <p style="font-size:0.88rem;color:var(--text-dark);text-align:center;margin-bottom:4px;">Read the pairs, then speak about YOUR routines vs right now! 🔄</p>
+          <div class="recorder" id="recorder-w5-monday">
+            <button class="record-btn" id="recordBtn-w5-monday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w5-monday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w5-monday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w5-monday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w5-monday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W5 WED: My Family Story -->
+      <section class="day-card" id="card-w5-wednesday" data-week="5" data-day="wednesday">
+        <div class="card-header">
+          <span class="day-badge">Wednesday</span>
+          <span class="live-badge">🚀 Extended Speaking</span>
+          <span class="done-badge" id="done-w5-wednesday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>👨‍👩‍👧 My Family Story</h2>
+        <p class="grammar-tag">Grammar: <strong>to be · have got · possessive adjectives · adjectives — all combined in an extended description</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📝 Read This Model Family Description</div>
+          <div class="dialogue-box">
+            <p>"My family is <strong>small but very close</strong>. My <strong>mother's</strong> name is Zeynep. She is <strong>forty-five</strong> years old and she is a <strong>teacher</strong>. She has got <strong>brown eyes</strong> and <strong>short hair</strong>. She is very <strong>kind and funny</strong>.</p>
+            <p>My <strong>father's</strong> name is Ali. He is a <strong>doctor</strong>. He works in a big hospital in Istanbul. He is very <strong>hard-working</strong>.</p>
+            <p>I have one <strong>sister</strong>. Her name is Melis. She is <strong>twenty</strong> years old. She hasn't got a job yet — she is a <strong>student</strong>. I love my family very much!"</p>
+          </div>
+          <div class="free-prompt">
+            <span class="fp-label">🗣 Now describe YOUR family — aim for 8–10 sentences!</span>
+            Use: <strong>My … 's name is… / He/She is… / He/She has got… / He/She works as a…</strong><br>
+            Include their job, age, appearance, and one personality adjective!
+          </div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice</div>
+          <p style="font-size:0.88rem;color:var(--text-dark);text-align:center;margin-bottom:4px;">Read the model, then describe YOUR family for 8–10 sentences! 👨‍👩‍👧</p>
+          <div class="recorder" id="recorder-w5-wednesday">
+            <button class="record-btn" id="recordBtn-w5-wednesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w5-wednesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w5-wednesday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w5-wednesday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w5-wednesday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W5 THU: Last Weekend -->
+      <section class="day-card" id="card-w5-thursday" data-week="5" data-day="thursday">
+        <div class="card-header">
+          <span class="day-badge">Thursday</span>
+          <span class="live-badge" style="background:#fde68a;color:#92400e;">⭐ Star Session</span>
+          <span class="done-badge" id="done-w5-thursday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>📅 Last Weekend</h2>
+        <p class="grammar-tag">Grammar: <strong>past simple: was/were · went/had/saw/watched/stayed · yesterday / last weekend / last night</strong></p>
+
+        <div class="section-block task-block">
+          <div class="section-label">🎯 Key Past Tense Verbs</div>
+          <div class="vocab-block">
+            <span class="vocab-chip chip-teal">was / were</span>
+            <span class="vocab-chip chip-teal">went → go</span>
+            <span class="vocab-chip chip-teal">had → have</span>
+            <span class="vocab-chip chip-teal">saw → see</span>
+            <span class="vocab-chip chip-teal">watched → watch</span>
+            <span class="vocab-chip chip-teal">stayed → stay</span>
+            <span class="vocab-chip">yesterday</span>
+            <span class="vocab-chip">last weekend</span>
+            <span class="vocab-chip">last night</span>
+          </div>
+          <div class="grammar-tip">💡 <strong>I went</strong> to the market. &nbsp;|&nbsp; <strong>I had</strong> lunch with family. &nbsp;|&nbsp; <strong>I didn't go</strong> to school. &nbsp;|&nbsp; <strong>I was</strong> at home.</div>
+        </div>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📝 Step 1 — Read These 5 Past Sentences</div>
+          <ul class="task-prompts">
+            <li><strong>Last weekend</strong> I went to the supermarket and the park.</li>
+            <li>On <strong>Saturday</strong> I had lunch with my family.</li>
+            <li>I watched a film on TV <strong>in the evening</strong>.</li>
+            <li><strong>Yesterday</strong> I was at home all day — it was very relaxing!</li>
+            <li>I didn't go to work <strong>last Friday</strong> — it was a holiday.</li>
+          </ul>
+          <div class="section-label" style="margin-top:14px;">💬 Step 2 — Answer These Questions About YOUR Weekend</div>
+          <div class="free-prompt">
+            <span class="fp-label">🗣 Use past tense in all your answers!</span>
+            1. Where were you last weekend?<br>
+            2. What did you do on Saturday or Sunday?<br>
+            3. Did you watch TV or a film last night? What was it?
+          </div>
+          <div class="reminder">⭐ Week 5 done — you are speaking in three tenses now, Öykü! Incredible! 🚀</div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice</div>
+          <p style="font-size:0.88rem;color:var(--text-dark);text-align:center;margin-bottom:4px;">Read the sentences, then answer the three questions about YOUR weekend! 📅</p>
+          <div class="recorder" id="recorder-w5-thursday">
+            <button class="record-btn" id="recordBtn-w5-thursday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w5-thursday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w5-thursday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w5-thursday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w5-thursday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════
+           WEEK 6 — Grand Finale!
+      ═══════════════════════════════════════ -->
+
+      <!-- W6 MON: All About Me -->
+      <section class="day-card" id="card-w6-monday" data-week="6" data-day="monday">
+        <div class="card-header">
+          <span class="day-badge">Monday</span>
+          <span class="live-badge">🏆 Free Speaking</span>
+          <span class="done-badge" id="done-w6-monday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>🌟 All About Me!</h2>
+        <p class="grammar-tag">Grammar: <strong>ALL A1 grammar combined — your full personal introduction</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📝 Read This Model Introduction</div>
+          <div class="dialogue-box">
+            <p>"Hello! My name is <strong>Öykü</strong>. I am from <strong>Turkey</strong>. I live in <strong>Istanbul</strong> — it's a big, beautiful city. I am a <strong>student</strong> and I study English.</p>
+            <p>My family has <strong>four</strong> people — my mother, father, and one sister. My mother is a <strong>teacher</strong> and my father works in a <strong>bank</strong>. My sister is a student too.</p>
+            <p>I can speak <strong>Turkish</strong> and <strong>English</strong>. I love <strong>reading</strong> and I like <strong>watching films</strong>. Every morning I get up at <strong>seven o'clock</strong> and I have <strong>tea</strong> for breakfast.</p>
+            <p>I am very happy to speak English today — and I want to speak even better!"</p>
+          </div>
+          <div class="free-prompt">
+            <span class="fp-label">🗣 Now it's YOUR turn — speak for 1–2 minutes!</span>
+            Cover all of these:<br>
+            ✔ Name, nationality, city<br>
+            ✔ Job / study<br>
+            ✔ Family<br>
+            ✔ What you can do / hobbies<br>
+            ✔ Daily routine<br>
+            ✔ One thing you love about your life!
+          </div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice</div>
+          <p style="font-size:0.88rem;color:var(--text-dark);text-align:center;margin-bottom:4px;">Read the model, then give YOUR full introduction — 1 to 2 minutes! 🌟</p>
+          <div class="recorder" id="recorder-w6-monday">
+            <button class="record-btn" id="recordBtn-w6-monday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w6-monday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w6-monday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w6-monday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w6-monday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W6 WED: Compare Two Things -->
+      <section class="day-card" id="card-w6-wednesday" data-week="6" data-day="wednesday">
+        <div class="card-header">
+          <span class="day-badge">Wednesday</span>
+          <span class="live-badge">🏆 Free Speaking</span>
+          <span class="done-badge" id="done-w6-wednesday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>⚖️ Compare Two Things</h2>
+        <p class="grammar-tag">Grammar: <strong>adjectives · this/that · but / and · present simple + can + there is/are — all combined</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📝 Read These 5 Comparison Sentences</div>
+          <p>Listen to how <strong>but</strong> and <strong>and</strong> connect two ideas!</p>
+          <ul class="task-prompts">
+            <li>This café is <strong>big and expensive</strong>. That café is <strong>small but cheap</strong>.</li>
+            <li>My old phone was <strong>black and small</strong>. My new phone is <strong>white and very big</strong>.</li>
+            <li>Istanbul is a <strong>big and noisy</strong> city. My grandmother's village is <strong>very small and quiet</strong>.</li>
+            <li>In summer it is <strong>hot and sunny</strong>. In winter it is <strong>cold and rainy</strong>.</li>
+            <li>I can speak Turkish <strong>very well</strong>. I can speak English, but <strong>not perfectly — yet!</strong></li>
+          </ul>
+          <div class="free-prompt">
+            <span class="fp-label">🗣 Now compare TWO things in YOUR life!</span>
+            Choose any two things and compare them using <strong>and / but</strong>:<br>
+            • Two cities you know &nbsp;|&nbsp; Two places you love &nbsp;|&nbsp; Two seasons<br>
+            • Your old school vs. your new school &nbsp;|&nbsp; Two foods you like<br>
+            Aim for at least 4–5 sentences of comparison!
+          </div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice</div>
+          <p style="font-size:0.88rem;color:var(--text-dark);text-align:center;margin-bottom:4px;">Read the sentences, then compare YOUR two things — use and / but! ⚖️</p>
+          <div class="recorder" id="recorder-w6-wednesday">
+            <button class="record-btn" id="recordBtn-w6-wednesday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w6-wednesday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w6-wednesday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w6-wednesday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w6-wednesday"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- W6 THU: My Story -->
+      <section class="day-card" id="card-w6-thursday" data-week="6" data-day="thursday">
+        <div class="card-header">
+          <span class="day-badge">Thursday</span>
+          <span class="live-badge" style="background:#fde68a;color:#92400e;">🏆 Grand Finale!</span>
+          <span class="done-badge" id="done-w6-thursday" style="display:none">✅ Done!</span>
+        </div>
+        <h2>📖 My Story — Past, Present &amp; Future</h2>
+        <p class="grammar-tag">Grammar: <strong>past simple · present simple · present continuous · can · I want to… — everything!</strong></p>
+
+        <div class="section-block listen-block">
+          <div class="section-label">📝 Read This Model Story</div>
+          <div class="dialogue-box">
+            <p>"My name is <strong>Öykü</strong> and I am from <strong>Turkey</strong>. I was born in <strong>Istanbul</strong>.</p>
+            <p>When I was young, I went to school and I studied <strong>very hard</strong>. I liked English a lot at school — it was my favourite subject!</p>
+            <p>Now I live in Istanbul and I am a <strong>student</strong>. I can speak English, but I want to speak <strong>better and better</strong>. I love reading and I always listen to <strong>English music</strong>.</p>
+            <p>Last week I watched an English film — it was <strong>wonderful</strong>. Right now I am practising my English speaking — and I am very <strong>proud</strong> of myself!</p>
+            <p>In the future, I want to <strong>travel to England</strong> and speak English <strong>every single day</strong>. I know I can do it!"</p>
+          </div>
+          <div class="free-prompt">
+            <span class="fp-label">🗣 Now tell YOUR story — past, present, and future!</span>
+            <strong>Past:</strong> Where did you grow up? What did you like at school?<br>
+            <strong>Present:</strong> What do you do now? What are you learning?<br>
+            <strong>Future:</strong> What do you want to do? Where do you want to go?<br>
+            Aim for at least 1–2 minutes — this is your Grand Finale! 🏆
+          </div>
+          <div class="reminder">🏆 You did it, Öykü! Six weeks of speaking practice — you are incredible! 🌟🎉</div>
+        </div>
+
+        <div class="section-block record-block">
+          <div class="section-label">🎙 Record Your Voice</div>
+          <p style="font-size:0.88rem;color:var(--text-dark);text-align:center;margin-bottom:4px;">Read the model, then tell YOUR own story — go for 1–2 minutes! 📖🏆</p>
+          <div class="recorder" id="recorder-w6-thursday">
+            <button class="record-btn" id="recordBtn-w6-thursday"><span class="record-icon">🎙</span><span class="record-label">Tap to Record</span></button>
+            <div class="timer" id="timer-w6-thursday" style="display:none">⏺ Recording… <span class="timer-count">0:00</span></div>
+            <audio class="playback" id="playback-w6-thursday" controls style="display:none"></audio>
+            <button class="submit-btn" id="submitBtn-w6-thursday" style="display:none">✓ Submit to Teacher</button>
+            <div class="status-msg" id="status-w6-thursday"></div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </section>
+
+  <footer>
+    <p>Made with 💬 for Öykü · A1 Speaking Champion! 🏆</p>
+  </footer>
+
+  <script src="oyku-script.js"></script>
+</body>
+</html>
